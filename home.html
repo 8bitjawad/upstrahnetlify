@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Home - Upstra" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyStat - Upstra</title>
+    <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
+    <link rel="stylesheet" href="static/core/css/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-gray-50 w-full fixed top-0 left-0 z-50 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0">
+            <a href="home.html" class="text-3xl font-black text-gray-900 hover:text-teal-700 transition duration-300">Upstra</a>
+          </div>
+          <div class="hidden sm:flex space-x-8 items-center">
+            <a href="mystat.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra</a>
+            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra Partner</a>
+            <a href="contact.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Contact</a>
+          </div>
+          <div class="sm:hidden">
+            <button id="menu-toggle" class="text-3xl text-gray-700 focus:outline-none">☰</button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 bg-white px-4">
+        <ul class="flex flex-col py-4 space-y-4 text-base font-semibold text-gray-700">
+          <li><a href="mystat.html" class="hover:text-teal-700 transition">Upstra</a></li>
+          <li><a href="mycerebro.html" class="hover:text-teal-700 transition">Upstra Partner</a></li>
+          <li><a href="contact.html" class="hover:text-teal-700 transition">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main style="margin-top: 80px">
+      <!-- Main content -->
+      <div
+        class="relative flex h-screen w-full items-center justify-center bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1632380148925-ff9f845087f8?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+      >
+        <div class="backdrop-blur-custom absolute inset-0 z-0 bg-black/30 backdrop-blur-sm" style="pointer-events: none"></div>
+        <div class="relative z-10 text-center">
+          <h1 class="mb-6 text-center font-bold text-4xl sm:text-5xl sm:font-medium text-blue-300">
+            Built for Athletes. Powered by Stats.<br />
+            Shared with the World.
+          </h1>
+          <p class="mt-8 px-4 text-center font-light text-white">The ultimate platform designed to empower athletes at every level.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center bg-black p-8">
+        <h1 class="text-center text-4xl text-blue-300 font-bold sm:text-5xl">Become the Athlete you've always wanted to be.</h1>
+        <div class="flex flex-col gap-y-8 sm:flex-row sm:gap-x-8 text-white mt-10">
+          <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-16">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"
+              />
+            </svg>
+            <h1 class="text-2xl text font-semibold text-blue-300">Crush Limits.</h1>
+            <p class="font-light">Track your stats, get discovered, and push beyond your potential.</p>
+            <button><a href="mystat.html"> Learn more</a></button>
+          </div>
+          <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-16">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"
+              />
+            </svg>
+
+            <h1 class="text-2xl text font-semibold text-blue-300">Elevate your Game.</h1>
+            <p class="font-light">Analyze your performance and connect with top clubs to grow faster.</p>
+            <button><a href="mycerebro.html"> Learn more</a></button>
+          </div>
+          <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-16">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+              />
+            </svg>
+            <h1 class="text-2xl text font-semibold text-blue-300">Share your glory.</h1>
+            <p class="font-light">Showcase your progress and get noticed by coaches and scouts.</p>
+            <button><a href="mystat.html"> Learn more</a></button>
+          </div>
+        </div>
+
+        <!-- Card 1 - Upstra / Club Connect -->
+        <h1 class="mt-10 items-center pt-8 text-4xl font-bold sm:text-5xl text-blue-300">Get started on your journey today.</h1>
+        <div class="mx-5 mt-10 flex flex-col gap-4 font-light sm:flex-row">
+          <div class="transform-200 relative h-80 flex-1 overflow-hidden rounded-2xl transition-transform hover:scale-105">
+            <img src="https://images.pexels.com/photos/1103969/pexels-photo-1103969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Upstra" class="h-full w-full rounded-2xl object-cover" />
+            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-amber-800/80 to-transparent p-6">
+              <a href="mystat.html">
+                <h2 class="mb-2 text-2xl font-bold text-white">Upstra</h2>
+                <p class="mb-3 text-sm text-white">Stay in sync with your club—real-time updates, events, and more.</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 - Cerebro / Performance Stats -->
+          <div class="transform-200 relative h-80 flex-1 overflow-hidden rounded-2xl transition-transform hover:scale-105">
+            <img src="https://images.pexels.com/photos/9251066/pexels-photo-9251066.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="Cerebro" class="h-full w-full rounded-2xl object-cover" />
+            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-amber-900/80 to-transparent p-6">
+              <a href="mycerebro.html">
+                <h2 class="mb-2 text-2xl font-bold text-white">Upstra Partner</h2>
+                <p class="mb-3 text-sm text-white">Track your sessions and see your growth over time.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Goals Section -->
+        <div class="flex flex-col items-center justify-center px-6 py-16 text-white">
+          <div class="mb-12 max-w-4xl text-center">
+            <h1 class="mb-8 text-4xl font-bold sm:text-5xl text-blue-300">What makes us the best?</h1>
+            <p class="text-lg leading-relaxed font-light sm:text-xl">At <span class="font-semibold">Upstra</span>, we're not just building a platform—we're building a movement.</p>
+          </div>
+
+          <!-- Goal Cards -->
+          <div class="grid w-full max-w-screen-xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Goal 1 -->
+            <div class="transform rounded-3xl bg-gradient-to-r from-cyan-500 to-slate-800 p-8 text-center shadow-lg transition-transform hover:scale-105">
+              <h3 class="mb-4 text-2xl font-semibold">Empowerment Through Data</h3>
+              <p class="text-sm font-light sm:text-base">We want to empower athletes, coaches, and teams with the right data and insights to unlock their full potential.</p>
+            </div>
+
+            <!-- Goal 2 -->
+            <div class="transform rounded-3xl bg-gradient-to-r from-slate-800 to-cyan-500 p-8 text-center shadow-lg transition-transform hover:scale-105">
+              <h3 class="mb-4 text-2xl font-semibold">Connect the Community</h3>
+              <p class="text-sm font-light sm:text-base">Our platform is designed to bring everyone in the sports ecosystem closer together, with seamless communication tools.</p>
+            </div>
+
+            <!-- Goal 3 -->
+            <div class="transform rounded-3xl bg-gradient-to-r from-cyan-500 to-slate-800 p-8 text-center shadow-lg transition-transform hover:scale-105">
+              <h3 class="mb-4 text-2xl font-semibold">Track Progress, Celebrate Achievements</h3>
+              <p class="text-sm font-light sm:text-base">Celebrate every milestone, no matter how big or small, with real-time tracking and achievement sharing.</p>
+            </div>
+
+            <!-- Goal 4 -->
+            <div class="transform rounded-3xl bg-gradient-to-r from-slate-800 to-cyan-500 p-8 text-center shadow-lg transition-transform hover:scale-105">
+              <h3 class="mb-4 text-2xl font-semibold">Simplify Team Management</h3>
+              <p class="text-sm font-light sm:text-base">Streamline team management, from scheduling to performance reviews, all in one place—no more scattered tools.</p>
+            </div>
+
+            <!-- Goal 5 -->
+            <div class="transform rounded-3xl bg-gradient-to-r from-cyan-500 to-slate-800 p-8 text-center shadow-lg transition-transform hover:scale-105">
+              <h3 class="mb-4 text-2xl font-semibold">Build Lasting Relationships</h3>
+              <p class="text-sm font-light sm:text-base">We aim to help players and teams build strong, lasting relationships both on and off the field.</p>
+            </div>
+
+            <!-- Goal 6 -->
+            <div class="transform rounded-3xl bg-gradient-to-r from-slate-800 to-cyan-500 p-8 text-center shadow-lg transition-transform hover:scale-105">
+              <h3 class="mb-4 text-2xl font-semibold">Create Sponsorship Opportunities</h3>
+              <p class="text-sm font-light sm:text-base">Our goal is to create opportunities for athletes and coaches to gain the recognition and sponsorship they deserve.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 w-full">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="mystat.html" class="flex items-center text-decoration-none text-black">
+              <img src="static/core/images/statlogo.png" class="h-8 me-3" alt="Stat Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+            </a>
+            <ul>
+              <li>
+                <p class="font-light">
+                  Founders Office <br />
+                  Ebrah Tech Pvt. Ltd. <br />
+                  #31/1, Yash Cottage, A&B Block, <br />
+                  Austin Town, Bangalore - 560047
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                </li>
+                <br />
+                <li>
+                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Follow us</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Legal</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+            <!-- Social SVGs as in base.html -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

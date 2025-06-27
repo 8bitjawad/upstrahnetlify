@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Contact Upstra" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Upstra</title>
+    <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
+    <link rel="stylesheet" href="static/core/css/contact1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-gray-50 w-full fixed top-0 left-0 z-50 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0">
+            <a href="home.html" class="text-3xl font-black text-gray-900 hover:text-teal-700 transition duration-300">Upstra</a>
+          </div>
+          <div class="hidden sm:flex space-x-8 items-center">
+            <a href="mystat.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra</a>
+            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra Partner</a>
+            <a href="contact.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Contact</a>
+          </div>
+          <div class="sm:hidden">
+            <button id="menu-toggle" class="text-3xl text-gray-700 focus:outline-none">☰</button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 bg-white px-4">
+        <ul class="flex flex-col py-4 space-y-4 text-base font-semibold text-gray-700">
+          <li><a href="mystat.html" class="hover:text-teal-700 transition">Upstra</a></li>
+          <li><a href="mycerebro.html" class="hover:text-teal-700 transition">Upstra Partner</a></li>
+          <li><a href="contact.html" class="hover:text-teal-700 transition">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main style="margin-top: 80px">
+      <div class="relative min-h-screen flex items-center justify-center px-4 py-20">
+        <!-- Background image layer -->
+        <div class="absolute inset-0 -z-10">
+          <img src="https://images.unsplash.com/photo-1632380148925-ff9f845087f8?q=80&w=1932&auto=format&fit=crop" alt="Contact Background" class="w-full h-full object-cover" />
+        </div>
+        <!-- Blur overlay behind form -->
+        <div class="absolute inset-0 bg-black/30 backdrop-blur-md -z-0"></div>
+        <!-- Contact Info -->
+        <div class="relative z-10 bg-black/60 backdrop-blur-md mt-8 p-8 pb-2 rounded-xl shadow-2xl w-full max-w-md">
+          <h1 class="text-3xl font-bold text-center text-white mb-4">Contact Us</h1>
+          <p class="text-white text-center mb-6">We'd love to hear from you. Reach out to us using the information below.</p>
+          <ul class="text-white text-lg mb-6">
+            <li><strong>Email:</strong> <a href="mailto:info@upstra.com" class="underline">info@upstra.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+911234567890" class="underline">+91 12345 67890</a></li>
+          </ul>
+          <div class="flex justify-center space-x-6">
+            <a href="https://facebook.com/yourpage" target="_blank" class="text-gray-400 hover:text-blue-500 transition">
+              <i class="fab fa-facebook fa-xl"></i>
+            </a>
+            <a href="https://instagram.com/yourpage" target="_blank" class="text-gray-400 hover:text-pink-500 transition">
+              <i class="fab fa-instagram fa-xl"></i>
+            </a>
+            <a href="https://twitter.com/yourpage" target="_blank" class="text-gray-400 hover:text-sky-400 transition">
+              <i class="fab fa-x-twitter fa-xl"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourpage" target="_blank" class="text-gray-400 hover:text-blue-600 transition">
+              <i class="fab fa-linkedin fa-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 w-full">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="mystat.html" class="flex items-center text-decoration-none text-black">
+              <img src="static/core/images/statlogo.png" class="h-8 me-3" alt="Stat Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+            </a>
+            <ul>
+              <li>
+                <p class="font-light">
+                  Founders Office <br />
+                  Ebrah Tech Pvt. Ltd. <br />
+                  #31/1, Yash Cottage, A&B Block, <br />
+                  Austin Town, Bangalore - 560047
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                </li>
+                <br />
+                <li>
+                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Follow us</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Legal</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+            <!-- Social SVGs as in base.html -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

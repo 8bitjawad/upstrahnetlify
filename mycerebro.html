@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Upstra Partner - MyCerebro" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upstra Partner - MyCerebro</title>
+    <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
+    <link rel="stylesheet" href="static/core/css/mystat.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-gray-50 w-full fixed top-0 left-0 z-50 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0">
+            <a href="home.html" class="text-3xl font-black text-gray-900 hover:text-teal-700 transition duration-300">Upstra</a>
+          </div>
+          <div class="hidden sm:flex space-x-8 items-center">
+            <a href="mystat.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra</a>
+            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra Partner</a>
+            <a href="contact.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Contact</a>
+          </div>
+          <div class="sm:hidden">
+            <button id="menu-toggle" class="text-3xl text-gray-700 focus:outline-none">☰</button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 bg-white px-4">
+        <ul class="flex flex-col py-4 space-y-4 text-base font-semibold text-gray-700">
+          <li><a href="mystat.html" class="hover:text-teal-700 transition">Upstra</a></li>
+          <li><a href="mycerebro.html" class="hover:text-teal-700 transition">Upstra Partner</a></li>
+          <li><a href="contact.html" class="hover:text-teal-700 transition">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main style="margin-top: 80px">
+      <!-- Hero Section with Background Video -->
+      <div class="relative w-full h-screen overflow-hidden">
+        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay loop muted playsinline preload="auto" poster="static/images/fallback.jpeg">
+          <source src="static/videos/mycerebrobg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 flex items-center justify-center text-white text-center z-10 bg-black/40">
+          <div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-red-300">Upstra Partner</h1>
+            <p class="mt-4 mx-4 text-lg sm:text-xl font-light">Your powerful toolkit for managing teams, scouting talent, and staying ahead in the sports world.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Countdown Timer Section -->
+      <div class="mystat-countdown">
+        <div class="mystat-countdown-inner">
+          <h3>Launch In:</h3>
+          <div id="countdown-timer"></div>
+        </div>
+      </div>
+      <!-- Feature Section -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between px-4 sm:px-12 lg:px-24">
+        <div class="flex-1 mt-0 sm:mt-0 font-light sm:pr-8 sm:ml-8 lg:ml-20">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-red-300">What You Can Do on Upstra Partner</h2>
+          <p class="mb-4 text-2xl text-white">Upstra Partner is built for those who lead — coaches, scouts, and recruiters. Track your players, assess performance, and connect with top talent, all in one place.</p>
+          <ul class="list-disc pl-5 space-y-2 text-white text-base sm:text-lg lg:text-xl">
+            <li>
+              <strong><span class="text-red-300"> Team Insights: </span></strong> Access live player stats, attendance, and progress logs.
+            </li>
+            <li>
+              <strong><span class="text-red-300"> Scouting Tools: </span></strong> Discover and follow top-performing athletes across clubs and regions.
+            </li>
+            <li>
+              <strong><span class="text-red-300"> Recruiter's Dashboard: </span></strong> Build shortlists, analyze performance trends, and manage outreach.
+            </li>
+          </ul>
+        </div>
+        <div class="phone-container-section flex-1 flex justify-center">
+          <div class="phone-frame mt-0 sm:mt-6">
+            <div class="phone-screen">
+              <img src="static/core/images/mystat2.jpeg" class="screen fade-screen-1" alt="Screen 1" />
+              <img src="static/core/images/mystat1.jpg" class="screen fade-screen-2" alt="Screen 2" />
+              <img src="static/core/images/mystat3.jpeg" class="screen fade-screen-3" alt="Screen 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Feed Section -->
+      <div class="flex flex-col sm:flex-row gap-4 px-4 items-center justify-between">
+        <div class="phone-container-section flex-1 flex justify-center">
+          <div class="phone-frame mt-0 sm:mt-6">
+            <div class="phone-screen">
+              <img src="static/core/images/mystat2.jpeg" class="screen fade-screen-1" alt="Screen 1" />
+              <img src="static/core/images/mystat1.jpg" class="screen fade-screen-2" alt="Screen 2" />
+              <img src="static/core/images/mystat3.jpeg" class="screen fade-screen-3" alt="Screen 3" />
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 mt-0 sm:mt-0 text-white font-light sm:pr-8 sm:mr-8 lg:mr-20">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-red-300">Live Feed & Talent Updates</h2>
+          <p class="mb-6 text-base sm:text-lg lg:text-xl text-white">Stay up-to-date with real-time updates from your teams and prospects. Review performance highlights, game videos, and training sessions — all personalized to your role.</p>
+          <ul class="list-disc pl-5 space-y-4 text-white">
+            <li class="text-base sm:text-lg lg:text-xl">
+              <strong><span class="text-red-300"> Athlete Watchlist: </span></strong> Get notified about standout moments and player improvements.
+            </li>
+            <li class="text-base sm:text-lg lg:text-xl">
+              <strong><span class="text-red-300"> Reports: </span></strong> Export match-day reports, fitness logs, and player assessments.
+            </li>
+            <li class="text-base sm:text-lg lg:text-xl">
+              <strong><span class="text-red-300"> Feedback Loop: </span></strong> Leave reviews, suggestions, or progress notes for athletes in your club.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- How It Works Section -->
+      <section class="bg-black text-white py-16 px-6 sm:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl sm:text-5xl font-bold mb-12 text-red-300">How It Works</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+              <div class="flex justify-center mb-6">
+                <div class="bg-red-400 p-4 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-user-round-icon lucide-circle-user-round"
+                  >
+                    <path d="M18 20a6 6 0 0 0-12 0" />
+                    <circle cx="12" cy="10" r="4" />
+                    <circle cx="12" cy="12" r="10" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-red-200">Sign Up</h3>
+              <p class="text-base text-gray-300">Create your free Upstra Partner account and gain access to a full recruitment and coaching suite.</p>
+            </div>
+            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+              <div class="flex justify-center mb-6">
+                <div class="bg-red-400 p-4 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-medal-icon lucide-medal">
+                    <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+                    <path d="M11 12 5.12 2.2" />
+                    <path d="m13 12 5.88-9.8" />
+                    <path d="M8 7h8" />
+                    <circle cx="12" cy="17" r="5" />
+                    <path d="M12 18v-2h-.5" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-red-200">Connect to Teams</h3>
+              <p class="text-base text-gray-300">Link with existing clubs, manage rosters, and explore new talent pools.</p>
+            </div>
+            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+              <div class="flex justify-center mb-6">
+                <div class="bg-red-400 p-4 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-smartphone-icon lucide-smartphone"
+                  >
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="M12 18h.01" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-red-200">Scout and Manage</h3>
+              <p class="text-base text-gray-300">Track performances, discover players, and build your winning team from the ground up.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Image Grid Section -->
+      <div class="image-grid px-4 my-10">
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
+            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
+              <p class="text-white text-sm font-medium truncate">Monitor performance, health, and attendance easily.</p>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
+            <img src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
+              <p class="text-white text-sm font-medium truncate">Scouting made simple — review highlights instantly.</p>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
+            <img src="https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
+              <p class="text-white text-sm font-medium truncate">Create impact by managing and guiding real talent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ Section -->
+      <section class="bg-black text-white px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-bold text-center text-red-300 mb-10">Frequently Asked Questions</h2>
+          <div class="space-y-4">
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                What is Upstra Partner and who is it for?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Upstra Partner is designed for coaches, recruiters, and club managers. It offers tools to track, analyze, and engage with talent — all in one dashboard.</div>
+            </div>
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                Is Upstra Partner free to use?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Yes! You can start with our free plan that includes core features. Premium tools for scouting and analytics will be offered for professionals.</div>
+            </div>
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                Can I use it without linking to a team?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Absolutely. You can use Upstra Partner independently to scout players, review updates, and manage shortlists.</div>
+            </div>
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                Are my evaluations and notes private?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Yes. Your scouting data and player evaluations remain completely private unless you choose to share them.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 w-full">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="mystat.html" class="flex items-center text-decoration-none text-black">
+              <img src="static/core/images/statlogo.png" class="h-8 me-3" alt="Stat Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+            </a>
+            <ul>
+              <li>
+                <p class="font-light">
+                  Founders Office <br />
+                  Ebrah Tech Pvt. Ltd. <br />
+                  #31/1, Yash Cottage, A&B Block, <br />
+                  Austin Town, Bangalore - 560047
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                </li>
+                <br />
+                <li>
+                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Follow us</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Legal</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+            <!-- Social SVGs as in base.html -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+      });
+      // Countdown Timer
+      var countDownDate = new Date("Aug 30, 2025 23:59:59").getTime();
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown-timer").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      // FAQ Accordion
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const answer = toggle.nextElementSibling;
+          const icon = toggle.querySelector("span");
+          const isOpen = !answer.classList.contains("hidden");
+          document.querySelectorAll(".faq-answer").forEach((el) => el.classList.add("hidden"));
+          document.querySelectorAll(".faq-toggle span").forEach((el) => (el.textContent = "+"));
+          if (!isOpen) {
+            answer.classList.remove("hidden");
+            icon.textContent = "−";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

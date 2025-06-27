@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Upstra - Mystat" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upstra - Mystat</title>
+    <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
+    <link rel="stylesheet" href="static/core/css/mystat.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-gray-50 w-full fixed top-0 left-0 z-50 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0">
+            <a href="home.html" class="text-3xl font-black text-gray-900 hover:text-teal-700 transition duration-300">Upstra</a>
+          </div>
+          <div class="hidden sm:flex space-x-8 items-center">
+            <a href="mystat.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra</a>
+            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra Partner</a>
+            <a href="contact.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Contact</a>
+          </div>
+          <div class="sm:hidden">
+            <button id="menu-toggle" class="text-3xl text-gray-700 focus:outline-none">☰</button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 bg-white px-4">
+        <ul class="flex flex-col py-4 space-y-4 text-base font-semibold text-gray-700">
+          <li><a href="mystat.html" class="hover:text-teal-700 transition">Upstra</a></li>
+          <li><a href="mycerebro.html" class="hover:text-teal-700 transition">Upstra Partner</a></li>
+          <li><a href="contact.html" class="hover:text-teal-700 transition">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main style="margin-top: 80px">
+      <!-- Hero Section with Background Video -->
+      <div class="relative w-full h-screen overflow-hidden">
+        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay loop muted playsinline preload="auto" poster="static/images/fallback.jpeg">
+          <source src="static/videos/mystatbg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 flex items-center justify-center text-white text-center z-10 bg-black/40">
+          <div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-red-300">Upstra</h1>
+            <p class="mt-4 mx-4 text-lg sm:text-xl font-light">Your personal everyday tool, your digital locker room, and your connection to the entire sports world.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Countdown Timer Section -->
+      <div class="mystat-countdown">
+        <div class="mystat-countdown-inner">
+          <h3>Launch In:</h3>
+          <div id="countdown-timer"></div>
+        </div>
+      </div>
+      <!-- Content Section Below Video -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between px-4 sm:px-12 lg:px-24">
+        <div class="flex-1 mt-0 sm:mt-0 font-light sm:pr-8 sm:ml-8 lg:ml-20">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-red-300">What You Can Do on Upstra</h2>
+          <p class="mb-4 text-2xl text-white">
+            We've built Upstra to be more than just an app on your phone—it's your personal everyday tool, your digital locker room, and your connection to the entire sports world. Here's a closer look at what you can do:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-white text-base sm:text-lg lg:text-xl">
+            <li>
+              <strong><span class="text-red-300"> Club Connect: </span></strong> Real-time updates from your club so you're always in the loop.
+            </li>
+            <li>
+              <strong><span class="text-red-300"> Performance Statistics: </span></strong> Track your growth through practices, fitness, and game-day stats.
+            </li>
+            <li>
+              <strong><span class="text-red-300"> Connect: </span></strong> Chat with teammates or meet new athletes and professionals.
+            </li>
+          </ul>
+        </div>
+        <!-- Phone Animation Section -->
+        <div class="phone-container-section flex-1 flex justify-center">
+          <div class="phone-frame mt-0 sm:mt-6">
+            <div class="phone-screen">
+              <img src="static/core/images/mystat2.jpeg" class="screen fade-screen-1" alt="Screen 1" />
+              <img src="static/core/images/mystat1.jpg" class="screen fade-screen-2" alt="Screen 2" />
+              <img src="static/core/images/mystat3.jpeg" class="screen fade-screen-3" alt="Screen 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SECOND Phone Animation & Feature Section: Your Feed -->
+      <div class="flex flex-col sm:flex-row gap-4 px-4 items-center justify-between">
+        <!-- Phone Section -->
+        <div class="phone-container-section flex-1 flex justify-center">
+          <div class="phone-frame mt-0 sm:mt-6">
+            <div class="phone-screen">
+              <img src="static/core/images/mystat2.jpeg" class="screen fade-screen-1" alt="Screen 1" />
+              <img src="static/core/images/mystat1.jpg" class="screen fade-screen-2" alt="Screen 2" />
+              <img src="static/core/images/mystat3.jpeg" class="screen fade-screen-3" alt="Screen 3" />
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 mt-0 sm:mt-0 text-white font-light sm:pr-8 sm:mr-8 lg:mr-20">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-red-300">Your Feed</h2>
+          <p class="mb-6 text-base sm:text-lg lg:text-xl text-white">
+            Stay in the loop with everything happening around you. Your personalized feed is where updates, highlights, and stories from your circle come to life—one post at a time. Post a photo, drop a video, or just leave a quick note—it's your
+            space to connect, express, and celebrate the moments that matter.
+          </p>
+          <ul class="list-disc pl-5 space-y-4 text-white">
+            <li class="text-base sm:text-lg lg:text-xl">
+              <strong><span class="text-red-300"> Connect: </span></strong> Keep track of your wins—because let's be honest, it's hard to remember them all on your own.
+            </li>
+            <li class="text-base sm:text-lg lg:text-xl">
+              <strong><span class="text-red-300"> Achievements: </span></strong> Celebrate your growth, your hustle, and every proud moment along the way.
+            </li>
+            <li class="text-base sm:text-lg lg:text-xl">
+              <strong><span class="text-red-300"> Reviews: </span></strong> Send good vibes! Drop a thoughtful note to a teammate or fellow athlete. A kind review can go a long way in boosting confidence and bringing a smile to someone.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- How It Works Section -->
+      <section class="bg-black text-white py-16 px-6 sm:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl sm:text-5xl font-bold mb-12 text-red-300">How It Works</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Step 1 -->
+            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+              <div class="flex justify-center mb-6">
+                <div class="bg-red-400 p-4 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-user-round-icon lucide-circle-user-round"
+                  >
+                    <path d="M18 20a6 6 0 0 0-12 0" />
+                    <circle cx="12" cy="10" r="4" />
+                    <circle cx="12" cy="12" r="10" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-red-200">Sign Up</h3>
+              <p class="text-base text-gray-300">Create your free Upstra profile and unlock your personal sports dashboard.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+              <div class="flex justify-center mb-6">
+                <div class="bg-red-400 p-4 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-medal-icon lucide-medal">
+                    <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+                    <path d="M11 12 5.12 2.2" />
+                    <path d="m13 12 5.88-9.8" />
+                    <path d="M8 7h8" />
+                    <circle cx="12" cy="17" r="5" />
+                    <path d="M12 18v-2h-.5" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-red-200">Join Your Club</h3>
+              <p class="text-base text-gray-300">Connect with your team, stay updated with club news, and sync schedules.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+              <div class="flex justify-center mb-6">
+                <div class="bg-red-400 p-4 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-smartphone-icon lucide-smartphone"
+                  >
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="M12 18h.01" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-red-200">Get Started</h3>
+              <p class="text-base text-gray-300">Post highlights, track stats, review teammates — and elevate your game.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Image Grid Section -->
+      <div class="image-grid my-10">
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Grid Item 1 -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
+            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Football Stadium" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
+              <p class="text-white text-sm font-medium truncate">Track your journey, one stat at a time.</p>
+            </div>
+          </div>
+          <!-- Grid Item 2 -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
+            <img src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Football Match" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
+              <p class="text-white text-sm font-medium truncate">Stay connected with your club and teammates.</p>
+            </div>
+          </div>
+          <!-- Grid Item 3 -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
+            <img src="https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Football Action" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
+              <p class="text-white text-sm font-medium truncate">Celebrate every win and moment with your community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ Section -->
+      <section class="bg-black text-white px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-bold text-center text-red-300 mb-10">Frequently Asked Questions</h2>
+          <div class="space-y-4">
+            <!-- Question 1 -->
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
+                What is Upstra and who is it for?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">
+                Upstra is a social performance platform built for athletes. Whether you're in school, college, or pro-level clubs, Upstra helps you track your stats, engage with your team, and showcase your progress.
+              </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
+                Is Upstra free to use?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">
+                Yes! Upstra's core features will always be free for athletes. We may introduce premium tools in the future, but you'll always have access to your stats and club network at no cost.
+              </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
+                Can I use Upstra if I'm not part of a club?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Absolutely. Even if you're not in a formal club, you can track personal stats, share updates, and connect with the sports community around you.</div>
+            </div>
+            <!-- Question 4 -->
+            <div class="border border-gray-700 rounded-lg overflow-hidden">
+              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
+                Will my data be visible to others?
+                <span class="text-red-300">+</span>
+              </button>
+              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">You have full control. Share your performance with clubs, teammates, or recruiters—or keep it private. It's your game, your rules.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 w-full">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="mystat.html" class="flex items-center text-decoration-none text-black">
+              <img src="static/core/images/statlogo.png" class="h-8 me-3" alt="Stat Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+            </a>
+            <ul>
+              <li>
+                <p class="font-light">
+                  Founders Office <br />
+                  Ebrah Tech Pvt. Ltd. <br />
+                  #31/1, Yash Cottage, A&B Block, <br />
+                  Austin Town, Bangalore - 560047
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li>
+                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                </li>
+                <br />
+                <li>
+                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Follow us</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Legal</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+            <!-- Social SVGs as in base.html -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+      });
+      // Countdown Timer
+      var countDownDate = new Date("Aug 30, 2025 23:59:59").getTime();
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown-timer").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      // FAQ Accordion
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const answer = toggle.nextElementSibling;
+          const icon = toggle.querySelector("span");
+          const isOpen = !answer.classList.contains("hidden");
+          document.querySelectorAll(".faq-answer").forEach((el) => el.classList.add("hidden"));
+          document.querySelectorAll(".faq-toggle span").forEach((el) => (el.textContent = "+"));
+          if (!isOpen) {
+            answer.classList.remove("hidden");
+            icon.textContent = "−";
+          }
+        });
+      });
+    </script>
+    <script src="static/core/js/mystat.js"></script>
+  </body>
+</html>
