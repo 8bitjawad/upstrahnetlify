@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="description" content="Home - Upstra" />
+    <meta name="description" content="Home - Upstrah" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upstra</title>
+    <title>Upstrah</title>
     <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
     <link rel="stylesheet" href="static/core/css/home.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   </head>
   <body>
     <!-- Navigation -->
@@ -16,11 +17,19 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-20 items-center justify-between">
           <div class="flex-shrink-0">
-            <a href="home.html" class="text-3xl font-black text-gray-900 transition duration-300 hover:text-teal-700">Upstra</a>
+            <a href="home.html" class="text-3xl font-black text-gray-900 transition duration-300 hover:text-teal-700">Upstrah</a>
           </div>
           <div class="hidden items-center space-x-8 sm:flex">
-            <a href="mystat.html" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800">Upstra</a>
-            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800">Upstra Partner</a>
+            <div class="relative">
+              <button type="button" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
+                <a href="mystat.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Upstrah</a>
+                <a href="mycerebro.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Upstrah Partner</a>
+              </div>
+            </div>
             <a href="contact.html" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800">Contact</a>
           </div>
           <div class="sm:hidden">
@@ -30,31 +39,51 @@
       </div>
       <div id="mobile-menu" class="max-h-0 overflow-hidden bg-white px-4 opacity-0 transition-all duration-300 sm:hidden">
         <ul class="flex flex-col space-y-4 py-4 text-base font-semibold text-gray-700">
-          <li><a href="mystat.html" class="transition hover:text-teal-700">Upstra</a></li>
-          <li><a href="mycerebro.html" class="transition hover:text-teal-700">Upstra Partner</a></li>
+          <li>
+            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+              Products
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
+              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
         </ul>
       </div>
     </nav>
     <main style="margin-top: 80px">
       <!-- Main content -->
-      <div
-        class="relative flex h-screen w-full items-center justify-center bg-cover bg-center"
-        style="background-image: url('https://images.unsplash.com/photo-1632380148925-ff9f845087f8?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
-      >
-        <div class="backdrop-blur-custom absolute inset-0 z-0 bg-black/30 backdrop-blur-sm" style="pointer-events: none"></div>
-        <div class="relative z-10 text-center">
-          <h1 class="mb-6 text-center text-4xl font-bold text-blue-300 sm:text-5xl sm:font-medium">
-            Built for Athletes. Powered by Stats.<br />
-            Shared with the World.
-          </h1>
-          <p class="mt-8 px-4 text-center font-light text-white">The ultimate platform designed to empower athletes at every level.</p>
+      <div class="relative h-[90vh] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('static/core/images/pattern1.jpg'); background-size: cover; background-position: center">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 flex flex-col-reverse md:grid md:grid-cols-2 items-center h-full w-full px-4 md:px-16 max-w-6xl mx-auto" style="min-height: 400px">
+          <div class="flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left">
+            <h1 class="mb-6 text-4xl font-bold text-[#8bff41] sm:text-5xl sm:font-medium" data-aos="fade-up">
+              Built for Athletes. Powered by Stats.<br />
+              Shared with the World.
+            </h1>
+            <p class="mb-6 px-0 text-lg font-light text-white max-w-xl" data-aos="fade-up" data-aos-delay="100">
+              The ultimate platform designed to empower athletes at every level.<br />
+              Track your stats, connect with clubs and level up your game.
+            </p>
+            <button class="px-6 py-3 bg-[#8bff41] text-white rounded-md text-lg shadow-md hover:bg-[#6fd32d] transition" data-aos="fade-up" data-aos-delay="200">
+              <a href="mystat.html"> Get Started </a>
+            </button>
+          </div>
+          <div class="relative flex justify-center items-center w-full h-full mb-8 md:mb-0">
+            <!-- Background phone -->
+            <img src="static/core/images/phonebg1.png" alt="phone" class="absolute w-[75%] max-w-md min-h-[250px] h-auto object-contain translate-x-12 md:translate-x-44 opacity-90 pointer-events-none" />
+
+            <!-- Foreground phone (no cut-off) -->
+            <img src="static/core/images/bgphone1.png" alt="phone" class="relative z-10 w-[75%] max-w-md min-h-[250px] h-auto object-contain -translate-x-8 md:translate-x-0" />
+          </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-center justify-center bg-black p-8">
-        <h1 class="text-center text-4xl font-bold text-blue-300 sm:text-5xl">Become the Athlete you've always wanted to be.</h1>
-        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2">Your goals aren't just dreams—track them, train for them, and turn them into milestones.</h2>
+      <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-8">
+        <h1 class="text-center text-4xl font-bold text-[#8bff41] sm:text-5xl" data-aos="fade-up">Become the Athlete you've always wanted to be.</h1>
+        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">Your goals aren't just dreams—track them, train for them, and turn them into milestones.</h2>
         <div class="mt-10 flex flex-col gap-y-8 text-white sm:flex-row sm:gap-x-8">
           <div class="">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-16">
@@ -64,7 +93,7 @@
                 d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"
               />
             </svg>
-            <h1 class="text text-2xl font-semibold text-blue-300">Crush Limits.</h1>
+            <h1 class="text text-2xl font-semibold text-[#8bff41]">Crush Limits.</h1>
             <p class="font-light">Track your stats, get discovered, and push beyond your potential.</p>
             <button><a href="mystat.html"> Learn more</a></button>
           </div>
@@ -77,7 +106,7 @@
               />
             </svg>
 
-            <h1 class="text text-2xl font-semibold text-blue-300">Elevate your Game.</h1>
+            <h1 class="text text-2xl font-semibold text-[#8bff41]">Elevate your Game.</h1>
             <p class="font-light">Analyze your performance and connect with top clubs to grow faster.</p>
             <button><a href="mycerebro.html"> Learn more</a></button>
           </div>
@@ -89,21 +118,21 @@
                 d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
               />
             </svg>
-            <h1 class="text text-2xl font-semibold text-blue-300">Share your glory.</h1>
+            <h1 class="text text-2xl font-semibold text-[#8bff41]">Share your glory.</h1>
             <p class="font-light">Showcase your progress and get noticed by coaches and scouts.</p>
             <button><a href="mystat.html"> Learn more</a></button>
           </div>
         </div>
 
-        <!-- Card 1 - Upstra / Club Connect -->
-        <h1 class="mt-10 items-center pt-8 text-center text-4xl font-bold text-blue-300 sm:text-5xl">Get started on your journey today.</h1>
-        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2">Two powerful tools. One mission — to elevate athletes, connect clubs, and unlock true performance.</h2>
+        <!-- Card 1 - Upstrah / Club Connect -->
+        <h1 class="mt-10 items-center pt-8 text-center text-4xl font-bold text-[#8bff41] sm:text-5xl" data-aos="fade-up">Get started on your journey today.</h1>
+        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">Two powerful tools. One mission — to elevate athletes, connect clubs, and unlock true performance.</h2>
         <div class="mx-5 mt-10 flex flex-col gap-4 font-light sm:flex-row">
           <div class="transform-200 relative h-80 flex-1 overflow-hidden rounded-2xl transition-transform hover:scale-105">
-            <img src="https://images.pexels.com/photos/1103969/pexels-photo-1103969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Upstra" class="h-full w-full rounded-2xl object-cover" />
+            <img src="https://images.pexels.com/photos/1103969/pexels-photo-1103969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Upstrah" class="h-full w-full rounded-2xl object-cover" />
             <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-amber-800/80 to-transparent p-6">
               <a href="mystat.html">
-                <h2 class="mb-2 text-2xl font-bold text-white">Upstra</h2>
+                <h2 class="mb-2 text-2xl font-bold text-white">Upstrah</h2>
                 <p class="mb-3 text-sm text-white">Stay in sync with your club—real-time updates, events, and more.</p>
               </a>
             </div>
@@ -114,19 +143,19 @@
             <img src="https://images.pexels.com/photos/9251066/pexels-photo-9251066.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="Cerebro" class="h-full w-full rounded-2xl object-cover" />
             <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-amber-900/80 to-transparent p-6">
               <a href="mycerebro.html">
-                <h2 class="mb-2 text-2xl font-bold text-white">Upstra Partner</h2>
+                <h2 class="mb-2 text-2xl font-bold text-white">Upstrah Partner</h2>
                 <p class="mb-3 text-sm text-white">Track your sessions and see your growth over time.</p>
               </a>
             </div>
           </div>
         </div>
         <div>
-          <h1 class="mt-8 mb-4 items-center pt-8 text-center text-4xl font-bold text-blue-300 sm:text-5xl">See Upstrah in Action.</h1>
-          <h2 class="text-white text-center text-lg font-light max-w-3xl mx-auto mt-2">Track your stats, relive the highlights, and discover what peak performance looks like — in every moment.</h2>
+          <h1 class="mt-8 mb-4 items-center pt-8 text-center text-4xl font-bold text-[#8bff41] sm:text-5xl" data-aos="fade-up">See Upstrah in Action.</h1>
+          <h2 class="text-white text-center text-lg font-light max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">Track your stats, relive the highlights, and discover what peak performance looks like — in every moment.</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 max-w-6xl mx-auto px-4 py-14">
           <!-- Tall Left Image -->
-          <div class="relative overflow-hidden shadow-md w-full h-[700px] border-2 border-blue-300 rounded-md">
+          <div class="relative overflow-hidden shadow-md w-full h-[700px] border-2 border-[#8bff41] rounded-md">
             <img src="https://images.pexels.com/photos/5069180/pexels-photo-5069180.jpeg" alt="Basketball Player" class="w-full h-full object-cover rounded-md" />
             <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full rounded-b-md">
               <p class="text-xl md:text-2xl font-bold text-white">Take Your Game to the Next Level</p>
@@ -136,7 +165,7 @@
           <!-- Right Side Container -->
           <div class="flex flex-col gap-4">
             <!-- Top Right Image -->
-            <div class="relative overflow-hidden shadow-md w-full h-[342px] border-2 border-blue-300 rounded-md">
+            <div class="relative overflow-hidden shadow-md w-full h-[342px] border-2 border-[#8bff41] rounded-md">
               <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg" alt="Team Talk" class="w-full h-full object-cover rounded-md" />
               <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full rounded-b-md">
                 <p class="text-lg md:text-xl font-bold text-white">Track Progress. Build Legacy.</p>
@@ -144,7 +173,7 @@
             </div>
 
             <!-- Bottom Right Image -->
-            <div class="relative overflow-hidden shadow-md w-full h-[342px] border-2 border-blue-300 rounded-md">
+            <div class="relative overflow-hidden shadow-md w-full h-[342px] border-2 border-[#8bff41] rounded-md">
               <img src="https://images.pexels.com/photos/3657154/pexels-photo-3657154.jpeg" alt="Athlete Victory" class="w-full h-full object-cover rounded-md" />
               <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full rounded-b-md">
                 <p class="text-lg md:text-xl font-bold text-white">Every Stat Tells Your Story</p>
@@ -154,46 +183,46 @@
         </div>
 
         <!-- Our Goals Section -->
-        <div class="flex flex-col items-center justify-center px-6 py-16 text-white">
+        <div class="flex flex-col items-center justify-center px-6 text-white">
           <div class="mb-12 max-w-4xl text-center">
-            <h1 class="mb-8 text-4xl font-bold text-blue-300 sm:text-5xl">What makes us the best?</h1>
-            <p class="text-lg leading-relaxed font-light sm:text-xl">At <span class="font-semibold">Upstra</span>, we're not just building a platform—we're building a movement.</p>
+            <h1 class="mb-8 text-4xl font-bold text-[#8bff41] sm:text-5xl" data-aos="fade-up">What makes us the best?</h1>
+            <p class="text-lg leading-relaxed font-light sm:text-xl" data-aos="fade-up" data-aos-delay="100">At <span class="font-semibold">Upstrah</span>, we're not just building a platform—we're building a movement.</p>
           </div>
 
           <!-- Goal Cards -->
           <div class="grid w-full max-w-screen-xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <!-- Goal 1 -->
-            <div class="transform rounded-3xl bg-gradient-to-r from-cyan-500 to-slate-800 p-8 text-center shadow-lg transition-transform hover:scale-105">
+            <div class="transform rounded-3xl bg-gradient-to-r from-emerald-500 to-emerald-900 p-8 text-center shadow-lg transition-transform hover:scale-105" data-aos="fade-up">
               <h3 class="mb-4 text-2xl font-semibold">Empowerment Through Data</h3>
               <p class="text-sm font-light sm:text-base">We want to empower athletes, coaches, and teams with the right data and insights to unlock their full potential.</p>
             </div>
 
             <!-- Goal 2 -->
-            <div class="transform rounded-3xl bg-gradient-to-r from-slate-800 to-cyan-500 p-8 text-center shadow-lg transition-transform hover:scale-105">
+            <div class="transform rounded-3xl bg-gradient-to-r from-emerald-500 to-emerald-900 p-8 text-center shadow-lg transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
               <h3 class="mb-4 text-2xl font-semibold">Connect the Community</h3>
               <p class="text-sm font-light sm:text-base">Our platform is designed to bring everyone in the sports ecosystem closer together, with seamless communication tools.</p>
             </div>
 
             <!-- Goal 3 -->
-            <div class="transform rounded-3xl bg-gradient-to-r from-cyan-500 to-slate-800 p-8 text-center shadow-lg transition-transform hover:scale-105">
+            <div class="transform rounded-3xl bg-gradient-to-r from-emerald-500 to-emerald-900 p-8 text-center shadow-lg transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
               <h3 class="mb-4 text-2xl font-semibold">Track Progress, Celebrate Achievements</h3>
               <p class="text-sm font-light sm:text-base">Celebrate every milestone, no matter how big or small, with real-time tracking and achievement sharing.</p>
             </div>
 
             <!-- Goal 4 -->
-            <div class="transform rounded-3xl bg-gradient-to-r from-slate-800 to-cyan-500 p-8 text-center shadow-lg transition-transform hover:scale-105">
+            <div class="transform rounded-3xl bg-gradient-to-r from-emerald-500 to-emerald-900 p-8 text-center shadow-lg transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
               <h3 class="mb-4 text-2xl font-semibold">Simplify Team Management</h3>
               <p class="text-sm font-light sm:text-base">Streamline team management, from scheduling to performance reviews, all in one place—no more scattered tools.</p>
             </div>
 
             <!-- Goal 5 -->
-            <div class="transform rounded-3xl bg-gradient-to-r from-cyan-500 to-slate-800 p-8 text-center shadow-lg transition-transform hover:scale-105">
+            <div class="transform rounded-3xl bg-gradient-to-r from-emerald-500 to-emerald-900 p-8 text-center shadow-lg transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
               <h3 class="mb-4 text-2xl font-semibold">Build Lasting Relationships</h3>
               <p class="text-sm font-light sm:text-base">We aim to help players and teams build strong, lasting relationships both on and off the field.</p>
             </div>
 
             <!-- Goal 6 -->
-            <div class="transform rounded-3xl bg-gradient-to-r from-slate-800 to-cyan-500 p-8 text-center shadow-lg transition-transform hover:scale-105">
+            <div class="transform rounded-3xl bg-gradient-to-r from-emerald-500 to-emerald-900 p-8 text-center shadow-lg transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="500">
               <h3 class="mb-4 text-2xl font-semibold">Create Sponsorship Opportunities</h3>
               <p class="text-sm font-light sm:text-base">Our goal is to create opportunities for athletes and coaches to gain the recognition and sponsorship they deserve.</p>
             </div>
@@ -208,7 +237,7 @@
           <div class="mb-6 md:mb-0">
             <a href="mystat.html" class="text-decoration-none flex items-center text-black">
               <img src="static/core/images/statlogo.png" class="me-3 h-8" alt="Stat Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstrah</span>
             </a>
             <ul>
               <li>
@@ -226,11 +255,11 @@
               <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
               <ul class="font-medium text-gray-500 dark:text-gray-400">
                 <li>
-                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                  <a href="mystat.html" class="hover:underline">Upstrah</a>
                 </li>
                 <br />
                 <li>
-                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                  <a href="mycerebro.html" class="hover:underline">Upstrah Partner</a>
                 </li>
               </ul>
             </div>
@@ -267,6 +296,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const toggleBtn = document.getElementById("menu-toggle");
@@ -280,6 +310,37 @@
             menu.classList.add("max-h-0", "opacity-0");
             menu.classList.remove("max-h-96", "opacity-100");
           }
+        });
+        // Dropdown for desktop (click only)
+        const productsBtn = document.getElementById("products-dropdown-btn");
+        const productsMenu = document.getElementById("products-dropdown-menu");
+        let dropdownOpen = false;
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownOpen = !dropdownOpen;
+            productsMenu.classList.toggle("hidden", !dropdownOpen);
+          });
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+              dropdownOpen = false;
+              productsMenu.classList.add("hidden");
+            }
+          });
+        }
+        // Dropdown for mobile
+        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+        const mobileProductsMenu = document.getElementById("mobile-products-menu");
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener("click", function () {
+            mobileProductsMenu.classList.toggle("hidden");
+          });
+        }
+        AOS.init({
+          once: true,
+          duration: 700,
+          offset: 80,
         });
       });
     </script>

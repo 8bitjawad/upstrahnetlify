@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="description" content="Contact Upstra" />
+    <meta name="description" content="Contact Upstrah" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Upstra</title>
+    <title>Contact - Upstrah</title>
     <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
     <link rel="stylesheet" href="static/core/css/contact1.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="bg-gray-50 w-full fixed top-0 left-0 z-50 shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+  <body class="bg-[#1c1c1c] text-white font-sans">
+    <!-- Navigation (copied from home.html, with Products dropdown) -->
+    <nav class="fixed top-0 left-0 z-50 w-full bg-gray-50 shadow-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
           <div class="flex-shrink-0">
-            <a href="home.html" class="text-3xl font-black text-gray-900 hover:text-teal-700 transition duration-300">Upstra</a>
+            <a href="home.html" class="text-3xl font-black text-gray-900 transition duration-300 hover:text-teal-700">Upstrah</a>
           </div>
-          <div class="hidden sm:flex space-x-8 items-center">
-            <a href="mystat.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra</a>
-            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra Partner</a>
-            <a href="contact.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Contact</a>
+          <div class="hidden items-center space-x-8 sm:flex">
+            <div class="relative">
+              <button type="button" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
+                <a href="mystat.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Upstrah</a>
+                <a href="mycerebro.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Upstrah Partner</a>
+              </div>
+            </div>
+            <a href="contact.html" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800">Contact</a>
           </div>
           <div class="sm:hidden">
             <button id="menu-toggle" class="text-3xl text-gray-700 focus:outline-none">☰</button>
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 bg-white px-4">
-        <ul class="flex flex-col py-4 space-y-4 text-base font-semibold text-gray-700">
-          <li><a href="mystat.html" class="hover:text-teal-700 transition">Upstra</a></li>
-          <li><a href="mycerebro.html" class="hover:text-teal-700 transition">Upstra Partner</a></li>
-          <li><a href="contact.html" class="hover:text-teal-700 transition">Contact</a></li>
+      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold text-gray-700">
+          <li>
+            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+              Products
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
+              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -40,47 +57,39 @@
       <div class="relative min-h-screen flex items-center justify-center px-4 py-20">
         <!-- Background image layer -->
         <div class="absolute inset-0 -z-10">
-          <img src="https://images.unsplash.com/photo-1632380148925-ff9f845087f8?q=80&w=1932&auto=format&fit=crop" alt="Contact Background" class="w-full h-full object-cover" />
+          <img src="static/core/images/pattern1.jpg" alt="Contact Background" class="w-full h-full object-cover" />
         </div>
-        <!-- Blur overlay behind form -->
-        <div class="absolute inset-0 bg-black/30 backdrop-blur-md -z-0"></div>
-        <!-- Contact Info -->
-        <div class="relative z-10 bg-black/60 backdrop-blur-md mt-8 p-8 pb-2 rounded-xl shadow-2xl w-full max-w-md">
-          <h1 class="text-3xl font-bold text-center text-white mb-4">Contact Us</h1>
-          <p class="text-white text-center mb-6">We'd love to hear from you. Reach out to us using the information below.</p>
-          <ul class="text-white text-lg mb-6">
-            <li><strong>Email:</strong> <a href="mailto:info@upstra.com" class="underline">info@upstra.com</a></li>
-            <li><strong>Phone:</strong> <a href="tel:+911234567890" class="underline">+91 12345 67890</a></li>
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black/70 -z-0"></div>
+        <!-- Contact Info Card -->
+        <div class="relative z-10 bg-black/60 backdrop-blur-lg border-2 border-[#8bff41] shadow-2xl rounded-2xl p-10 max-w-lg w-full" data-aos="fade-up">
+          <h1 class="text-4xl font-bold text-center text-[#8bff41] mb-4" data-aos="fade-up">Contact Us</h1>
+          <p class="text-white text-center mb-6 text-lg" data-aos="fade-up" data-aos-delay="100">We'd love to hear from you. Reach out to us using the information below.</p>
+          <ul class="text-white text-lg mb-6 space-y-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-[#8bff41]"></i><span>Email:</span> <a href="mailto:info@upstra.com" class="underline hover:text-[#8bff41]">info@upstra.com</a></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#8bff41]"></i><span>Phone:</span> <a href="tel:+911234567890" class="underline hover:text-[#8bff41]">+91 12345 67890</a></li>
           </ul>
-          <div class="flex justify-center space-x-6">
-            <a href="https://facebook.com/yourpage" target="_blank" class="text-gray-400 hover:text-blue-500 transition">
-              <i class="fab fa-facebook fa-xl"></i>
-            </a>
-            <a href="https://instagram.com/yourpage" target="_blank" class="text-gray-400 hover:text-pink-500 transition">
-              <i class="fab fa-instagram fa-xl"></i>
-            </a>
-            <a href="https://twitter.com/yourpage" target="_blank" class="text-gray-400 hover:text-sky-400 transition">
-              <i class="fab fa-x-twitter fa-xl"></i>
-            </a>
-            <a href="https://linkedin.com/in/yourpage" target="_blank" class="text-gray-400 hover:text-blue-600 transition">
-              <i class="fab fa-linkedin fa-xl"></i>
-            </a>
+          <div class="flex justify-center space-x-6 mt-4">
+            <a href="https://facebook.com/yourpage" target="_blank" class="text-gray-400 hover:text-[#1877f3] transition"><i class="fab fa-facebook fa-xl"></i></a>
+            <a href="https://instagram.com/yourpage" target="_blank" class="text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram fa-xl"></i></a>
+            <a href="https://twitter.com/yourpage" target="_blank" class="text-gray-400 hover:text-sky-400 transition"><i class="fab fa-x-twitter fa-xl"></i></a>
+            <a href="https://linkedin.com/in/yourpage" target="_blank" class="text-gray-400 hover:text-[#0a66c2] transition"><i class="fab fa-linkedin fa-xl"></i></a>
           </div>
         </div>
       </div>
     </main>
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-900 w-full">
+    <!-- Footer (copied from home.html, styled for consistency) -->
+    <footer class="w-full bg-white dark:bg-gray-900 text-gray-900">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-            <a href="mystat.html" class="flex items-center text-decoration-none text-black">
-              <img src="static/core/images/statlogo.png" class="h-8 me-3" alt="Stat Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+            <a href="mystat.html" class="text-decoration-none flex items-center text-black">
+              <img src="static/core/images/statlogo.png" class="me-3 h-8" alt="Stat Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900">Upstrah</span>
             </a>
             <ul>
               <li>
-                <p class="font-light">
+                <p class="font-light text-gray-900">
                   Founders Office <br />
                   Ebrah Tech Pvt. Ltd. <br />
                   #31/1, Yash Cottage, A&B Block, <br />
@@ -89,52 +98,53 @@
               </li>
             </ul>
           </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900">Resources</h2>
+              <ul class="font-medium text-gray-700">
                 <li>
-                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                  <a href="mystat.html" class="hover:underline text-gray-900">Upstrah</a>
                 </li>
                 <br />
                 <li>
-                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                  <a href="mycerebro.html" class="hover:underline text-gray-900">Upstrah Partner</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Follow us</h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900">Follow us</h2>
+              <ul class="font-medium text-gray-700">
                 <li class="mb-4">
-                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline text-gray-900">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline text-gray-900">Instagram</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Legal</h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900">Legal</h2>
+              <ul class="font-medium text-gray-700">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">Privacy Policy</a>
+                  <a href="#" class="hover:underline text-gray-900">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                  <a href="#" class="hover:underline text-gray-900">Terms &amp; Conditions</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
         <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
-          <div class="flex mt-4 sm:justify-center sm:mt-0">
+          <span class="text-sm text-gray-500 sm:text-center">© 2025 <a href="#" class="hover:underline text-gray-900">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="mt-4 flex sm:mt-0 sm:justify-center">
             <!-- Social SVGs as in base.html -->
           </div>
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const toggleBtn = document.getElementById("menu-toggle");
@@ -148,6 +158,37 @@
             menu.classList.add("max-h-0", "opacity-0");
             menu.classList.remove("max-h-96", "opacity-100");
           }
+        });
+        // Products dropdown for desktop
+        const productsBtn = document.getElementById("products-dropdown-btn");
+        const productsMenu = document.getElementById("products-dropdown-menu");
+        let dropdownOpen = false;
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownOpen = !dropdownOpen;
+            productsMenu.classList.toggle("hidden", !dropdownOpen);
+          });
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+              dropdownOpen = false;
+              productsMenu.classList.add("hidden");
+            }
+          });
+        }
+        // Products dropdown for mobile
+        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+        const mobileProductsMenu = document.getElementById("mobile-products-menu");
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener("click", function () {
+            mobileProductsMenu.classList.toggle("hidden");
+          });
+        }
+        AOS.init({
+          once: true,
+          duration: 700,
+          offset: 80,
         });
       });
     </script>

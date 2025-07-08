@@ -9,68 +9,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   </head>
-  <body>
+  <body class="bg-[#1c1c1c] text-white">
     <!-- Navigation -->
-    <nav class="bg-gray-50 w-full fixed top-0 left-0 z-50 shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+    <nav class="fixed top-0 left-0 z-50 w-full bg-gray-50 shadow-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
           <div class="flex-shrink-0">
-            <a href="home.html" class="text-3xl font-black text-gray-900 hover:text-teal-700 transition duration-300">Upstra</a>
+            <a href="home.html" class="text-3xl font-black text-gray-900 transition duration-300 hover:text-teal-700">Upstrah</a>
           </div>
-          <div class="hidden sm:flex space-x-8 items-center">
-            <a href="mystat.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra</a>
-            <a href="mycerebro.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Upstra Partner</a>
-            <a href="contact.html" class="text-lg font-semibold text-gray-700 hover:text-teal-800 transition duration-300">Contact</a>
+          <div class="hidden items-center space-x-8 sm:flex">
+            <div class="relative">
+              <button type="button" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
+                <a href="mystat.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Upstrah</a>
+                <a href="mycerebro.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Upstrah Partner</a>
+              </div>
+            </div>
+            <a href="contact.html" class="text-lg font-semibold text-gray-700 transition duration-300 hover:text-teal-800">Contact</a>
           </div>
           <div class="sm:hidden">
             <button id="menu-toggle" class="text-3xl text-gray-700 focus:outline-none">☰</button>
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden opacity-0 transition-all duration-300 bg-white px-4">
-        <ul class="flex flex-col py-4 space-y-4 text-base font-semibold text-gray-700">
-          <li><a href="mystat.html" class="hover:text-teal-700 transition">Upstra</a></li>
-          <li><a href="mycerebro.html" class="hover:text-teal-700 transition">Upstra Partner</a></li>
-          <li><a href="contact.html" class="hover:text-teal-700 transition">Contact</a></li>
+      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold text-gray-700">
+          <li>
+            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+              Products
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
+              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <main style="margin-top: 80px">
+    <main class="bg-[#1c1c1c] min-h-screen" style="margin-top: 80px">
       <!-- Hero Section with Background Video -->
-      <div class="relative w-full h-screen overflow-hidden">
+      <div class="relative w-full h-screen overflow-hidden bg-[#1c1c1c]">
         <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay loop muted playsinline preload="auto" poster="static/images/fallback.jpeg">
           <source src="static/videos/mycerebrobg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div class="absolute inset-0 flex items-center justify-center text-white text-center z-10 bg-black/40">
+        <div class="absolute inset-0 flex items-center justify-center text-center z-10 bg-[#1c1c1c]/80">
           <div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-red-300">Upstra Partner</h1>
-            <p class="mt-4 mx-4 text-lg sm:text-xl font-light">Your powerful toolkit for managing teams, scouting talent, and staying ahead in the sports world.</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#8bff41]" data-aos="fade-up">Upstrah Partner</h1>
+            <p class="mt-4 mx-4 text-lg sm:text-xl font-light text-[#8bff41]" data-aos="fade-up" data-aos-delay="100">Your powerful toolkit for managing teams, scouting talent, and staying ahead in the sports world.</p>
           </div>
         </div>
       </div>
       <!-- Countdown Timer Section -->
       <div class="mystat-countdown">
         <div class="mystat-countdown-inner">
-          <h3>Launch In:</h3>
+          <h3 class="text-[#8bff41] text-xl font-bold" data-aos="fade-up">Launch In:</h3>
           <div id="countdown-timer"></div>
         </div>
       </div>
       <!-- Feature Section -->
       <div class="flex flex-col sm:flex-row gap-4 items-center justify-between px-4 sm:px-12 lg:px-24">
         <div class="flex-1 mt-0 sm:mt-0 font-light sm:pr-8 sm:ml-8 lg:ml-20">
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-red-300">What You Can Do on Upstra Partner</h2>
-          <p class="mb-4 text-2xl text-white">Upstra Partner is built for those who lead — coaches, scouts, and recruiters. Track your players, assess performance, and connect with top talent, all in one place.</p>
-          <ul class="list-disc pl-5 space-y-2 text-white text-base sm:text-lg lg:text-xl">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#8bff41]" data-aos="fade-up">What You Can Do on Upstrah Partner</h2>
+          <p class="mb-6 text-2xl text-base sm:text-lg lg:text-xl text-white" data-aos="fade-up" data-aos-delay="100">
+            Upstrah Partner is built for those who lead — coaches, scouts, and recruiters. Track your players, assess performance, and connect with top talent, all in one place.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-white text-base sm:text-lg lg:text-xl" data-aos="fade-up" data-aos-delay="200">
             <li>
-              <strong><span class="text-red-300"> Team Insights: </span></strong> Access live player stats, attendance, and progress logs.
+              <strong><span class="text-[#8bff41]"> Team Insights: </span></strong> Access live player stats, attendance, and progress logs.
             </li>
             <li>
-              <strong><span class="text-red-300"> Scouting Tools: </span></strong> Discover and follow top-performing athletes across clubs and regions.
+              <strong><span class="text-[#8bff41]"> Scouting Tools: </span></strong> Discover and follow top-performing athletes across clubs and regions.
             </li>
             <li>
-              <strong><span class="text-red-300"> Recruiter's Dashboard: </span></strong> Build shortlists, analyze performance trends, and manage outreach.
+              <strong><span class="text-[#8bff41]"> Recruiter's Dashboard: </span></strong> Build shortlists, analyze performance trends, and manage outreach.
             </li>
           </ul>
         </div>
@@ -96,29 +115,31 @@
           </div>
         </div>
         <div class="flex-1 mt-0 sm:mt-0 text-white font-light sm:pr-8 sm:mr-8 lg:mr-20">
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-red-300">Live Feed & Talent Updates</h2>
-          <p class="mb-6 text-base sm:text-lg lg:text-xl text-white">Stay up-to-date with real-time updates from your teams and prospects. Review performance highlights, game videos, and training sessions — all personalized to your role.</p>
-          <ul class="list-disc pl-5 space-y-4 text-white">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#8bff41]" data-aos="fade-up">Live Feed & Talent Updates</h2>
+          <p class="mb-6 text-2xl text-base sm:text-lg lg:text-xl text-white" data-aos="fade-up" data-aos-delay="100">
+            Stay up-to-date with real-time updates from your teams and prospects. Review performance highlights, game videos, and training sessions — all personalized to your role.
+          </p>
+          <ul class="list-disc pl-5 space-y-4 text-white" data-aos="fade-up" data-aos-delay="200">
             <li class="text-base sm:text-lg lg:text-xl">
-              <strong><span class="text-red-300"> Athlete Watchlist: </span></strong> Get notified about standout moments and player improvements.
+              <strong><span class="text-[#8bff41]"> Athlete Watchlist: </span></strong> Get notified about standout moments and player improvements.
             </li>
             <li class="text-base sm:text-lg lg:text-xl">
-              <strong><span class="text-red-300"> Reports: </span></strong> Export match-day reports, fitness logs, and player assessments.
+              <strong><span class="text-[#8bff41]"> Reports: </span></strong> Export match-day reports, fitness logs, and player assessments.
             </li>
             <li class="text-base sm:text-lg lg:text-xl">
-              <strong><span class="text-red-300"> Feedback Loop: </span></strong> Leave reviews, suggestions, or progress notes for athletes in your club.
+              <strong><span class="text-[#8bff41]"> Feedback Loop: </span></strong> Leave reviews, suggestions, or progress notes for athletes in your club.
             </li>
           </ul>
         </div>
       </div>
       <!-- How It Works Section -->
-      <section class="bg-black text-white py-16 px-6 sm:px-12 lg:px-24">
+      <section class="bg-[#1c1c1c] text-white py-16 px-6 sm:px-12 lg:px-24" data-aos="fade-up">
         <div class="max-w-7xl mx-auto text-center">
-          <h2 class="text-4xl sm:text-5xl font-bold mb-12 text-red-300">How It Works</h2>
+          <h2 class="text-4xl sm:text-5xl font-bold mb-12 text-[#8bff41]" data-aos="fade-up">How It Works</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+            <div class="bg-[#232323] rounded-xl p-8 shadow-lg hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="100">
               <div class="flex justify-center mb-6">
-                <div class="bg-red-400 p-4 rounded-full">
+                <div class="bg-[#8bff41] p-4 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -137,12 +158,12 @@
                   </svg>
                 </div>
               </div>
-              <h3 class="text-2xl font-semibold mb-2 text-red-200">Sign Up</h3>
-              <p class="text-base text-gray-300">Create your free Upstra Partner account and gain access to a full recruitment and coaching suite.</p>
+              <h3 class="text-2xl font-semibold mb-2 text-[#8bff41]">Sign Up</h3>
+              <p class="text-base text-[#8bff41]">Create your free Upstrah Partner account and gain access to a full recruitment and coaching suite.</p>
             </div>
-            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+            <div class="bg-[#232323] rounded-xl p-8 shadow-lg hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="200">
               <div class="flex justify-center mb-6">
-                <div class="bg-red-400 p-4 rounded-full">
+                <div class="bg-[#8bff41] p-4 rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-medal-icon lucide-medal">
                     <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
                     <path d="M11 12 5.12 2.2" />
@@ -153,12 +174,12 @@
                   </svg>
                 </div>
               </div>
-              <h3 class="text-2xl font-semibold mb-2 text-red-200">Connect to Teams</h3>
-              <p class="text-base text-gray-300">Link with existing clubs, manage rosters, and explore new talent pools.</p>
+              <h3 class="text-2xl font-semibold mb-2 text-[#8bff41]">Connect to Teams</h3>
+              <p class="text-base text-[#8bff41]">Link with existing clubs, manage rosters, and explore new talent pools.</p>
             </div>
-            <div class="bg-black rounded-xl p-8 shadow-lg hover:scale-105 transform transition">
+            <div class="bg-[#232323] rounded-xl p-8 shadow-lg hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="300">
               <div class="flex justify-center mb-6">
-                <div class="bg-red-400 p-4 rounded-full">
+                <div class="bg-[#8bff41] p-4 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -176,84 +197,92 @@
                   </svg>
                 </div>
               </div>
-              <h3 class="text-2xl font-semibold mb-2 text-red-200">Scout and Manage</h3>
-              <p class="text-base text-gray-300">Track performances, discover players, and build your winning team from the ground up.</p>
+              <h3 class="text-2xl font-semibold mb-2 text-[#8bff41]">Scout and Manage</h3>
+              <p class="text-base text-[#8bff41]">Track performances, discover players, and build your winning team from the ground up.</p>
             </div>
           </div>
         </div>
       </section>
       <!-- Image Grid Section -->
-      <div class="image-grid px-4 my-10">
-        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
-          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
-            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
-              <p class="text-white text-sm font-medium truncate">Monitor performance, health, and attendance easily.</p>
-            </div>
+      <div class="w-full flex flex-col items-center justify-center py-12" data-aos="fade-up">
+        <!-- Desktop: Overlapping cards -->
+        <div class="hidden md:flex justify-center items-center gap-0" data-aos="fade-up" data-aos-delay="100">
+          <!-- Left image -->
+          <div class="relative z-0 -mr-8" style="transform: rotate(-8deg)">
+            <img src="static/core/images/mystat1.jpg" alt="Stat 1" class="w-48 h-72 object-cover rounded-2xl shadow-xl border-4 border-[#1c1c1c]" />
           </div>
-          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
-            <img src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
-              <p class="text-white text-sm font-medium truncate">Scouting made simple — review highlights instantly.</p>
-            </div>
+          <!-- Center image -->
+          <div class="relative z-10">
+            <img src="static/core/images/mystat2.jpeg" alt="Stat 2" class="w-56 h-80 object-cover rounded-2xl shadow-2xl border-4 border-[#1c1c1c]" />
           </div>
-          <div class="relative rounded-2xl overflow-hidden shadow-lg h-64">
-            <img src="https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 px-4 py-2 rounded-b-2xl">
-              <p class="text-white text-sm font-medium truncate">Create impact by managing and guiding real talent.</p>
-            </div>
+          <!-- Right image -->
+          <div class="relative z-0 -ml-8" style="transform: rotate(8deg)">
+            <img src="static/core/images/mystat3.jpeg" alt="Stat 3" class="w-48 h-72 object-cover rounded-2xl shadow-xl border-4 border-[#1c1c1c]" />
           </div>
+        </div>
+        <!-- Mobile: simple row -->
+        <div class="flex md:hidden justify-center gap-4 py-8" data-aos="fade-up" data-aos-delay="200">
+          <img src="static/core/images/mystat1.jpg" alt="Stat 1" class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-[#1c1c1c]" />
+          <img src="static/core/images/mystat2.jpeg" alt="Stat 2" class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-[#1c1c1c]" />
+          <img src="static/core/images/mystat3.jpeg" alt="Stat 3" class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-[#1c1c1c]" />
+        </div>
+        <!-- Centered text section below images -->
+        <div class="w-full max-w-2xl mx-auto mt-8 px-4 text-center" data-aos="fade-up" data-aos-delay="300">
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#8bff41] mb-4">Your Journey, Your Story</h2>
+          <p class="text-base sm:text-lg text-white font-light">
+            Every stat, every moment, every win—Upstrah Partner is here to help you capture and celebrate your athletic journey. Share your highlights, connect with your team, and inspire others along the way.
+          </p>
         </div>
       </div>
       <!-- FAQ Section -->
-      <section class="bg-black text-white px-4 py-12">
+      <section class="bg-[#1c1c1c] text-white px-4 py-12" data-aos="fade-up">
         <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl font-bold text-center text-red-300 mb-10">Frequently Asked Questions</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#8bff41] mb-10" data-aos="fade-up">Frequently Asked Questions</h2>
           <div class="space-y-4">
-            <div class="border border-gray-700 rounded-lg overflow-hidden">
+            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
               <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
-                What is Upstra Partner and who is it for?
-                <span class="text-red-300">+</span>
+                What is Upstrah Partner and who is it for?
+                <span class="text-[#8bff41]">+</span>
               </button>
-              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Upstra Partner is designed for coaches, recruiters, and club managers. It offers tools to track, analyze, and engage with talent — all in one dashboard.</div>
+              <div class="hidden px-6 pb-4 faq-answer">Upstrah Partner is designed for coaches, recruiters, and club managers. It offers tools to track, analyze, and engage with talent — all in one dashboard.</div>
             </div>
-            <div class="border border-gray-700 rounded-lg overflow-hidden">
+            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
               <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
-                Is Upstra Partner free to use?
-                <span class="text-red-300">+</span>
+                Is Upstrah Partner free to use?
+                <span class="text-[#8bff41]">+</span>
               </button>
-              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Yes! You can start with our free plan that includes core features. Premium tools for scouting and analytics will be offered for professionals.</div>
+              <div class="hidden px-6 pb-4 faq-answer">Yes! You can start with our free plan that includes core features. Premium tools for scouting and analytics will be offered for professionals.</div>
             </div>
-            <div class="border border-gray-700 rounded-lg overflow-hidden">
+            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
               <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                 Can I use it without linking to a team?
-                <span class="text-red-300">+</span>
+                <span class="text-[#8bff41]">+</span>
               </button>
-              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Absolutely. You can use Upstra Partner independently to scout players, review updates, and manage shortlists.</div>
+              <div class="hidden px-6 pb-4 faq-answer">Absolutely. You can use Upstrah Partner independently to scout players, review updates, and manage shortlists.</div>
             </div>
-            <div class="border border-gray-700 rounded-lg overflow-hidden">
+            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
               <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                 Are my evaluations and notes private?
-                <span class="text-red-300">+</span>
+                <span class="text-[#8bff41]">+</span>
               </button>
-              <div class="hidden px-6 pb-4 text-gray-300 faq-answer">Yes. Your scouting data and player evaluations remain completely private unless you choose to share them.</div>
+              <div class="hidden px-6 pb-4 faq-answer">Yes. Your scouting data and player evaluations remain completely private unless you choose to share them.</div>
             </div>
           </div>
         </div>
       </section>
     </main>
     <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-900 w-full">
+    <footer class="w-full bg-white dark:bg-gray-900 text-gray-900">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-            <a href="mystat.html" class="flex items-center text-decoration-none text-black">
-              <img src="static/core/images/statlogo.png" class="h-8 me-3" alt="Stat Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Upstra</span>
+            <a href="mystat.html" class="text-decoration-none flex items-center text-black">
+              <img src="static/core/images/statlogo.png" class="me-3 h-8" alt="Stat Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900">Upstrah</span>
             </a>
             <ul>
               <li>
-                <p class="font-light">
+                <p class="font-light text-gray-900">
                   Founders Office <br />
                   Ebrah Tech Pvt. Ltd. <br />
                   #31/1, Yash Cottage, A&B Block, <br />
@@ -262,52 +291,53 @@
               </li>
             </ul>
           </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Resources</h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900">Resources</h2>
+              <ul class="font-medium text-gray-700">
                 <li>
-                  <a href="mystat.html" class="hover:underline">Upstra</a>
+                  <a href="mystat.html" class="hover:underline text-gray-900">Upstrah</a>
                 </li>
                 <br />
                 <li>
-                  <a href="mycerebro.html" class="hover:underline">Upstra Partner</a>
+                  <a href="mycerebro.html" class="hover:underline text-gray-900">Upstrah Partner</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Follow us</h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900">Follow us</h2>
+              <ul class="font-medium text-gray-700">
                 <li class="mb-4">
-                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline text-gray-900">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline text-gray-900">Instagram</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Legal</h2>
-              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900">Legal</h2>
+              <ul class="font-medium text-gray-700">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">Privacy Policy</a>
+                  <a href="#" class="hover:underline text-gray-900">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                  <a href="#" class="hover:underline text-gray-900">Terms &amp; Conditions</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
         <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
-          <div class="flex mt-4 sm:justify-center sm:mt-0">
+          <span class="text-sm text-gray-500 sm:text-center">© 2025 <a href="#" class="hover:underline text-gray-900">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="mt-4 flex sm:mt-0 sm:justify-center">
             <!-- Social SVGs as in base.html -->
           </div>
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const toggleBtn = document.getElementById("menu-toggle");
@@ -321,6 +351,37 @@
             menu.classList.add("max-h-0", "opacity-0");
             menu.classList.remove("max-h-96", "opacity-100");
           }
+        });
+        // Products dropdown for desktop
+        const productsBtn = document.getElementById("products-dropdown-btn");
+        const productsMenu = document.getElementById("products-dropdown-menu");
+        let dropdownOpen = false;
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownOpen = !dropdownOpen;
+            productsMenu.classList.toggle("hidden", !dropdownOpen);
+          });
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+              dropdownOpen = false;
+              productsMenu.classList.add("hidden");
+            }
+          });
+        }
+        // Products dropdown for mobile
+        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+        const mobileProductsMenu = document.getElementById("mobile-products-menu");
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener("click", function () {
+            mobileProductsMenu.classList.toggle("hidden");
+          });
+        }
+        AOS.init({
+          once: true,
+          duration: 700,
+          offset: 80,
         });
       });
       // Countdown Timer
