@@ -150,3 +150,75 @@
 .container:nth-child(7) {
   transition-delay: 0.6s;
 }
+
+.store-badges {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.store-badge-img {
+  height: 56px; /* 3.5rem, matches h-14 */
+  width: auto;
+  max-width: 180px;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 500px) {
+  .store-badges {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .store-badge-img {
+    height: 44px;
+    max-width: 140px;
+  }
+}
+
+.download-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem auto 2rem auto;
+}
+.download-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.download-icon-link:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+}
+.download-icon-img {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 600px) {
+  .download-icons {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .download-icon-link {
+    width: 80vw;
+    max-width: 320px;
+    padding: 0.5rem 0.5rem;
+  }
+  .download-icon-img {
+    height: 40px;
+    width: 40px;
+  }
+}
