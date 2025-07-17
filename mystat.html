@@ -18,9 +18,12 @@
       body {
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
+      html, body {
+        overflow-x: hidden;
+      }
     </style>
   </head>
-  <body class="bg-[#1c1c1c] text-white">
+  <body class="bg-[#1c1c1c] text-white overflow-x-hidden">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -109,12 +112,12 @@
       </div> -->
       </div>
       <!-- Download Icons Section -->
-      <div class="flex items-center justify-center min-h-[40vh]">
-        <div class="w-full max-w-md p-6 rounded-2xl shadow-xl flex flex-col items-center">
+      <div class="flex items-center justify-center min-h-[40vh] box-border">
+        <div class="w-full max-w-md p-6 rounded-2xl shadow-xl flex flex-col items-center max-w-full">
           <h2 class="text-3xl text-white font-extrabold my-3 text-center">Get the app</h2>
-          <div class="flex flex-col gap-3 w-full md:flex-row md:gap-4">
+          <div class="flex flex-col gap-3 w-full md:flex-row md:gap-4 max-w-full">
             <a href="#" target="_blank"
-              class="flex items-center justify-center w-full px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
+              class="flex items-center justify-center w-full max-w-full px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
               rel="noreferrer">
               <svg class="w-8 h-8" viewBox="0 0 40 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0)">
@@ -132,7 +135,7 @@
               </div>
             </a>
             <a href="#" target="_blank"
-              class="flex items-center justify-center w-full px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
+              class="flex items-center justify-center w-full max-w-full px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
               rel="noreferrer">
               <svg class="w-8 h-8" viewBox="-9 0 274 274" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g>
@@ -152,34 +155,34 @@
       </div>
       <!-- End Download Icons Section -->
       <h1 class="text-center font-bold text-[#8bff41] mx-4 sm:mx-8 text-2xl sm:text-4xl md:text-5xl lg:text-5xl" data-aos="fade-up">Explore new tools that help you write, focus, and communicate.</h1>
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 max-w-5xl mx-auto px-4 py-12" data-aos="fade-up" data-aos-delay="100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto px-4 py-12 max-w-full overflow-x-hidden" data-aos="fade-up" data-aos-delay="100">
         <!-- LEFT NARROWER CARD -->
-        <div class="bg-black rounded-2xl p-6 flex flex-col gap-y-4 shadow-lg" data-aos="fade-right" data-aos-delay="200">
+        <div class="bg-black rounded-2xl p-4 md:p-6 flex flex-col gap-y-4 shadow-lg max-w-full overflow-x-hidden col-span-1">
           <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=60"
                alt="Quick Insight"
-               class="w-full h-48 object-cover rounded-xl" />
+               class="w-full h-48 object-cover rounded-xl max-w-full" />
           <h2 class="text-white text-2xl font-semibold">Instant Overview</h2>
           <p class="text-gray-400">
             View high-level insights and user snapshots on demand.Writing Tools can proofread your text and rewrite different versions until the tone and wording are just right, and summarize selected text with a tap. They’re available nearly everywhere you write, including third-party apps.
           </p>
         </div>
         <!-- RIGHT WIDER COLUMN (STACKED CARDS) -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-6 max-w-full overflow-x-hidden col-span-1 lg:col-span-1">
           <!-- Top Right -->
-          <div class="bg-black rounded-2xl p-6 flex flex-col justify-between shadow-lg" data-aos="fade-left" data-aos-delay="300">
+          <div class="bg-black rounded-2xl p-4 md:p-6 flex flex-col justify-between shadow-lg max-w-full overflow-x-hidden" data-aos="fade-left" data-aos-delay="300">
             <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=800&q=60"
                  alt="Athlete performance"
-                 class="w-full h-40 object-cover rounded-xl mb-4" />
+                 class="w-full h-40 object-cover rounded-xl mb-4 max-w-full" />
             <h3 class="text-white text-xl font-semibold mb-1">Performance Tracker</h3>
             <p class="text-gray-400 text-sm">
               Track player activity and performance across metrics with weekly summaries.
             </p>
           </div>
           <!-- Bottom Right -->
-          <div class="bg-black rounded-2xl p-6 flex flex-col justify-between shadow-lg" data-aos="fade-left" data-aos-delay="400">
+          <div class="bg-black rounded-2xl p-4 md:p-6 flex flex-col justify-between shadow-lg max-w-full overflow-x-hidden" data-aos="fade-left" data-aos-delay="400">
             <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60"
                  alt="Strategy"
-                 class="w-full h-40 object-cover rounded-xl mb-4" />
+                 class="w-full h-40 object-cover rounded-xl mb-4 max-w-full" />
             <h3 class="text-white text-xl font-semibold mb-1">Tactical Insights</h3>
             <p class="text-gray-400 text-sm">
               Dive deeper into team analytics and plan smarter, data-driven strategies.
@@ -188,8 +191,8 @@
         </div>
       </div>
       <h1 class="text-center font-bold text-[#8bff41] mx-4 sm:mx-8 mt-8 text-2xl sm:text-4xl md:text-5xl lg:text-5xl" data-aos="fade-up"> Train. Track. Triumph.</h1>
-      <section class="py-16 px-6" data-aos="fade-up">
-        <div class="max-w-5xl mx-auto bg-neutral-900 rounded-3xl p-12">
+      <section class="py-4 md:py-8 lg:py-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
+        <div class="max-w-5xl mx-auto bg-neutral-900 rounded-3xl p-4 md:p-8 lg:p-12">
           <!-- Header -->
           <div class="mb-12 max-w-3xl text-left" data-aos="fade-up" data-aos-delay="100">
             <h2 class="text-4xl font-extrabold text-white leading-tight">
@@ -200,24 +203,24 @@
             </p>
           </div>
           <!-- Cards Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-full overflow-x-hidden">
             <!-- Card -->
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-10 text-center min-h-[220px]" data-aos="zoom-in" data-aos-delay="200">
+            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="200">
               <h3 class="text-3xl font-bold text-white leading-snug">Analytics & Tracking 📊</h3>
             </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-10 text-center min-h-[220px]" data-aos="zoom-in" data-aos-delay="300">
+            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="300">
               <h3 class="text-3xl font-bold text-white leading-snug">Live Match Updates ⚽</h3>
             </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-10 text-center min-h-[220px]" data-aos="zoom-in" data-aos-delay="400">
+            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="400">
               <h3 class="text-3xl font-bold text-white leading-snug">Player Profiles 🧍‍♂️</h3>
             </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-10 text-center min-h-[220px]" data-aos="zoom-in" data-aos-delay="500">
+            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="500">
               <h3 class="text-3xl font-bold text-white leading-snug">Team Highlights 🎥</h3>
             </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-10 text-center min-h-[220px]" data-aos="zoom-in" data-aos-delay="600">
+            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="600">
               <h3 class="text-3xl font-bold text-white leading-snug">Goal Sharing 🚀</h3>
             </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-10 text-center min-h-[220px]" data-aos="zoom-in" data-aos-delay="700">
+            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="700">
               <h3 class="text-3xl font-bold text-white leading-snug">Fan Community 🤝</h3>
             </div>
           </div>
