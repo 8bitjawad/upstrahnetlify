@@ -13,48 +13,63 @@
   </head>
   <body class="bg-[#1c1c1c] text-white font-sans">
     <!-- Navigation (copied from home.html, with Products dropdown) -->
-    <nav class="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav class="fixed top-0 left-0 z-50 w-full bg-[#1c1c1c] text-white shadow-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div class="flex h-20 items-center justify-between">
-          <div class="flex-shrink-0">
-            <a href="home.html">
-              <img src="static/core/images/mainlogo.png" alt="Upstrah Logo" style="height: 40px; width: auto; display: block;" />
-            </a>
-          </div>
-          <div class="hidden items-center space-x-8 sm:flex">
+          <!-- Left-aligned Brand -->
+          <a href="home.html" class="text-2xl font-bold">UPSTRAH</a>
+    
+          <!-- Centered Nav Links -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-12">
+            <!-- Products Dropdown -->
             <div class="relative">
-              <button type="button" class="text-lg font-semibold text-gray-800 transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+              <button type="button" class="text-lg font-semibold transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
                 Products
-                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
-              <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
-                <a href="mystat.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Upstrah</a>
-                <a href="mycerebro.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Upstrah Partner</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white text-black border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
+                <a href="mystat.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah</a>
+                <a href="mycerebro.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah Partner</a>
               </div>
             </div>
-            <a href="contact.html" class="text-lg font-semibold text-gray-800 transition duration-300 hover:text-teal-800">Contact</a>
+    
+            <!-- About Us -->
+            <a href="aboutus.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">About Us</a>
+    
+            <!-- Contact -->
+            <a href="contact.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">Contact</a>
           </div>
+    
+          <!-- Mobile Menu Toggle -->
           <div class="sm:hidden">
-            <button id="menu-toggle" class="text-3xl text-gray-800 focus:outline-none">☰</button>
+            <button id="menu-toggle" class="text-3xl focus:outline-none">☰</button>
           </div>
         </div>
       </div>
+    
+      <!-- Mobile Menu -->
       <div id="mobile-menu" class="max-h-0 overflow-hidden bg-white px-4 opacity-0 transition-all duration-300 sm:hidden">
-        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold text-gray-700">
+        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold">
           <li>
             <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
               Products
-              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
             <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
               <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
               <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
             </ul>
           </li>
+          <li><a href="aboutus.html" class="transition hover:text-teal-700">About Us</a></li>
           <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
         </ul>
       </div>
     </nav>
+    
     <main style="margin-top: 80px">
       <div class="relative min-h-screen flex items-center justify-center px-4 py-20">
         <!-- Background image layer -->
@@ -86,108 +101,154 @@
         </div>
       </div>
 
-      <section class="bg-[#1c1c1c] text-white px-4 py-12" data-aos="fade-up">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#8bff41] mb-10" data-aos="fade-up">Frequently Asked Questions</h2>
-          <div class="space-y-4">
-            <!-- Question 1 -->
-            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
-                What is Upstrah and who is it for?
-                <span class="text-[#8bff41]">+</span>
-              </button>
-              <div class="hidden px-6 pb-4 faq-answer">
-                Upstrah is a social performance platform built for athletes. Whether you're in school, college, or pro-level clubs, Upstrah helps you track your stats, engage with your team, and showcase your progress.
+      <section class="bg-black text-white px-4 py-12" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#8bff41] mb-2" data-aos="fade-up">Frequently Asked Questions</h2>
+          <p class="text-center text-gray-400 mb-10" data-aos="fade-up" data-aos-delay="50">Here’s what most people ask before joining Upstrah</p>
+      
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left Column -->
+            <div class="space-y-4">
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  What is Upstrah and who is it for?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  Upstrah is a social performance platform built for athletes. Whether you're in school, college, or pro-level clubs, Upstrah helps you track your stats, engage with your team, and showcase your progress.
+                </div>
+              </div>
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  Is Upstrah free to use?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  Yes! Upstrah's core features will always be free for athletes. We may introduce premium tools in the future, but you'll always have access to your stats and club network at no cost.
+                </div>
+              </div>
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  Can I use Upstrah if I'm not part of a club?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  Absolutely. Even if you're not in a formal club, you can track personal stats, share updates, and connect with the sports community around you.
+                </div>
+              </div>
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  Will my data be visible to others?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  You have full control. Share your performance with clubs, teammates, or recruiters—or keep it private. It's your game, your rules.
+                </div>
               </div>
             </div>
-            <!-- Question 2 -->
-            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
-                Is Upstrah free to use?
-                <span class="text-[#8bff41]">+</span>
-              </button>
-              <div class="hidden px-6 pb-4 faq-answer">Yes! Upstrah's core features will always be free for athletes. We may introduce premium tools in the future, but you'll always have access to your stats and club network at no cost.</div>
-            </div>
-            <!-- Question 3 -->
-            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
-                Can I use Upstrah if I'm not part of a club?
-                <span class="text-[#8bff41]">+</span>
-              </button>
-              <div class="hidden px-6 pb-4 faq-answer">Absolutely. Even if you're not in a formal club, you can track personal stats, share updates, and connect with the sports community around you.</div>
-            </div>
-            <!-- Question 4 -->
-            <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-              <button class="w-full text-left px-6 py-4 focus:outline-none font-semibold text-lg flex justify-between items-center faq-toggle">
-                Will my data be visible to others?
-                <span class="text-[#8bff41]">+</span>
-              </button>
-              <div class="hidden px-6 pb-4 faq-answer">You have full control. Share your performance with clubs, teammates, or recruiters—or keep it private. It's your game, your rules.</div>
+      
+            <!-- Right Column -->
+            <div class="space-y-4">
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  How do I join or create a team?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  You can join existing teams via invite links or search. To create your own, just go to the Clubs section and follow the setup wizard.
+                </div>
+              </div>
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  Does Upstrah work for all sports?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  Yes! Upstrah is built to support a wide variety of sports. You can customize stats based on your sport's unique performance metrics.
+                </div>
+              </div>
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="700">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  Can coaches view athlete stats?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  Yes, coaches can view and manage athlete data within their team dashboards. It's designed to enhance coaching and recruitment.
+                </div>
+              </div>
+              <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="800">
+                <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
+                  How often are new features added?
+                  <span class="text-[#8bff41]">+</span>
+                </button>
+                <div class="hidden px-6 pb-4 faq-answer">
+                  We regularly release new features based on athlete and club feedback. Stay tuned on our socials or newsletter to hear first.
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      
     </main>
     <!-- Footer (copied from home.html, styled for consistency) -->
-    <footer class="w-full bg-white dark:bg-gray-900 text-gray-900">
-      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer class="w-full text-white">
+
+      <div class="mx-auto border border-black w-full bg-[#1c1c1c] max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="mystat.html" class="text-decoration-none flex items-center text-black">
-              <img src="static/core/images/statlogo.png" class="me-3 h-8" alt="Stat Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900">Upstrah</span>
+              <img src="static/core/images/mainlogo.png" class="me-3 h-8" alt="Stat Logo" />
             </a>
             <ul>
               <li>
-                <p class="font-light text-gray-900">
+                <p class="font-light">
                   Founders Office <br />
                   Ebrah Tech Pvt. Ltd. <br />
-                  #31/1, Yash Cottage, A&B Block, <br />
-                  Austin Town, Bangalore - 560047
                 </p>
               </li>
             </ul>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900">Resources</h2>
-              <ul class="font-medium text-gray-700">
+              <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
+              <ul class="font-medium">
                 <li>
-                  <a href="mystat.html" class="hover:underline text-gray-900">Upstrah</a>
+                  <a href="mystat.html" class="hover:underline">Upstrah</a>
                 </li>
                 <br />
                 <li>
-                  <a href="mycerebro.html" class="hover:underline text-gray-900">Upstrah Partner</a>
+                  <a href="mycerebro.html" class="hover:underline">Upstrah Partner</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900">Follow us</h2>
-              <ul class="font-medium text-gray-700">
+              <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
+              <ul class="font-medium">
                 <li class="mb-4">
-                  <a href="https://github.com/themesberg/flowbite" class="hover:underline text-gray-900">LinkedIn</a>
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline text-gray-900">Instagram</a>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900">Legal</h2>
-              <ul class="font-medium text-gray-700">
+              <h2 class="mb-6 text-sm font-semibold">Legal</h2>
+              <ul class="font-medium ">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline text-gray-900">Privacy Policy</a>
+                  <a href="#" class="hover:underline">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="#" class="hover:underline text-gray-900">Terms &amp; Conditions</a>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center">© 2025 <a href="#" class="hover:underline text-gray-900">Ebrah Tech</a>. All Rights Reserved. </span>
+          <span class="text-sm sm:text-center">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
           <div class="mt-4 flex sm:mt-0 sm:justify-center">
             <!-- Social SVGs as in base.html -->
           </div>

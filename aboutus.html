@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Contact Upstrah" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Upstrah</title>
+    <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
+    <link rel="stylesheet" href="static/core/css/contact1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  </head>
+  <body class="bg-[#1c1c1c] text-white font-sans">
+    <!-- Navigation (copied from home.html, with Products dropdown) -->
+    <nav class="fixed top-0 left-0 z-50 w-full bg-[#1c1c1c] text-white shadow-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+        <div class="flex h-20 items-center justify-between">
+          <!-- Left-aligned Brand -->
+          <a href="home.html" class="text-2xl font-bold">UPSTRAH</a>
+    
+          <!-- Centered Nav Links -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-12">
+            <!-- Products Dropdown -->
+            <div class="relative">
+              <button type="button" class="text-lg font-semibold transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white text-black border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
+                <a href="mystat.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah</a>
+                <a href="mycerebro.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah Partner</a>
+              </div>
+            </div>
+    
+            <!-- About Us -->
+            <a href="aboutus.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">About Us</a>
+    
+            <!-- Contact -->
+            <a href="contact.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">Contact</a>
+          </div>
+    
+          <!-- Mobile Menu Toggle -->
+          <div class="sm:hidden">
+            <button id="menu-toggle" class="text-3xl focus:outline-none">☰</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold">
+          <li>
+            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+              Products
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
+              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
+            </ul>
+          </li>
+          <li><a href="aboutus.html" class="transition hover:text-teal-700">About Us</a></li>
+          <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Upstrah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white">
+
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center py-20 px-6" style="background-image: url('cerebrobg.jpg');">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-12 backdrop-blur-sm bg-black/70 p-8 rounded-2xl">
+        <!-- Left Content -->
+        <div class="md:w-1/2" data-aos="fade-right">
+          <h1 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#8bff41] to-[#00ffe7] text-transparent bg-clip-text">Our Existence Explained</h1>
+        </div>
+        <!-- Right Content -->
+        <div class="md:w-1/2 space-y-5 text-lg text-gray-300" data-aos="fade-left">
+          <p>Upstrah is more than just a social platform—it’s a digital arena for athletes. Whether you’re striving for greatness in school, college, or pro sports, we’re here to fuel your journey with data, engagement, and recognition.</p>
+          <p>Founded with a mission to empower athletes, Upstrah blends performance analytics with community features to create an ecosystem where every player gets noticed, and every stat tells a story.</p>
+          <p>We believe performance should speak louder than politics. That’s why we built a platform where your growth is measurable, your achievements are visible, and your team is always within reach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+        <div class="md:w-1/2 space-y-6" data-aos="fade-up">
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#8bff41]">Why We Built This</h2>
+          <p class="text-gray-300">Athletes today need more than just trophies and medals—they need a digital footprint. Upstrah helps players build that presence, showcasing their growth, potential, and passion over time.</p>
+          <p class="text-gray-400">With coaches, recruiters, and fans in mind, we offer the perfect middle ground for serious performance tracking and fun social interactions. Every athlete deserves to be scouted, seen, and celebrated.</p>
+        </div>
+        <div class="md:w-1/2 space-y-6 text-gray-300" data-aos="fade-up">
+          <p>We're constantly improving and iterating. Our team is composed of athletes, designers, developers, and strategists all working together to change the future of sports networking. We’re not just a platform—we’re a movement.</p>
+          <p>Upstrah envisions a future where every athlete has the chance to be discovered, mentored, and celebrated globally. This is just the beginning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="py-20 px-6 bg-gradient-to-br from-[#111] to-[#1a1a1a]">
+      <div class="max-w-6xl mx-auto text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#8bff41] mb-4">Meet Our Founders</h2>
+        <p class="text-gray-400">A passionate crew behind the Upstrah mission</p>
+      </div>
+      <div class="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+        <!-- Founder Card 1 -->
+        <div class="bg-[#181818] p-6 rounded-2xl shadow-lg hover:shadow-[#8bff41]/30 transition-all" data-aos="zoom-in">
+          <img src="founder1.jpg" alt="Founder 1" class="w-full h-64 object-cover rounded-xl mb-4" />
+          <h3 class="text-xl font-bold text-[#8bff41]">Mir Sarwar Ali</h3>
+          <p class="text-gray-400 text-sm mt-2">CEO & Product Visionary. Ex-footballer turned tech strategist.</p>
+        </div>
+        <!-- Founder Card 2 -->
+        <div class="bg-[#181818] p-6 rounded-2xl shadow-lg hover:shadow-[#8bff41]/30 transition-all" data-aos="zoom-in">
+          <img src="founder2.jpg" alt="Founder 2" class="w-full h-64 object-cover rounded-xl mb-4" />
+          <h3 class="text-xl font-bold text-[#8bff41]">Mohammed Jawad</h3>
+          <p class="text-gray-400 text-sm mt-2">Built this entire gah damn thing.</p>
+        </div>
+        <!-- Founder Card 3 -->
+        <div class="bg-[#181818] p-6 rounded-2xl shadow-lg hover:shadow-[#8bff41]/30 transition-all" data-aos="zoom-in">
+          <img src="founder3.jpg" alt="Founder 3" class="w-full h-64 object-cover rounded-xl mb-4" />
+          <h3 class="text-xl font-bold text-[#8bff41]">Mirza Zain Ali</h3>
+          <p class="text-gray-400 text-sm mt-2">CPO or sumn</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-[#8bff41]" data-aos="fade-up">Join the Movement</h2>
+      <p class="text-gray-400 mb-8 max-w-xl mx-auto" data-aos="fade-up">Upstrah is built for the next generation of athletes. Are you ready to transform your sports journey?</p>
+      <a href="/" class="inline-block bg-gradient-to-r from-[#8bff41] to-[#00ffe7] text-black font-bold py-3 px-6 rounded-full text-lg hover:scale-105 transition">Return to Home</a>
+    </section>
+
+
+
+
+</body>
+</main>
+    <footer class="w-full text-white">
+
+        <div class="mx-auto border border-black w-full bg-[#1c1c1c] max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+              <a href="mystat.html" class="text-decoration-none flex items-center text-black">
+                <img src="static/core/images/mainlogo.png" class="me-3 h-8" alt="Stat Logo" />
+              </a>
+              <ul>
+                <li>
+                  <p class="font-light">
+                    Founders Office <br />
+                    Ebrah Tech Pvt. Ltd. <br />
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+              <div>
+                <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
+                <ul class="font-medium">
+                  <li>
+                    <a href="mystat.html" class="hover:underline">Upstrah</a>
+                  </li>
+                  <br />
+                  <li>
+                    <a href="mycerebro.html" class="hover:underline">Upstrah Partner</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
+                <ul class="font-medium">
+                  <li class="mb-4">
+                    <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                  </li>
+                  <li>
+                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="mb-6 text-sm font-semibold">Legal</h2>
+                <ul class="font-medium ">
+                  <li class="mb-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm sm:text-center">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
+            <div class="mt-4 flex sm:mt-0 sm:justify-center">
+              <!-- Social SVGs as in base.html -->
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+          <!-- Optional JS for animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+      AOS.init();
+    </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const toggleBtn = document.getElementById("menu-toggle");
+          const menu = document.getElementById("mobile-menu");
+          toggleBtn.addEventListener("click", function () {
+            const isOpen = menu.classList.contains("max-h-0");
+            if (isOpen) {
+              menu.classList.remove("max-h-0", "opacity-0");
+              menu.classList.add("max-h-96", "opacity-100");
+            } else {
+              menu.classList.add("max-h-0", "opacity-0");
+              menu.classList.remove("max-h-96", "opacity-100");
+            }
+          });
+          // Products dropdown for desktop
+          const productsBtn = document.getElementById("products-dropdown-btn");
+          const productsMenu = document.getElementById("products-dropdown-menu");
+          let dropdownOpen = false;
+          if (productsBtn && productsMenu) {
+            productsBtn.addEventListener("click", function (e) {
+              e.stopPropagation();
+              dropdownOpen = !dropdownOpen;
+              productsMenu.classList.toggle("hidden", !dropdownOpen);
+            });
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (e) {
+              if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+                dropdownOpen = false;
+                productsMenu.classList.add("hidden");
+              }
+            });
+          }
+          // Products dropdown for mobile
+          const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+          const mobileProductsMenu = document.getElementById("mobile-products-menu");
+          if (mobileProductsToggle && mobileProductsMenu) {
+            mobileProductsToggle.addEventListener("click", function () {
+              mobileProductsMenu.classList.toggle("hidden");
+            });
+          }
+          AOS.init({
+            once: true,
+            duration: 700,
+            offset: 80,
+          });
+        });
+      </script>
+    </body>
+  </html>
+  
