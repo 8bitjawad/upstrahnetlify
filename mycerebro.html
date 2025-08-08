@@ -16,8 +16,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
     <style>
       body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      /* Hero background animation layers */
+      .stars {
+        background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1.2px);
+        background-size: 3px 3px;
+        opacity: 0.10;
+        animation: stars-drift 120s linear infinite;
+        transform: translateZ(0);
+      }
+      .twinkling {
+        background-image:
+          radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25) 0.5px, transparent 2px),
+          radial-gradient(circle at 80% 60%, rgba(255,255,255,0.18) 0.5px, transparent 2px),
+          radial-gradient(circle at 40% 80%, rgba(255,255,255,0.22) 0.5px, transparent 2px),
+          radial-gradient(circle at 70% 20%, rgba(255,255,255,0.16) 0.5px, transparent 2px);
+        background-size: 180px 180px, 240px 240px, 220px 220px, 260px 260px;
+        mix-blend-mode: screen;
+        opacity: 0.25;
+        animation: twinkle 6s ease-in-out infinite alternate;
+      }
+      @keyframes stars-drift {
+        0% { background-position: 0 0; }
+        100% { background-position: 1000px 600px; }
+      }
+      @keyframes twinkle {
+        0% { opacity: 0.15; filter: brightness(0.9); }
+        50% { opacity: 0.35; filter: brightness(1.1); }
+        100% { opacity: 0.2; filter: brightness(1.0); }
+      }
+      .particles-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .stars, .twinkling { animation: none; }
+      }
     </style>
   </head>
   <body class="bg-[#1c1c1c] text-white">
@@ -81,11 +119,16 @@
     
     <main class="bg-[#1c1c1c] min-h-screen" style="margin-top: 80px">
       <!-- Hero Section with Background Video -->
-      <section
-  class="relative bg-cover bg-center bg-no-repeat py-24 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto shadow-xl"
-  style="background-image: url('static/core/images/cerebrobg.jpg');"
+            <section
+   class="relative bg-cover bg-center bg-no-repeat py-24 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto shadow-xl overflow-hidden"
+   style="background-image: url('static/core/images/cerebrobg.jpg');"
 >
-  <div class="flex flex-col md:flex-row items-center md:items-start gap-12 max-w-7xl mx-auto">
+  <!-- Animated layers -->
+  <div class="absolute inset-0 pointer-events-none">
+    <canvas class="particles-canvas"></canvas>
+    <div class="absolute inset-0 bg-black/25"></div>
+  </div>
+  <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-12 max-w-7xl mx-auto">
     <!-- Left text content -->
     <div class="md:w-1/2 text-center md:text-left text-white">
       <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight max-w-xl">
@@ -194,75 +237,8 @@
 
       <!-- End Download Icons Section -->
 
-      <section class="px-4 sm:px-8 md:px-16 lg:px-24 py-16 bg-black text-white">
-        <h1 class="font-bold text-center mb-12 text-3xl sm:text-4xl md:text-5xl text-[#8bff41] leading-tight">
-          Built for <br class="hidden sm:inline" />
-          Upstrah Intelligence.
-  </h1>
-        <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Top Row -->
-            <!-- Left Card -->
-            <div class="bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-500 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center">
-              <svg class="w-10 h-10 mb-4" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-              <h3 class="text-xl font-semibold mb-2">Real-time Analytics</h3>
-              <p class="text-sm">Monitor player stats and performance as the match unfolds.</p>
-            </div>
-      
-            <!-- Center Image Card -->
-            <div class="md:scale-110 transform transition duration-300">
-              <div class="bg-white rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center p-4">
-                <img src="static/core/images/mystat1.jpg" alt="App Screenshot" class="object-contain w-full max-h-96 rounded-xl" />
-              </div>
-            </div>
-      
-            <!-- Right Card -->
-            <div class="bg-gradient-to-br from-pink-600 via-red-500 to-yellow-400 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center">
-              <svg class="w-10 h-10 mb-4" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-              
-              <h3 class="text-xl font-semibold mb-2">Performance Breakdown</h3>
-              <p class="text-sm">Detailed reports and breakdowns for every session and drill.</p>
-            </div>
-          </div>
-      
-          <!-- Bottom Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
-            <!-- Card 1 -->
-            <div class="bg-gradient-to-br from-green-400 via-emerald-500 to-cyan-600 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center">
-              <svg class="w-10 h-10 mb-4" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M12 4v16m8-8H4" />
-              </svg>
-              <h3 class="text-xl font-semibold mb-2">Team Insights</h3>
-              <p class="text-sm">Gain visibility into team trends and collaborative progress.</p>
-            </div>
-      
-            <!-- Card 2 -->
-            <div class="bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center">
-              <svg class="w-10 h-10 mb-4" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-              <h3 class="text-xl font-semibold mb-2">Drill Scheduler</h3>
-              <p class="text-sm">Create, manage and assign drills with full transparency.</p>
-            </div>
-      
-            <!-- Card 3 -->
-            <div class="bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-600 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center">
-              <svg class="w-10 h-10 mb-4" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <h3 class="text-xl font-semibold mb-2">Club Portal</h3>
-              <p class="text-sm">A centralized dashboard for managing all club operations.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
        <!-- Value Section for Clubs and Coaches -->
-<section class="relative bg-black py-20 px-4 sm:px-8 md:px-16">
+<section class="relative py-20 px-4 sm:px-8 md:px-16">
   <!-- Main White Card -->
   <div class="relative bg-white rounded-3xl p-8 sm:p-12 shadow-xl max-w-screen-xl mx-auto">
     <!-- Header with Gradient Text -->
@@ -310,32 +286,161 @@
   </div>
 </section>
 
-      <!-- Feature Section -->
-      <h1 class="text-center mt-10 font-bold text-[#8bff41] mx-4 sm:mx-8 mb-12 text-2xl sm:text-4xl md:text-5xl lg:text-5xl" data-aos="fade-up">In an emergency, Upstrah has your back.</h1>
 
-      <div class="flex flex-col mb-10 sm:flex-row items-center justify-between px-4 sm:px-6 lg:px-12 mt-12" data-aos="fade-up" data-aos-delay="100">
-        <!-- Left Text Section -->
-       <!-- Left Text Section -->
-        <div class="flex-1 flex justify-end sm:pr-8">
-          <p class="text-xl text-white max-w-xs text-center sm:text-left leading-relaxed" data-aos="fade-right" data-aos-delay="200">
-            Upstrah is your all-in-one sports companion — from real-time club updates and detailed performance stats to seamless connections with the entire sports community.
-           </p>
+<section class="max-w-6xl bg-white rounded-2xl mx-4 sm:mx-6 lg:mx-8 xl:mx-auto px-4 py-8 overflow-hidden">
+  <!-- Header -->
+  <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">
+          Everything You Need.<br>
+          Nothing You Don't.
+      </h1>
+      <p class="text-gray-600 text-sm max-w-md mx-auto">
+          Comprehensive sports social management designed with simplicity and community in mind.
+      </p>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Card 1 - Top Left -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col h-64 transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Easy Tournament Booking</h3>
+          <p class="text-gray-600 text-sm flex-grow">
+              Schedule tournaments with your community. Browse by sport, location, and availability.
+          </p>
       </div>
 
-      
-        <!-- Right Phone Animation Section -->
-        <div class="flex-1 flex justify-center mt-6 sm:mt-0">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <img src="static/core/images/mystat2.jpeg" class="screen fade-screen-1" alt="Screen 1" />
-              <img src="static/core/images/mystat1.jpg" class="screen fade-screen-2" alt="Screen 2" />
-              <img src="static/core/images/mystat3.jpeg" class="screen fade-screen-3" alt="Screen 3" />
+      <!-- Card 2 - Top Center (Purple with Phone) - Raised -->
+      <div class="bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl p-6 shadow-2xl flex flex-col items-center justify-center text-white relative overflow-hidden h-64 transform -translate-y-4 hover:scale-105 hover:-translate-y-6 transition-all duration-300">
+          <div class="w-32 h-44 bg-white rounded-3xl shadow-2xl flex items-center justify-center relative transform rotate-2 hover:rotate-0 transition-transform duration-300">
+              <!-- Phone mockup -->
+              <div class="w-28 h-40 bg-gray-900 rounded-2xl p-1">
+                  <div class="w-full h-full bg-gradient-to-b from-orange-400 to-pink-500 rounded-xl flex flex-col">
+                      <!-- Status bar -->
+                      <div class="flex justify-between items-center px-2 py-1 text-white text-xs">
+                          <span>9:41</span>
+                          <div class="flex space-x-1">
+                              <div class="w-1 h-1 bg-white rounded-full"></div>
+                              <div class="w-1 h-1 bg-white rounded-full"></div>
+                              <div class="w-1 h-1 bg-white rounded-full"></div>
+                          </div>
+                      </div>
+                      
+                      <!-- App content -->
+                      <div class="flex-grow px-2 py-1 text-white">
+                          <div class="text-xs mb-1">Hope You're Feeling Well Today!</div>
+                          <div class="flex items-center space-x-1 mb-2">
+                              <div class="w-4 h-4 bg-white rounded-full"></div>
+                              <div class="text-xs">Sarah Mitchell</div>
+                          </div>
+                          <div class="bg-white bg-opacity-20 rounded-lg p-1 text-xs">
+                              Sports Performance Dashboard
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Card 3 - Top Right -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col h-64 transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Athlete Tracker</h3>
+          <p class="text-gray-600 text-sm flex-grow">
+              Follow your favorite athletes and get smart reminders that keep you in track.
+          </p>
+      </div>
+
+      <!-- Card 4 - Bottom Left -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col h-64 transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Team Management</h3>
+          <p class="text-gray-600 text-sm flex-grow">
+              Manage your team roster, track player stats, and coordinate practice sessions.
+          </p>
+      </div>
+
+      <!-- Card 5 - Bottom Center - Raised -->
+      <div class="bg-white rounded-2xl p-6 shadow-2xl border border-gray-200 flex flex-col h-64 transform -translate-y-4 hover:scale-105 hover:-translate-y-6 transition-all duration-300">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012-2m-2 8h2m-2 4h2"/>
+              </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Digital Stats Records</h3>
+          <p class="text-gray-600 text-sm flex-grow">
+              Access and share performance stats, game records, and historical data securely.
+          </p>
+      </div>
+
+      <!-- Card 6 - Bottom Right -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col h-64 transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Secure & Encrypted</h3>
+          <p class="text-gray-600 text-sm flex-grow">
+              Ultra-secure community data security without compromising ease of use for players and coaches.
+          </p>
+      </div>
+  </div>
+</section>
+      <!-- Image Grid Section --> 
+      <div class="w-full py-10 px-6 md:px-10 flex justify-center">
+        <div class="w-full max-w-6xl bg-white rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
+          
+          <!-- Left Half: Phone Image -->
+          <div class="w-full md:w-1/2 p-4 flex justify-center items-center">
+            <img src="static/core/images/phone1.png" alt="App Preview" class="h-72 md:h-80 lg:h-96 object-contain" />
+          </div>
+  
+          <!-- Right Half: Text & Buttons -->
+          <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start text-left">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Get the app</h2>
+            <p class="text-gray-700 mb-6 max-w-md">
+              Download our app to unlock exclusive features and stay connected on the go. Available on both iOS and Android.
+            </p>
+  
+            <!-- Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <!-- App Store Button -->
+              <a href="#" target="_blank"
+                 class="flex items-center px-4 py-2 bg-black text-white rounded-xl hover:scale-105 transition-transform group">
+                <svg class="w-6 h-6 mr-3" viewBox="0 0 40 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32.6226 23.7016C32.6026 20.0267 34.2591 17.253 37.6118 15.2103C35.7359 12.5167 32.902 11.0347 29.1601 10.7443C25.6177 10.464 21.7461 12.8171 20.3292 12.8171C18.8324 12.8171 15.3998 10.8445 12.7057 10.8445C7.13769 10.9346 1.22048 15.3004 1.22048 24.1822C1.22048 26.8057 1.69945 29.516 2.65738 32.3131C3.93461 35.988 8.54465 45 13.3542 44.8498C15.8688 44.7897 17.645 43.0574 20.9179 43.0574C24.091 43.0574 25.7375 44.8498 28.5414 44.8498C33.3909 44.7797 37.5619 36.5888 38.7793 32.9039C32.2733 29.8298 32.6226 23.8919 32.6226 23.7016ZM26.9748 7.25968C29.6989 4.01535 29.4494 1.06142 29.3696 0C26.9648 0.140187 24.1808 1.64219 22.5943 3.49466C20.848 5.4773 19.8203 7.93058 20.0398 10.6943C22.6442 10.8945 25.019 9.55274 26.9748 7.25968Z" fill="white" />
+                </svg>
+                <span class="text-sm font-medium">App Store</span>
+              </a>
+  
+              <!-- Play Store Button -->
+              <a href="#" target="_blank"
+                 class="flex items-center px-4 py-2 bg-black text-white rounded-xl hover:scale-105 transition-transform group">
+                <svg class="w-6 h-6 mr-3" viewBox="-9 0 274 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M188.81319,178.874645 C221.272218,161.051727 245.880297,147.470853 248.001319,146.415618 C254.78648,142.806714 261.79324,133.256838 248.001319,125.838536 C243.548228,123.506467 219.573289,110.347687 188.81319,93.3795092 L146.171146,136.443648 L188.81319,178.874645 Z" fill="#FFD900"></path>
+                  <path d="M146.171146,136.443648 L10.3940643,273.286517 C13.5808739,273.708611 17.1792251,272.864423 21.4212696,270.532353 C30.3274526,265.657168 124.739324,214.098388 188.81319,178.885198 L146.171146,136.443648 Z" fill="#F43249"></path>
+                  <path d="M146.171146,136.443648 L188.81319,93.5905562 C188.81319,93.5905562 30.9711459,7.45172685 21.4212696,2.36549437 C17.8229184,0.233919759 13.7919209,-0.399221214 10.1830173,0.233919759 L146.171146,136.443648 Z" fill="#00EE76"></path>
+                  <path d="M146.171146,136.443648 L10.1830173,0.233919759 C4.6641385,1.51075405 0,6.38593954 0,16.3579099 C0,32.270853 0,244.003747 0,257.162527 C0,266.290309 3.60890354,272.864423 10.3940643,273.497564 L146.171146,136.443648 Z" fill="#00D3FF"></path>
+                </svg>
+                <span class="text-sm font-medium">Play Store</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Image Grid Section --> 
     </main>
     <!-- Footer -->
     <footer class="w-full text-white">
@@ -403,6 +508,85 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+      // Glowing particles background for hero
+      (function(){
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function initParticles(){
+          const hero = document.querySelector('section[style*="cerebrobg.jpg"]');
+          if(!hero) return;
+          const canvas = hero.querySelector('.particles-canvas');
+          if(!canvas) return;
+          const ctx = canvas.getContext('2d');
+          let width, height, dpr, particles = [], rafId;
+
+          function resize(){
+            dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+            width = hero.clientWidth; height = hero.clientHeight;
+            canvas.width = Math.floor(width * dpr);
+            canvas.height = Math.floor(height * dpr);
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          }
+
+          function createParticles(){
+            const count = Math.floor(Math.min(120, Math.max(50, (width * height) / 15000)));
+            particles = new Array(count).fill(0).map(()=>({
+              x: Math.random()*width,
+              y: Math.random()*height,
+              vx: (Math.random()-0.5)*0.4,
+              vy: (Math.random()-0.5)*0.4,
+              r: Math.random()*1.6 + 0.8,
+              glow: Math.random()*0.6 + 0.4,
+              hue: 90 + Math.random()*60 // greenish glow range
+            }));
+          }
+
+          function step(){
+            ctx.clearRect(0,0,width,height);
+            for(const p of particles){
+              p.x += p.vx; p.y += p.vy;
+              if(p.x < -10) p.x = width+10; if(p.x > width+10) p.x = -10;
+              if(p.y < -10) p.y = height+10; if(p.y > height+10) p.y = -10;
+
+              const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*8);
+              grd.addColorStop(0, `hsla(${p.hue}, 100%, 70%, ${0.9*p.glow})`);
+              grd.addColorStop(0.4, `hsla(${p.hue}, 100%, 60%, ${0.35*p.glow})`);
+              grd.addColorStop(1, 'rgba(0,0,0,0)');
+              ctx.fillStyle = grd;
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.r*8, 0, Math.PI*2);
+              ctx.fill();
+
+              ctx.fillStyle = `hsla(${p.hue}, 100%, 75%, 0.9)`;
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+              ctx.fill();
+            }
+            rafId = requestAnimationFrame(step);
+          }
+
+          function start(){
+            resize(); createParticles(); step();
+          }
+          function stop(){
+            if(rafId) cancelAnimationFrame(rafId);
+          }
+
+          const ro = new ResizeObserver(()=>{ resize(); createParticles(); });
+          ro.observe(hero);
+          window.addEventListener('visibilitychange', ()=>{
+            if(document.hidden) stop(); else step();
+          });
+
+          start();
+        }
+        if(!prefersReduced){
+          if(document.readyState === 'complete') initParticles();
+          else window.addEventListener('load', initParticles);
+        }
+      })();
+
       document.addEventListener("DOMContentLoaded", function () {
         const toggleBtn = document.getElementById("menu-toggle");
         const menu = document.getElementById("mobile-menu");
