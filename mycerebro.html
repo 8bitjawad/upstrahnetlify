@@ -121,10 +121,15 @@
       <!-- Hero Section with Background Video -->
             <section
    class="relative bg-cover bg-center bg-no-repeat py-24 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto shadow-xl overflow-hidden"
-   style="background-image: url('static/core/images/cerebrobg.jpg');"
+   style="background-image: url('static/core/images/purplebg1.jpg');"
 >
   <!-- Animated layers -->
   <div class="absolute inset-0 pointer-events-none">
+    <!-- Stars animation layer -->
+    <div class="absolute inset-0 stars"></div>
+    <!-- Twinkling animation layer -->
+    <div class="absolute inset-0 twinkling"></div>
+    <!-- Particles canvas -->
     <canvas class="particles-canvas"></canvas>
     <div class="absolute inset-0 bg-black/25"></div>
   </div>
@@ -243,7 +248,7 @@
   <div class="relative bg-white rounded-3xl p-8 sm:p-12 shadow-xl max-w-screen-xl mx-auto">
     <!-- Header with Gradient Text -->
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
-      <span class="bg-gradient-to-r from-[#00ffa6] to-[#8bff41] text-transparent bg-clip-text">Empowering Clubs & Coaches</span>
+      <span class="text-purple-600">Empowering Clubs & Coaches</span>
     </h2>
 
     <!-- Decorative SVG (optional - top right) -->
@@ -332,14 +337,14 @@
                       
                       <!-- App content -->
                       <div class="flex-grow px-2 py-1 text-white">
-                          <div class="text-xs mb-1">Hope You're Feeling Well Today!</div>
+                          <div class="text-xs mb-1">Achieve your performance goals today!</div>
                           <div class="flex items-center space-x-1 mb-2">
                               <div class="w-4 h-4 bg-white rounded-full"></div>
                               <div class="text-xs">Sarah Mitchell</div>
                           </div>
-                          <div class="bg-white bg-opacity-20 rounded-lg p-1 text-xs">
+                          <!-- <div class="bg-white bg-opacity-20 rounded-lg p-1 text-xs">
                               Sports Performance Dashboard
-                          </div>
+                          </div> -->
                       </div>
                   </div>
               </div>
@@ -508,82 +513,133 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-      // Glowing particles background for hero
-      (function(){
+      // Glowing dots animation
+      (function() {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        function initParticles(){
-          const hero = document.querySelector('section[style*="cerebrobg.jpg"]');
-          if(!hero) return;
-          const canvas = hero.querySelector('.particles-canvas');
-          if(!canvas) return;
+        if (prefersReduced) return;
+        
+        function initGlowingDots() {
+          const canvas = document.querySelector('.particles-canvas');
+          if (!canvas) return;
+          
           const ctx = canvas.getContext('2d');
-          let width, height, dpr, particles = [], rafId;
-
-          function resize(){
-            dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-            width = hero.clientWidth; height = hero.clientHeight;
-            canvas.width = Math.floor(width * dpr);
-            canvas.height = Math.floor(height * dpr);
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          let dots = [];
+          let animationId;
+          
+          // Set canvas size
+          function resizeCanvas() {
+            const section = canvas.closest('section');
+            if (!section) return;
+            
+            const rect = section.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
           }
-
-          function createParticles(){
-            const count = Math.floor(Math.min(120, Math.max(50, (width * height) / 15000)));
-            particles = new Array(count).fill(0).map(()=>({
-              x: Math.random()*width,
-              y: Math.random()*height,
-              vx: (Math.random()-0.5)*0.4,
-              vy: (Math.random()-0.5)*0.4,
-              r: Math.random()*1.6 + 0.8,
-              glow: Math.random()*0.6 + 0.4,
-              hue: 90 + Math.random()*60 // greenish glow range
-            }));
-          }
-
-          function step(){
-            ctx.clearRect(0,0,width,height);
-            for(const p of particles){
-              p.x += p.vx; p.y += p.vy;
-              if(p.x < -10) p.x = width+10; if(p.x > width+10) p.x = -10;
-              if(p.y < -10) p.y = height+10; if(p.y > height+10) p.y = -10;
-
-              const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*8);
-              grd.addColorStop(0, `hsla(${p.hue}, 100%, 70%, ${0.9*p.glow})`);
-              grd.addColorStop(0.4, `hsla(${p.hue}, 100%, 60%, ${0.35*p.glow})`);
-              grd.addColorStop(1, 'rgba(0,0,0,0)');
-              ctx.fillStyle = grd;
+          
+          // Dot class
+          class GlowingDot {
+            constructor() {
+              this.reset();
+            }
+            
+            reset() {
+              this.x = Math.random() * canvas.width;
+              this.y = Math.random() * canvas.height;
+              this.vx = (Math.random() - 0.5) * 1;
+              this.vy = (Math.random() - 0.5) * 1;
+              this.radius = Math.random() * 3 + 1;
+              this.opacity = Math.random() * 0.6 + 0.4; // Increased base opacity
+              this.pulseSpeed = Math.random() * 0.02 + 0.01;
+              this.pulse = 0;
+            }
+            
+            update() {
+              // Move
+              this.x += this.vx;
+              this.y += this.vy;
+              
+              // Bounce off edges
+              if (this.x <= 0 || this.x >= canvas.width) this.vx *= -1;
+              if (this.y <= 0 || this.y >= canvas.height) this.vy *= -1;
+              
+              // Keep in bounds
+              this.x = Math.max(0, Math.min(canvas.width, this.x));
+              this.y = Math.max(0, Math.min(canvas.height, this.y));
+              
+              // Pulse effect
+              this.pulse += this.pulseSpeed;
+            }
+            
+            draw() {
+              const currentOpacity = this.opacity * (0.6 + 0.4 * Math.sin(this.pulse)); // Brighter pulsing
+              
+              // Outer glow
+              const gradient = ctx.createRadialGradient(
+                this.x, this.y, 0,
+                this.x, this.y, this.radius * 8
+              );
+              gradient.addColorStop(0, `rgba(255, 255, 255, ${currentOpacity})`);
+              gradient.addColorStop(0.3, `rgba(200, 150, 255, ${currentOpacity * 0.8})`); // Brighter glow
+              gradient.addColorStop(1, 'rgba(150, 100, 255, 0)');
+              
+              ctx.fillStyle = gradient;
               ctx.beginPath();
-              ctx.arc(p.x, p.y, p.r*8, 0, Math.PI*2);
+              ctx.arc(this.x, this.y, this.radius * 8, 0, Math.PI * 2);
               ctx.fill();
-
-              ctx.fillStyle = `hsla(${p.hue}, 100%, 75%, 0.9)`;
+              
+              // Inner bright core
+              ctx.fillStyle = `rgba(255, 255, 255, ${currentOpacity})`; // Brighter core
               ctx.beginPath();
-              ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+              ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
               ctx.fill();
             }
-            rafId = requestAnimationFrame(step);
           }
-
-          function start(){
-            resize(); createParticles(); step();
+          
+          // Create dots
+          function createDots() {
+            dots = [];
+            const dotCount = Math.min(60, Math.max(25, Math.floor((canvas.width * canvas.height) / 15000)));
+            for (let i = 0; i < dotCount; i++) {
+              dots.push(new GlowingDot());
+            }
           }
-          function stop(){
-            if(rafId) cancelAnimationFrame(rafId);
+          
+          // Animation loop
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            dots.forEach(dot => {
+              dot.update();
+              dot.draw();
+            });
+            
+            animationId = requestAnimationFrame(animate);
           }
-
-          const ro = new ResizeObserver(()=>{ resize(); createParticles(); });
-          ro.observe(hero);
-          window.addEventListener('visibilitychange', ()=>{
-            if(document.hidden) stop(); else step();
+          
+          // Initialize
+          function init() {
+            resizeCanvas();
+            createDots();
+            animate();
+          }
+          
+          // Handle window resize
+          window.addEventListener('resize', () => {
+            resizeCanvas();
+            createDots();
           });
-
-          start();
+          
+          // Start animation
+          init();
         }
-        if(!prefersReduced){
-          if(document.readyState === 'complete') initParticles();
-          else window.addEventListener('load', initParticles);
+        
+        // Start when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initGlowingDots);
+        } else {
+          initGlowingDots();
         }
       })();
 

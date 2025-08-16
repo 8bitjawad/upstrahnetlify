@@ -10,8 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+      body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+      html, body {
+        overflow-x: hidden;
+      }
+    </style>
   </head>
-  <body class="bg-[#1c1c1c] text-white font-sans">
+  <body class="bg-[#1c1c1c] text-white">
     <!-- Navigation (copied from home.html, with Products dropdown) -->
     <nav class="fixed top-0 left-0 z-50 w-full bg-[#1c1c1c] text-white shadow-md">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
@@ -71,39 +79,96 @@
     </nav>
     
     <main style="margin-top: 80px">
-      <div class="relative min-h-screen flex items-center justify-center px-4 py-20">
-        <!-- Background image layer -->
-        <div class="absolute inset-0 -z-10">
-          <img src="static/core/images/pattern1.jpg" alt="Contact Background" class="w-full h-full object-cover" />
+      <section class="relative bg-[#1c1c1c] text-white py-20 px-6 sm:px-12 lg:px-24">
+        <!-- Contact Our Team Section -->
+        <div class="max-w-7xl mx-auto text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent mb-4">
+            Contact Our Team
+          </h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+            Get in touch with the right department. We're here to support your journey.
+          </p>
         </div>
-        <!-- Animated gradient accent -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-32 bg-gradient-to-r from-[#8bff41] via-[#41e6ff] to-[#8bff41] blur-2xl opacity-40 animate-pulse rounded-full z-0"></div>
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-black/70 -z-0"></div>
-        <!-- Contact Info Card -->
-        <div class="relative z-10 bg-black/60 backdrop-blur-lg border-4 border-gradient-to-r from-[#8bff41] via-[#41e6ff] to-[#8bff41] shadow-2xl rounded-2xl p-10 max-w-lg w-full animate-fade-in" data-aos="fade-up">
-          <div class="flex justify-center mb-2">
-            <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#8bff41" fill-opacity="0.15"/><path d="M24 14a7 7 0 0 1 7 7c0 5.25-7 13-7 13s-7-7.75-7-13a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" fill="#8bff41"/></svg>
+      
+        <!-- Contact Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <!-- Sales -->
+          <div class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition">
+            <h3 class="text-2xl font-bold mb-4">Sales</h3>
+            <p class="text-gray-300 mb-6">Talk to our team about products, pricing, or enterprise solutions.</p>
+            <a href="mailto:sales@upstra.com" class="text-purple-400 font-semibold hover:underline">sales@upstra.com</a>
           </div>
-          <h1 class="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#8bff41] via-[#41e6ff] to-[#8bff41] mb-2 tracking-tight" data-aos="fade-up">Let's Connect!</h1>
-          <p class="text-white text-center mb-6 text-lg font-light" data-aos="fade-up" data-aos-delay="100">We're here to help you level up your game, answer your questions, and celebrate your wins. Reach out and our team will get back to you soon!</p>
-          <ul class="text-white text-lg mb-6 space-y-2">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-[#8bff41]"></i><span>Email:</span> <a href="mailto:info@upstra.com" class="underline hover:text-[#8bff41]">info@upstra.com</a></li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#8bff41]"></i><span>Phone:</span> <a href="tel:+911234567890" class="underline hover:text-[#8bff41]">+91 12345 67890</a></li>
-          </ul>
-          <div class="flex justify-center space-x-6 mt-4">
-            <!-- Social SVGs section (do not alter) -->
-            <a href="https://facebook.com/yourpage" target="_blank" class="text-gray-400 hover:text-[#1877f3] transition"><i class="fab fa-facebook fa-xl"></i></a>
-            <a href="https://instagram.com/yourpage" target="_blank" class="text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram fa-xl"></i></a>
-            <a href="https://twitter.com/yourpage" target="_blank" class="text-gray-400 hover:text-sky-400 transition"><i class="fab fa-x-twitter fa-xl"></i></a>
-            <a href="https://linkedin.com/in/yourpage" target="_blank" class="text-gray-400 hover:text-[#0a66c2] transition"><i class="fab fa-linkedin fa-xl"></i></a>
+      
+          <!-- Support -->
+          <div class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition">
+            <h3 class="text-2xl font-bold mb-4">Support</h3>
+            <p class="text-gray-300 mb-6">Need help? Our support team is available 24/7 for assistance.</p>
+            <a href="mailto:support@upstra.com" class="text-purple-400 font-semibold hover:underline">support@upstra.com</a>
+          </div>
+      
+          <!-- Visit Us -->
+          <div class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition">
+            <h3 class="text-2xl font-bold mb-4">Visit Us</h3>
+            <p class="text-gray-300 mb-6">Come by our HQ and meet the team in person.</p>
+            <span class="text-purple-400 font-semibold">123 Business St, Tech City</span>
+          </div>
+      
+          <!-- Call Us -->
+          <div class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition">
+            <h3 class="text-2xl font-bold mb-4">Call Us</h3>
+            <p class="text-gray-300 mb-6">Prefer to talk? We're just a phone call away.</p>
+            <a href="tel:+911234567890" class="text-purple-400 font-semibold hover:underline">+91 12345 67890</a>
           </div>
         </div>
-      </div>
+      </section>
+      
+      <!-- Join the Community Section -->
+      <section class="relative bg-[#1c1c1c] text-white py-20 px-6 sm:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent mb-4">
+            Join the Community
+          </h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+            Connect with us on social media and be part of the journey.
+          </p>
+        </div>
+      
+        <!-- Social Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <!-- Facebook -->
+          <a href="https://facebook.com/yourpage" target="_blank" 
+             class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col items-center justify-center hover:scale-105 transition">
+            <i class="fab fa-facebook fa-3x text-[#1877f3] mb-4"></i>
+            <h3 class="text-xl font-semibold">Facebook</h3>
+          </a>
+      
+          <!-- Instagram -->
+          <a href="https://instagram.com/yourpage" target="_blank" 
+             class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col items-center justify-center hover:scale-105 transition">
+            <i class="fab fa-instagram fa-3x text-pink-500 mb-4"></i>
+            <h3 class="text-xl font-semibold">Instagram</h3>
+          </a>
+      
+          <!-- Twitter -->
+          <a href="https://twitter.com/yourpage" target="_blank" 
+             class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col items-center justify-center hover:scale-105 transition">
+            <i class="fab fa-x-twitter fa-3x text-sky-400 mb-4"></i>
+            <h3 class="text-xl font-semibold">Twitter</h3>
+          </a>
+      
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/yourpage" target="_blank" 
+             class="bg-black/50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-lg p-8 flex flex-col items-center justify-center hover:scale-105 transition">
+            <i class="fab fa-linkedin fa-3x text-[#0a66c2] mb-4"></i>
+            <h3 class="text-xl font-semibold">LinkedIn</h3>
+          </a>
+        </div>
+      </section>
+      
 
-      <section class="bg-black text-white px-4 py-12" data-aos="fade-up">
+      <section class="bg-[#1c1c1c] text-white px-4 py-12" data-aos="fade-up">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#8bff41] mb-2" data-aos="fade-up">Frequently Asked Questions</h2>
+          <h2 class="text-4xl sm:text-5xl font-bold text-center bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent mb-2" data-aos="fade-up">Frequently Asked Questions</h2>
           <p class="text-center text-gray-400 mb-10" data-aos="fade-up" data-aos-delay="50">Here’s what most people ask before joining Upstrah</p>
       
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -112,7 +177,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   What is Upstrah and who is it for?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   Upstrah is a social performance platform built for athletes. Whether you're in school, college, or pro-level clubs, Upstrah helps you track your stats, engage with your team, and showcase your progress.
@@ -121,7 +186,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   Is Upstrah free to use?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   Yes! Upstrah's core features will always be free for athletes. We may introduce premium tools in the future, but you'll always have access to your stats and club network at no cost.
@@ -130,7 +195,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   Can I use Upstrah if I'm not part of a club?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   Absolutely. Even if you're not in a formal club, you can track personal stats, share updates, and connect with the sports community around you.
@@ -139,7 +204,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   Will my data be visible to others?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   You have full control. Share your performance with clubs, teammates, or recruiters—or keep it private. It's your game, your rules.
@@ -152,7 +217,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   How do I join or create a team?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   You can join existing teams via invite links or search. To create your own, just go to the Clubs section and follow the setup wizard.
@@ -161,7 +226,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   Does Upstrah work for all sports?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   Yes! Upstrah is built to support a wide variety of sports. You can customize stats based on your sport's unique performance metrics.
@@ -170,7 +235,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="700">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   Can coaches view athlete stats?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   Yes, coaches can view and manage athlete data within their team dashboards. It's designed to enhance coaching and recruitment.
@@ -179,7 +244,7 @@
               <div class="border border-gray-700 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="800">
                 <button class="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center faq-toggle">
                   How often are new features added?
-                  <span class="text-[#8bff41]">+</span>
+                  <span class="bg-gradient-to-r from-[#6a11cb] to-[#a044ff] bg-clip-text text-transparent">+</span>
                 </button>
                 <div class="hidden px-6 pb-4 faq-answer">
                   We regularly release new features based on athlete and club feedback. Stay tuned on our socials or newsletter to hear first.
@@ -302,6 +367,22 @@
           offset: 80,
         });
       });
+    </script>
+    <script>
+       document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const answer = toggle.nextElementSibling;
+          const icon = toggle.querySelector("span");
+          const isOpen = !answer.classList.contains("hidden");
+          document.querySelectorAll(".faq-answer").forEach((el) => el.classList.add("hidden"));
+          document.querySelectorAll(".faq-toggle span").forEach((el) => (el.textContent = "+"));
+          if (!isOpen) {
+            answer.classList.remove("hidden");
+            icon.textContent = "−";
+          }
+        });
+      });
+
     </script>
   </body>
 </html>
