@@ -10,81 +10,78 @@
     <link rel="manifest" href="static/core/favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="static/core/css/home.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" /> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
     <style>
       body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans';
   }
     </style>
   </head>
 
-  <body>
+  <body class="bg-[#1c1c1c]">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 z-50 w-full bg-[#1c1c1c] text-white shadow-md">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-        <div class="flex h-20 items-center justify-between">
-          <!-- Left-aligned Brand -->
-          <a href="home.html" class="text-2xl font-bold">UPSTRAH</a>
+    <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+        <div class="flex h-16 items-center justify-between px-4">
+          <!-- Brand -->
+          <a href="home.html" class="text-xl font-bold text-white">UPSTRAH</a>
     
-          <!-- Centered Nav Links -->
-          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-12">
+          <!-- Centered nav links (sm and above) -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
             <!-- Products Dropdown -->
             <div class="relative">
-              <button type="button" class="text-lg font-semibold transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+              <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
                 Products
                 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div class="absolute left-0 mt-2 w-48 bg-[#1c1c1c] text-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
-                <a href="mystat.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah</a>
-                <a href="mycerebro.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah Partner</a>
+              <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
+                <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
+                <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
               </div>
             </div>
-    
-            <!-- About Us -->
-            <a href="aboutus.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">About Us</a>
-    
-            <!-- Contact -->
-            <a href="contact.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">Contact</a>
+            <!-- Other links -->
+            <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
+            <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
           </div>
     
-          <!-- Mobile Menu Toggle -->
+          <!-- Mobile toggle -->
           <div class="sm:hidden">
-            <button id="menu-toggle" class="text-3xl focus:outline-none">☰</button>
+            <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
           </div>
         </div>
-      </div>
     
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c] text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
-        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold">
-          <li>
-            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
-              Products
-              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
-              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
-              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
-            </ul>
-          </li>
-          <li><a href="aboutus.html" class="transition hover:text-teal-700">About Us</a></li>
-          <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
-        </ul>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+          <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
+            <li>
+              <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+                <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
+                <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
+              </ul>
+            </li>
+            <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     
     <main style="margin-top: 80px">
       <!-- Main content -->
        
-      <div class="relative h-full sm:h-[90vh] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('static/core/images/pattern1.jpg'); background-size: cover; background-position: center">
-        <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative h-full sm:h-[90vh] w-full bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0"></div>
         <div class="relative z-10 flex flex-col-reverse md:grid md:grid-cols-2 items-center h-full w-full px-4 md:px-16 max-w-6xl mx-auto" style="min-height: 400px">
           <div class="flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left">
             <h1 class="mb-6 text-4xl font-bold text-[#8bff41] sm:text-5xl sm:font-medium" data-aos="fade-up">
@@ -107,107 +104,126 @@
             <img src="static/core/images/bgphone1.png" alt="phone" class="relative z-10 w-[75%] max-w-md min-h-[250px] h-auto object-contain -translate-x-8 md:translate-x-0" />
           </div>
         </div>
-      </div>
-
-   <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-6 sm:p-8">
-  <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41] mt-10" data-aos="fade-up">
-    Discover Your True Potential.
-  </h1>
-  <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
-    No room for mediocrity with Upstrah.
-  </h2>
-
-  <div class="w-full max-w-6xl mt-10 px-2 sm:px-4">
-    <!-- Top Row (2 Cards) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-      <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
-        <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <h2 class="text-xl font-bold z-10">Connect with Athletes</h2>
-        <p class="text-sm text-center mt-2 z-10">Start structured training with your local coach or academy</p>
-      </div>
-
-      <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
-        <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <h2 class="text-xl font-bold z-10">Live Game Updates</h2>
-        <p class="text-sm text-center mt-2 z-10">Performance Analytics → Get verified. Show what you’re made of.</p>
-      </div>
-    </div>
-
-    <!-- Bottom Row (3 Cards) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
-        <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <h2 class="text-xl font-bold z-10">Post Your Stats</h2>
-        <p class="text-sm text-center mt-2 z-10">Get Discovered based on real performance</p>
-      </div>
-
-      <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
-        <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <h2 class="text-xl font-bold z-10">Community Rankings</h2>
-        <p class="text-sm text-center mt-2 z-10">Opportunities → Turn progress into pathways.</p>
-      </div>
-
-      <div class="relative aspect-square bg-white border-2 border-purple-600 rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-purple-800">
-        <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-10" />
-        <div class="z-10 text-center">
-          <h2 class="text-xl font-bold mb-2">Organize Tournaments</h2>
-          <p class="text-sm mb-4">Create, manage, and join local sports tournaments with ease. Find teams and compete in your area.</p>
-          <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-all">
-            View More
-          </button>
+      </div>      
+      <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-6 sm:p-8">
+        <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41] mt-10" data-aos="fade-up">
+          Discover Your True Potential.
+        </h1>
+        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
+          No room for mediocrity with Upstrah.
+        </h2>
+      
+        <div class="w-full max-w-6xl mt-10 px-2 sm:px-4">
+          <!-- Top Row (2 Cards) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            
+            <!-- Card 1 -->
+            <div class="relative aspect-square bg-gradient-to-b from-black via-black to-green-700/40 rounded-xl p-6 flex flex-col items-center justify-between text-white">
+              <div class="z-10 text-center">
+                <h2 class="text-xl font-bold">Connect with Athletes</h2>
+                <p class="text-sm mt-2">Start structured training with your local coach or academy</p>
+              </div>
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="mt-4 max-h-[65%] w-auto object-contain rounded-lg" />
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="relative aspect-square bg-gradient-to-b from-black via-black to-green-700/40 rounded-xl p-6 flex flex-col items-center justify-between text-white">
+              <div class="z-10 text-center">
+                <h2 class="text-xl font-bold">Live Game Updates</h2>
+                <p class="text-sm mt-2">Performance Analytics → Get verified. Show what you’re made of.</p>
+              </div>
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="mt-4 max-h-[65%] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
+      
+          <!-- Bottom Row (3 Cards) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            
+            <!-- Card 3 -->
+            <div class="relative aspect-square bg-gradient-to-b from-black via-black to-green-700/40 rounded-xl p-6 flex flex-col items-center justify-between text-white">
+              <div class="z-10 text-center">
+                <h2 class="text-xl font-bold">Post Your Stats</h2>
+                <p class="text-sm mt-2">Get Discovered based on real performance</p>
+              </div>
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="mt-4 max-h-[65%] w-auto object-contain rounded-lg" />
+            </div>
+      
+            <!-- Card 4 -->
+            <div class="relative aspect-square bg-gradient-to-b from-black via-black to-green-700/40 rounded-xl p-6 flex flex-col items-center justify-between text-white">
+              <div class="z-10 text-center">
+                <h2 class="text-xl font-bold">Community Rankings</h2>
+                <p class="text-sm mt-2">Opportunities → Turn progress into pathways.</p>
+              </div>
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="mt-4 max-h-[65%] w-auto object-contain rounded-lg" />
+            </div>
+      
+            <!-- Card 5 (White with Green Border) -->
+            <div class="relative aspect-square bg-white border-2 border-green-600 rounded-xl p-6 flex flex-col items-center justify-between text-white">
+              <div class="z-10 text-center">
+                <h2 class="text-xl text-black font-bold">Explore our Products</h2>
+                <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-all">
+                  View More
+                </button>
+              </div>
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="mt-4 max-h-[65%] w-auto object-contain rounded-lg" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
+      
         
-        
-        <!-- Card 1 - Upstrah / Club Connect -->
-        <!-- <section class="w-full rounded-xl px-6 sm:px-10 md:px-20 py-16 bg-black mt-10 mb-10 overflow-x-hidden">
-          <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
-            <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-right">
-              <img src="static/core/images/bgphone1.png" alt="Upstrah App Screenshot" class="max-w-[300px] w-full sm:max-w-[360px] md:max-w-[420px] lg:max-w-[460px]" />
+      <!-- <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-6 sm:p-8">
+        <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41] mt-10" data-aos="fade-up">
+          Discover Your True Potential.
+        </h1>
+        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
+          No room for mediocrity with Upstrah.
+        </h2>
+      
+        <div class="w-full max-w-6xl mt-10 px-2 sm:px-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+              <h2 class="text-xl font-bold z-10">Connect with Athletes</h2>
+              <p class="text-sm text-center mt-2 z-10">Start structured training with your local coach or academy</p>
             </div>
-                    <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-left">
-              <h2 class="text-3xl sm:text-4xl font-bold text-[#8bff41] mb-4">Our apps unlock the power of athletic performance.</h2>
-              <p class="text-white text-lg font-light mb-4">
-                Upstrah and its partner platform are designed for athletes, coaches, and clubs seeking real-time insights and better communication. From training stats to live updates, everything is seamlessly integrated.
-              </p>
-              <p class="text-white text-lg font-light mb-8">
-                Whether you're tracking your progress, syncing with your club, or simply staying informed, our apps provide a streamlined experience to keep everyone connected and in sync — anytime, anywhere.
-              </p>
-              <a href="mystat.html" class="inline-block px-6 py-3 bg-[#8bff41] text-white font-semibold rounded-md shadow-md hover:bg-lime-500 transition-colors duration-300">
-                Explore Products
-              </a>
-            </div>
-          </div>
-         <div class="flex flex-col lg:flex-row gap-6 mt-16" style="height: 700px;">
-            <div class="relative overflow-hidden shadow-md w-full lg:w-2/3 border-2 border-[#8bff41] rounded-md" style="height: 100%;">
-              <img src="https://images.pexels.com/photos/5069180/pexels-photo-5069180.jpeg" alt="Basketball Player" class="w-full h-full object-cover rounded-md" />
-              <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full rounded-b-md">
-                <p class="text-xl md:text-2xl font-bold text-white">Take Your Game to the Next Level</p>
-              </div>
-            </div>
-        
-            <div class="flex flex-col gap-6 w-full lg:w-1/3" style="height: 100%;">
-              <div class="relative overflow-hidden shadow-md w-full border-2 border-[#8bff41] rounded-md" style="height: 50%;">
-                <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg" alt="Team Talk" class="w-full h-full object-cover rounded-md" />
-                <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full rounded-b-md">
-                  <p class="text-lg md:text-xl font-bold text-white">Track Progress. Build Legacy.</p>
-                </div>
-              </div>
-        
-              <div class="relative overflow-hidden shadow-md w-full border-2 border-[#8bff41] rounded-md" style="height: 50%;">
-                <img src="https://images.pexels.com/photos/3657154/pexels-photo-3657154.jpeg" alt="Athlete Victory" class="w-full h-full object-cover rounded-md" />
-                <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full rounded-b-md">
-                  <p class="text-lg md:text-xl font-bold text-white">Every Stat Tells Your Story</p>
-                </div>
-              </div>
+      
+            <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+              <h2 class="text-xl font-bold z-10">Live Game Updates</h2>
+              <p class="text-sm text-center mt-2 z-10">Performance Analytics → Get verified. Show what you’re made of.</p>
             </div>
           </div>
-        </section>
-         -->
-
+      
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+              <h2 class="text-xl font-bold z-10">Post Your Stats</h2>
+              <p class="text-sm text-center mt-2 z-10">Get Discovered based on real performance</p>
+            </div>
+      
+            <div class="relative aspect-square bg-gradient-to-br from-purple-800 to-black rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-white">
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+              <h2 class="text-xl font-bold z-10">Community Rankings</h2>
+              <p class="text-sm text-center mt-2 z-10">Opportunities → Turn progress into pathways.</p>
+            </div>
+      
+            <div class="relative aspect-square bg-white border-2 border-purple-600 rounded-xl p-4 overflow-hidden flex flex-col items-center justify-center text-purple-800">
+              <img src="static/core/images/card1.jpg" alt="Card Image" class="absolute inset-0 w-full h-full object-cover opacity-10" />
+              <div class="z-10 text-center">
+                <h2 class="text-xl font-bold mb-2">Organize Tournaments</h2>
+                <p class="text-sm mb-4">Create, manage, and join local sports tournaments with ease. Find teams and compete in your area.</p>
+                <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-all">
+                  View More
+                </button>
+              </div>
+            </div>
+          </div>
+      </div> -->
+      
+      
+      
+      
          <section class="w-full bg-[#1c1c1c] py-8 lg:py-12 px-2 sm:px-6 lg:px-20">
           <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center">
             
@@ -241,30 +257,17 @@
       <section class="w-full bg-[#1c1c1c] px-2 sm:px-6 md:px-10 pt-4 pb-12 lg:pt-6 lg:pb-16">
 
   <!-- Header -->
-  <div class="mb-6 text-center">
-    <h1 class="mb-3 text-3xl sm:text-4xl font-bold text-[#8bff41]" data-aos="fade-up">
-      What makes us the best?
-    </h1>
-    <p class="text-base sm:text-lg leading-relaxed font-light text-white" data-aos="fade-up" data-aos-delay="100">
-      At <span class="font-semibold">Upstrah</span>, we're not just building a platform—we're building a movement.
-    </p>
-  </div>
 
-  <!-- Two Column Text Section -->
-  <div class="w-full mb-8 text-white flex flex-col lg:flex-row gap-6 items-center justify-between">
-    <!-- Left Half -->
-    <div class="w-full lg:w-1/2 h-64 rounded-xl flex items-center justify-center bg-[#292929]">
-      <span class="text-gray-400 text-sm">[ Left side content placeholder ]</span>
-    </div>
-
+ 
     <!-- Right Half -->
-    <div class="w-full lg:w-1/2 space-y-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#8bff41]">Join the Future of Athlete Social</h2>
-      <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-        Elevate your sports journey with a platform built for athletes. Track your stats, share achievements, and connect with teammates, fans, and recruiters — all in one place.
-      </p>
+    <div class="flex flex-col items-center justify-center bg-[#1c1c1c] sm:p-8">
+      <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41]" data-aos="fade-up">
+        Join the Future of Athlete Social
+      </h1>
+      <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
+        Elevate your sports journey with a platform built for athletes.
+      </h2>
     </div>
-  </div>
 
   <!-- Cards Grid -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 w-full pb-4">
@@ -389,7 +392,7 @@
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="mystat.html" class="text-decoration-none flex items-center text-black">
-              <img src="static/core/images/mainlogo.png" class="me-3 h-8" alt="Stat Logo" />
+              <img src="static/core/images/footerlogo.png" class="me-3 h-8" alt="Stat Logo" />
             </a>
             <ul>
               <li>
