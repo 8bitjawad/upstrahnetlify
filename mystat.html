@@ -16,81 +16,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
     <style>
       body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans';
   }
-      html, body {
-        overflow-x: hidden;
+      /* Glowing dots animation styles */
+      .particles-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        pointer-events: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .particles-canvas { display: none; }
       }
     </style>
   </head>
-  <body class="bg-[#1c1c1c] text-white overflow-x-hidden">
+
+  <body class="bg-[#1c1c1c]">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 z-50 w-full bg-[#1c1c1c] text-white shadow-md">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-        <div class="flex h-20 items-center justify-between">
-          <!-- Left-aligned Brand -->
-          <a href="home.html" class="text-2xl font-bold">UPSTRAH</a>
+    <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+        <div class="flex h-16 items-center justify-between px-4">
+          <!-- Brand -->
+          <a href="home.html" class="text-xl font-bold text-white">UPSTRAH</a>
     
-          <!-- Centered Nav Links -->
-          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-12">
+          <!-- Centered nav links (sm and above) -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
             <!-- Products Dropdown -->
             <div class="relative">
-              <button type="button" class="text-lg font-semibold transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+              <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
                 Products
                 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div class="absolute left-0 mt-2 w-48 bg-[#1c1c1c] text-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
-                <a href="mystat.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah</a>
-                <a href="mycerebro.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah Partner</a>
+              <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
+                <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
+                <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
               </div>
             </div>
-    
-            <!-- About Us -->
-            <a href="aboutus.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">About Us</a>
-    
-            <!-- Contact -->
-            <a href="contact.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">Contact</a>
+            <!-- Other links -->
+            <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
+            <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
           </div>
     
-          <!-- Mobile Menu Toggle -->
+          <!-- Mobile toggle -->
           <div class="sm:hidden">
-            <button id="menu-toggle" class="text-3xl focus:outline-none">☰</button>
+            <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
           </div>
         </div>
-      </div>
     
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c] text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
-        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold">
-          <li>
-            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
-              Products
-              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
-              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
-              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
-            </ul>
-          </li>
-          <li><a href="aboutus.html" class="transition hover:text-teal-700">About Us</a></li>
-          <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
-        </ul>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+          <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
+            <li>
+              <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+                <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
+                <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
+              </ul>
+            </li>
+            <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
+    
     <main class="bg-[#1c1c1c] min-h-screen" style="margin-top: 80px">
-      <section class="relative w-full bg-cover bg-center bg-no-repeat" style="background-image: url('static/core/images/pattern1.jpg'); background-size: cover; background-position: center;">
+      <section class="relative w-full bg-cover bg-center bg-no-repeat overflow-hidden">
+        <!-- Glowing dots animation canvas -->
+        <canvas class="particles-canvas"></canvas>
         <div class="max-w-7xl mx-auto px-6 sm:px-10 md:px-20 py-12 flex flex-col md:flex-row items-start gap-12">
           <!-- Left Text Content with extra top padding to push down -->
-          <div class="flex-1 text-center md:text-left pt-16 md:pt-24">
+          <div class="flex-1 text-center md:text-left pt-10 md:pt-10">
             <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl text-[#8bff41] leading-tight">
               Built for <br class="hidden sm:inline" />
               Upstrah Intelligence.
             </h1>
-            <h2 class="font-light text-base sm:text-lg mt-3 mb-6">
+            <h2 class="font-light text-white text-base sm:text-lg mt-3 mb-6">
               Available on iOS and Android.
             </h2>
             <p class="text-white max-w-xl leading-relaxed mb-8">
@@ -98,7 +108,8 @@
             </p>
     
             <!-- Download Buttons Replacing Get Started -->
-            <div class="flex flex-col items-center gap-3 w-full md:flex-row md:justify-center md:gap-4 max-w-xs md:max-w-md mx-auto">
+            <div class="flex flex-col gap-3 w-full max-w-xs mx-auto 
+            md:flex-row md:gap-4 md:justify-start md:mx-0 md:max-w-2xl">
               <a href="#" target="_blank"
                 class="flex items-center justify-center w-full md:w-auto px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
                 rel="noreferrer">
@@ -189,14 +200,11 @@ Connect with coaches, track your progress, and get real-time insights with the U
 </div>
 
       </section>
-  
-    
-   
-      <section class="max-w-6xl mx-auto px-3 py-6">
+      <section class="max-w-6xl mx-auto mt-10 mb-10 px-3 py-6">
         <!-- Header -->
         <div class="text-center mb-6">
-            <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl mb-2" data-aos="fade-up">
-                Explore <span class="gradient-text">Important</span><br>
+            <h1 class="font-bold text-[#8bff41] text-2xl sm:text-3xl lg:text-4xl mb-2" data-aos="fade-up">
+                Explore Important<br>
                 Features of Banking.
             </h1>
             <p class="text-gray-400 text-sm max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
@@ -205,203 +213,150 @@ Connect with coaches, track your progress, and get real-time insights with the U
         </div>
 
         <!-- Cards Grid -->
-        <div class="space-y-1">
-            <!-- Row 1: Two Square Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1" data-aos="fade-up" data-aos-delay="150">
-                <!-- Card 1 -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 flex flex-col">
-                    <div class="absolute top-3 left-3 w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012-2m-2 8h2m-2 4h2"/>
-                        </svg>
-                    </div>
-                    <div class="mt-12 mb-4">
-                        <h3 class="text-white text-lg font-semibold mb-2">View Charts & Reports</h3>
-                        <p class="text-gray-400 text-sm">View high-level insights and user snapshots on demand. Writing Tools can proofread your text.</p>
-                    </div>
-                    <!-- Mini chart visualization -->
-                    <div class="relative h-20 mb-2 flex-grow">
-                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=40" 
-                             alt="Charts" class="w-full h-full object-cover rounded-lg opacity-20 absolute inset-0">
-                        <div class="relative flex items-end justify-between px-2 h-full">
-                            <div class="w-1 bg-blue-400 rounded-t" style="height: 60%"></div>
-                            <div class="w-1 bg-green-400 rounded-t" style="height: 80%"></div>
-                            <div class="w-1 bg-blue-400 rounded-t" style="height: 40%"></div>
-                            <div class="w-1 bg-purple-400 rounded-t" style="height: 70%"></div>
-                            <div class="w-1 bg-green-400 rounded-t" style="height: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="text-green-400 text-xs font-semibold">$489.50</div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 flex flex-col">
-                    <div class="absolute top-3 left-3 w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
-                        </svg>
-                    </div>
-                    <div class="mt-12 mb-4">
-                        <h3 class="text-white text-lg font-semibold mb-2">Easy to Create Wallet</h3>
-                        <p class="text-gray-400 text-sm">Track player activity and performance across metrics with weekly summaries.</p>
-                    </div>
-                    <!-- Circular progress -->
-                    <div class="relative h-20 mb-2 flex-grow flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=800&q=40" 
-                             alt="Wallet" class="w-full h-full object-cover rounded-lg opacity-20 absolute inset-0">
-                        <div class="relative w-12 h-12 rounded-full border-4 border-slate-600 border-t-cyan-400 animate-pulse"></div>
-                        <div class="absolute text-cyan-400 text-xs font-bold">66%</div>
-                    </div>
-                    <div class="text-cyan-400 text-xs font-semibold">$5,906.86</div>
-                </div>
-            </div>
-
-            <!-- Row 2: Wide Horizontal Card -->
-            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden group hover:scale-[1.01] transition-transform duration-200" data-aos="fade-up" data-aos-delay="250">
-                <div class="flex flex-col sm:flex-row items-center gap-4">
-                    <div class="w-full sm:w-1/3 relative">
-                        <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=50" 
-                             alt="Credit Cards" class="w-full h-24 sm:h-32 object-cover rounded-xl">
-                        <!-- Overlapping card effect -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="flex -space-x-4">
-                                <div class="w-16 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg transform rotate-12 opacity-90"></div>
-                                <div class="w-16 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg transform -rotate-6 opacity-90"></div>
-                                <div class="w-16 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg transform rotate-3 opacity-90"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-2/3 text-center sm:text-left">
-                        <div class="flex items-center gap-2 mb-2">
-                            <div class="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-white text-lg font-semibold">International Multi-Currency Credit Card</h3>
-                        </div>
-                        <p class="text-gray-400 text-sm">Dive deeper into team analytics and plan smarter, data-driven strategies with our advanced card system.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Row 3: One Big Left + Two Right Cards -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-1" data-aos="fade-up" data-aos-delay="350">
-                <!-- Left Big Card -->
-                <div class="lg:col-span-1 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 flex flex-col">
-                    <div class="absolute top-3 left-3 w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <div class="mt-12 mb-4">
-                        <h3 class="text-white text-lg font-semibold mb-2">Secure Banking Details</h3>
-                        <p class="text-gray-400 text-sm mb-4">Keep your data protected with industry-leading encryption and privacy tools.</p>
-                    </div>
-                    <!-- Bar chart -->
-                    <div class="relative h-24 flex-grow">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=40" 
-                             alt="Security" class="w-full h-full object-cover rounded-lg opacity-20 absolute inset-0">
-                        <div class="relative flex items-end justify-between px-2 h-full">
-                            <div class="flex flex-col items-center">
-                                <div class="w-3 bg-blue-500 rounded-t mb-1" style="height: 40px"></div>
-                                <span class="text-xs text-gray-400">Jan</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-3 bg-green-500 rounded-t mb-1" style="height: 60px"></div>
-                                <span class="text-xs text-gray-400">Feb</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-3 bg-purple-500 rounded-t mb-1" style="height: 35px"></div>
-                                <span class="text-xs text-gray-400">Mar</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-3 bg-orange-500 rounded-t mb-1" style="height: 55px"></div>
-                                <span class="text-xs text-gray-400">Apr</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Cards Container -->
-                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-1">
-                    <!-- Top Right Card -->
-                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200">
-                        <div class="absolute top-3 right-3 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
-                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                            </svg>
-                        </div>
-                        <div class="mb-3">
-                            <h3 class="text-white text-base font-semibold mb-1">Data Analytics</h3>
-                            <p class="text-gray-400 text-xs">Analyze your data with powerful visualizations and actionable reports.</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=40" 
-                             alt="Analytics" class="w-full h-20 object-cover rounded-lg opacity-30 flex-grow">
-                    </div>
-
-                    <!-- Bottom Right Card -->
-                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200">
-                        <div class="absolute top-3 right-3 w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
-                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"/>
-                            </svg>
-                        </div>
-                        <div class="mb-3">
-                            <h3 class="text-white text-base font-semibold mb-1">24/7 Support</h3>
-                            <p class="text-gray-400 text-xs">Our team is always available to help you with any questions or issues.</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=40" 
-                             alt="Support" class="w-full h-20 object-cover rounded-lg opacity-30 flex-grow">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="space-y-2">
+          <!-- Row 1: Two Square Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" data-aos="fade-up" data-aos-delay="150">
+              <!-- Card 1: Charts & Reports -->
+              <div class="bg-black rounded-2xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 flex flex-col min-h-[300px]">
+                  <div class="absolute top-3 left-3 w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                      </svg>
+                  </div>
+                  <div class="mt-14 mb-6">
+                      <h3 class="text-white text-lg font-semibold mb-2">View Charts & Reports</h3>
+                      <p class="text-gray-400 text-sm">View high-level insights and user snapshots on demand. Writing Tools can proofread your text.</p>
+                  </div>
+                  <!-- Mini chart visualization -->
+                  <div class="relative h-40 mb-4 flex-grow">
+                      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=40" 
+                           alt="Charts" class="w-full h-full object-cover rounded-lg opacity-20 absolute inset-0">
+                      <div class="relative flex items-end justify-between px-2 h-full">
+                          <div class="w-2 bg-blue-400 rounded-t" style="height: 60%"></div>
+                          <div class="w-2 bg-green-400 rounded-t" style="height: 80%"></div>
+                          <div class="w-2 bg-blue-400 rounded-t" style="height: 40%"></div>
+                          <div class="w-2 bg-purple-400 rounded-t" style="height: 70%"></div>
+                          <div class="w-2 bg-green-400 rounded-t" style="height: 90%"></div>
+                      </div>
+                  </div>
+                  <div class="text-green-400 text-sm font-semibold">$489.50</div>
+              </div>
       
-      <!-- <h1 class="text-center font-bold text-[#8bff41] mx-4 sm:mx-8 mt-8 text-2xl sm:text-4xl md:text-5xl lg:text-5xl" data-aos="fade-up"> Train. Track. Triumph.</h1>
-      <section class="py-4 md:py-8 lg:py-12 px-4 md:px-8 lg:px-12" data-aos="fade-up">
-        <div class="max-w-5xl mx-auto bg-neutral-900 rounded-3xl p-4 md:p-8 lg:p-12">
-          
-          <div class="mb-12 max-w-3xl text-left" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-4xl font-extrabold text-white leading-tight">
-              There’s never been a better time to connect, compete, and grow 🏅
-            </h2>
-            <p class="mt-4 text-lg text-gray-300">
-              Discover the features that make our sports social platform the ultimate game-changer.
-            </p>
+              <!-- Card 2: Easy Wallet -->
+              <div class="bg-black rounded-2xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 flex flex-col min-h-[300px]">
+                  <div class="absolute top-3 left-3 w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                      </svg>
+                  </div>
+                  <div class="mt-14 mb-6">
+                      <h3 class="text-white text-lg font-semibold mb-2">Easy to Create Wallet</h3>
+                      <p class="text-gray-400 text-sm">Track player activity and performance across metrics with weekly summaries.</p>
+                  </div>
+                  <!-- Circular progress -->
+                  <div class="relative h-40 mb-4 flex-grow flex items-center justify-center">
+                      <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=800&q=40" 
+                           alt="Wallet" class="w-full h-full object-cover rounded-lg opacity-20 absolute inset-0">
+                      <div class="relative w-16 h-16 rounded-full border-4 border-slate-600 border-t-cyan-400 animate-pulse"></div>
+                      <div class="absolute text-cyan-400 text-sm font-bold">66%</div>
+                  </div>
+                  <div class="text-cyan-400 text-sm font-semibold">$5,906.86</div>
+              </div>
           </div>
-         
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-full overflow-x-hidden">
       
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="200">
-              <h3 class="text-3xl font-bold text-white leading-snug">Analytics & Tracking 📊</h3>
-            </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="300">
-              <h3 class="text-3xl font-bold text-white leading-snug">Live Match Updates ⚽</h3>
-            </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="400">
-              <h3 class="text-3xl font-bold text-white leading-snug">Player Profiles 🧍‍♂️</h3>
-            </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="500">
-              <h3 class="text-3xl font-bold text-white leading-snug">Team Highlights 🎥</h3>
-            </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="600">
-              <h3 class="text-3xl font-bold text-white leading-snug">Goal Sharing 🚀</h3>
-            </div>
-            <div class="bg-black rounded-2xl shadow-lg flex items-center justify-center p-4 md:p-10 text-center min-h-[220px] max-w-full overflow-x-hidden" data-aos="zoom-in" data-aos-delay="700">
-              <h3 class="text-3xl font-bold text-white leading-snug">Fan Community 🤝</h3>
-            </div>
+          <!-- Row 2: Wide Horizontal Card -->
+          <div class="bg-black rounded-2xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.01] transition-transform duration-200 min-h-[220px]" data-aos="fade-up" data-aos-delay="250">
+              <div class="flex flex-col sm:flex-row items-center gap-6">
+                  <div class="w-full sm:w-1/3 relative">
+                      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=50" 
+                           alt="Credit Cards" class="w-full h-40 sm:h-48 object-cover rounded-xl">
+                      <!-- Overlapping card effect -->
+                      <div class="absolute inset-0 flex items-center justify-center">
+                          <div class="flex -space-x-4">
+                              <div class="w-20 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg transform rotate-12 opacity-90"></div>
+                              <div class="w-20 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg transform -rotate-6 opacity-90"></div>
+                              <div class="w-20 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg transform rotate-3 opacity-90"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="w-full sm:w-2/3 text-center sm:text-left">
+                      <div class="flex items-center gap-2 mb-2">
+                          <div class="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center">
+                              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                          </div>
+                          <h3 class="text-white text-lg font-semibold">International Multi-Currency Credit Card</h3>
+                      </div>
+                      <p class="text-gray-400 text-sm">Dive deeper into team analytics and plan smarter, data-driven strategies with our advanced card system.</p>
+                  </div>
+              </div>
           </div>
-        </div>
-      </section>
-       -->
-      <!-- Content Section Below Video -->
+      
+          <!-- Row 3: One Big Left + Two Right Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-2" data-aos="fade-up" data-aos-delay="350">
+              <!-- Left Big Card: Security -->
+              <div class="lg:col-span-1 bg-black rounded-2xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 flex flex-col min-h-[320px]">
+                  <div class="absolute top-3 left-3 w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                      </svg>
+                  </div>
+                  <div class="mt-14 mb-6">
+                      <h3 class="text-white text-lg font-semibold mb-2">Secure Banking Details</h3>
+                      <p class="text-gray-400 text-sm mb-4">Keep your data protected with industry-leading encryption and privacy tools.</p>
+                  </div>
+                  <!-- Bar chart -->
+                  <div class="relative h-48 flex-grow">
+                      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=40" 
+                           alt="Security" class="w-full h-full object-cover rounded-lg opacity-20 absolute inset-0">
+                      <div class="relative flex items-end justify-between px-2 h-full">
+                          <!-- bars -->
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Right Cards Container -->
+              <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <!-- Top Right Card: Analytics -->
+                  <div class="bg-black rounded-2xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 min-h-[200px]">
+                      <div class="absolute top-3 right-3 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
+                          <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                          </svg>
+                      </div>
+                      <div class="mb-3">
+                          <h3 class="text-white text-base font-semibold mb-1">Data Analytics</h3>
+                          <p class="text-gray-400 text-sm">Analyze your data with powerful visualizations and actionable reports.</p>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=40" 
+                           alt="Analytics" class="w-full h-32 object-cover rounded-lg opacity-30 flex-grow">
+                  </div>
+      
+                  <!-- Bottom Right Card: Support -->
+                  <div class="bg-black rounded-2xl p-6 border border-slate-700 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-200 min-h-[200px]">
+                      <div class="absolute top-3 right-3 w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
+                          <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"></path>
+                          </svg>
+                      </div>
+                      <div class="mb-3">
+                          <h3 class="text-white text-base font-semibold mb-1">24/7 Support</h3>
+                          <p class="text-gray-400 text-sm">Our team is always available to help you with any questions or issues.</p>
+                      </div>
+                      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=40" 
+                           alt="Support" class="w-full h-32 object-cover rounded-lg opacity-30 flex-grow">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+      
+      <!-- phone animation that got removed :(
       <h1 class="text-center font-bold text-[#8bff41] mx-4 sm:mx-8 mb-12 text-2xl sm:text-4xl md:text-5xl lg:text-5xl" data-aos="fade-up">In an emergency, Upstrah has your back.</h1>
 
       <div class="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 lg:px-12 mt-12" data-aos="fade-up" data-aos-delay="100">
-        <!-- Left Text Section -->
-       <!-- Left Text Section -->
         <div class="flex-1 flex justify-end sm:pr-8">
           <p class="text-xl text-white max-w-xs text-center sm:text-left leading-relaxed" data-aos="fade-right" data-aos-delay="200">
             Upstrah is your all-in-one sports companion — from real-time club updates and detailed performance stats to seamless connections with the entire sports community.
@@ -409,7 +364,6 @@ Connect with coaches, track your progress, and get real-time insights with the U
       </div>
 
       
-        <!-- Right Phone Animation Section -->
         <div class="flex-1 flex justify-center mt-6 sm:mt-0">
           <div class="phone-frame">
             <div class="phone-screen">
@@ -420,7 +374,7 @@ Connect with coaches, track your progress, and get real-time insights with the U
           </div>
         </div>
       </div>
-    
+     -->
       <!-- How It Works Section -->
 <section class="w-full mb-10 mt-10 px-4 sm:px-6 lg:px-10" data-aos="fade-up">
          <div class="mx-auto max-w-7xl bg-black text-white rounded-3xl shadow-xl overflow-hidden py-16 px-4 sm:px-8 lg:px-16">
@@ -432,8 +386,8 @@ Connect with coaches, track your progress, and get real-time insights with the U
       
         <!-- Horizontal/Vertical Timeline -->
         <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-12 sm:gap-6 max-w-5xl mx-auto">
-          <!-- Connecting line (only on desktop) -->
-          <div class="hidden sm:block absolute top-6 left-0 w-full h-1 bg-[#8bff41] z-0"></div>
+        <!-- Connecting line (dotted, visible on all screens) -->
+        <div class="hidden md:block absolute top-6 left-0 w-full h-[4px] z-0 bg-[repeating-radial-gradient(circle,_#8bff41_0px,_#8bff41_3px,_transparent_4px,_transparent_12px)]"></div>
       
           <!-- Step 1 -->
           <div class="flex flex-col items-center text-center flex-1 relative z-10" data-aos="fade-up" data-aos-delay="100">
@@ -481,7 +435,7 @@ Connect with coaches, track your progress, and get real-time insights with the U
         </div>
       
         <!-- Download Section Box -->
-        <div class="mt-20 bg-gray-900 rounded-3xl shadow-lg p-8 flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+        <div class="mt-20 bg-[#1c1c1c] rounded-3xl shadow-lg p-8 flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
           <!-- Left -->
           <div class="lg:w-1/2 text-center lg:text-left">
             <h3 class="text-3xl sm:text-4xl font-bold mb-6 text-[#8bff41]">Download the App</h3>
@@ -503,13 +457,13 @@ Connect with coaches, track your progress, and get real-time insights with the U
 
     </main>
     <!-- Footer -->
-    <footer class="w-full text-white">
+   <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
 
       <div class="mx-auto border border-black w-full bg-[#1c1c1c] max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="mystat.html" class="text-decoration-none flex items-center text-black">
-              <img src="static/core/images/mainlogo.png" class="me-3 h-8" alt="Stat Logo" />
+              <img src="static/core/images/footerlogo.png" class="me-3 h-8" alt="Stat Logo" />
             </a>
             <ul>
               <li>
@@ -566,6 +520,7 @@ Connect with coaches, track your progress, and get real-time insights with the U
         </div>
       </div>
     </footer>
+    
     <script src="static/core/js/mystat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
@@ -614,6 +569,137 @@ Connect with coaches, track your progress, and get real-time insights with the U
           offset: 80,
         });
       });
+      
+      // Glowing dots animation
+      (function() {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+        
+        function initGlowingDots() {
+          const canvas = document.querySelector('.particles-canvas');
+          if (!canvas) return;
+          
+          const ctx = canvas.getContext('2d');
+          let dots = [];
+          let animationId;
+          
+          // Set canvas size
+          function resizeCanvas() {
+            const section = canvas.closest('section');
+            if (!section) return;
+            
+            const rect = section.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+          }
+          
+          // Dot class
+          class GlowingDot {
+            constructor() {
+              this.reset();
+            }
+            
+            reset() {
+              this.x = Math.random() * canvas.width;
+              this.y = Math.random() * canvas.height;
+              this.vx = (Math.random() - 0.5) * 1;
+              this.vy = (Math.random() - 0.5) * 1;
+              this.radius = Math.random() * 3 + 1;
+              this.opacity = Math.random() * 0.6 + 0.4;
+              this.pulseSpeed = Math.random() * 0.02 + 0.01;
+              this.pulse = 0;
+            }
+            
+            update() {
+              // Move
+              this.x += this.vx;
+              this.y += this.vy;
+              
+              // Bounce off edges
+              if (this.x <= 0 || this.x >= canvas.width) this.vx *= -1;
+              if (this.y <= 0 || this.y >= canvas.height) this.vy *= -1;
+              
+              // Keep in bounds
+              this.x = Math.max(0, Math.min(canvas.width, this.x));
+              this.y = Math.max(0, Math.min(canvas.height, this.y));
+              
+              // Pulse effect
+              this.pulse += this.pulseSpeed;
+            }
+            
+            draw() {
+              const currentOpacity = this.opacity * (0.6 + 0.4 * Math.sin(this.pulse));
+              
+              // Outer glow - lime green
+              const gradient = ctx.createRadialGradient(
+                this.x, this.y, 0,
+                this.x, this.y, this.radius * 8
+              );
+              gradient.addColorStop(0, `rgba(139, 255, 65, ${currentOpacity})`);
+              gradient.addColorStop(0.3, `rgba(139, 255, 65, ${currentOpacity * 0.8})`);
+              gradient.addColorStop(1, 'rgba(139, 255, 65, 0)');
+              
+              ctx.fillStyle = gradient;
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.radius * 8, 0, Math.PI * 2);
+              ctx.fill();
+              
+              // Inner bright core - lime green
+              ctx.fillStyle = `rgba(139, 255, 65, ${currentOpacity})`;
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          }
+          
+          // Create dots
+          function createDots() {
+            dots = [];
+            const dotCount = Math.min(60, Math.max(25, Math.floor((canvas.width * canvas.height) / 15000)));
+            for (let i = 0; i < dotCount; i++) {
+              dots.push(new GlowingDot());
+            }
+          }
+          
+          // Animation loop
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            dots.forEach(dot => {
+              dot.update();
+              dot.draw();
+            });
+            
+            animationId = requestAnimationFrame(animate);
+          }
+          
+          // Initialize
+          function init() {
+            resizeCanvas();
+            createDots();
+            animate();
+          }
+          
+          // Handle window resize
+          window.addEventListener('resize', () => {
+            resizeCanvas();
+            createDots();
+          });
+          
+          // Start animation
+          init();
+        }
+        
+        // Start when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initGlowingDots);
+        } else {
+          initGlowingDots();
+        }
+      })();
+      
       // Countdown Timer
       var countDownDate = new Date("Jul 30, 2025 23:59:59").getTime();
       var x = setInterval(function () {
