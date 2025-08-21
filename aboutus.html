@@ -12,79 +12,120 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
       body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      
+      /* Fix for scrollbar bug - more robust overflow handling */
+      html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+      }
+      
+      /* Ensure all containers stay within viewport */
+      .container-fix {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+      
+      /* SVG container fix to prevent overflow */
+      .svg-container {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Fix for large gradient text that might cause overflow */
+      .gradient-text {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Prevent AOS animations from causing horizontal overflow */
+      [data-aos] {
+        overflow-x: visible !important;
+      }
+      
+      /* Ensure sections don't exceed viewport width */
+      section {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
     </style>
   </head>
-  <body class="bg-[#1c1c1c] text-white font-sans overflow-x-hidden">
+  <body class="bg-[#1c1c1c] text-white font-sans container-fix">
     <!-- Navigation (copied from home.html, with Products dropdown) -->
-    <nav class="fixed top-0 left-0 z-50 w-full bg-[#1c1c1c] text-white shadow-md">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-        <div class="flex h-20 items-center justify-between">
-          <!-- Left-aligned Brand -->
-          <a href="home.html" class="text-2xl font-bold">UPSTRAH</a>
+    <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+        <div class="flex h-16 items-center justify-between px-4">
+          <!-- Brand -->
+          <a href="home.html" class="text-xl font-bold text-white">UPSTRAH</a>
     
-          <!-- Centered Nav Links -->
-          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-12">
+          <!-- Centered nav links (sm and above) -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
             <!-- Products Dropdown -->
             <div class="relative">
-              <button type="button" class="text-lg font-semibold transition duration-300 hover:text-teal-800 flex items-center focus:outline-none" id="products-dropdown-btn">
+              <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
                 Products
                 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div class="absolute left-0 mt-2 w-48 bg-[#1c1c1c] text-white border border-gray-200 rounded-md shadow-lg hidden z-50" id="products-dropdown-menu">
-                <a href="mystat.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah</a>
-                <a href="mycerebro.html" class="block px-4 py-2 hover:bg-gray-100">Upstrah Partner</a>
+              <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
+                <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
+                <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
               </div>
             </div>
-    
-            <!-- About Us -->
-            <a href="aboutus.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">About Us</a>
-    
-            <!-- Contact -->
-            <a href="contact.html" class="text-lg font-semibold transition duration-300 hover:text-teal-800">Contact</a>
+            <!-- Other links -->
+            <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
+            <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
           </div>
     
-          <!-- Mobile Menu Toggle -->
+          <!-- Mobile toggle -->
           <div class="sm:hidden">
-            <button id="menu-toggle" class="text-3xl focus:outline-none">☰</button>
+            <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
           </div>
         </div>
-      </div>
     
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c] text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
-        <ul class="flex flex-col space-y-4 py-4 text-base font-semibold">
-          <li>
-            <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
-              Products
-              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
-              <li><a href="mystat.html" class="block transition hover:text-teal-700">Upstrah</a></li>
-              <li><a href="mycerebro.html" class="block transition hover:text-teal-700">Upstrah Partner</a></li>
-            </ul>
-          </li>
-          <li><a href="aboutus.html" class="transition hover:text-teal-700">About Us</a></li>
-          <li><a href="contact.html" class="transition hover:text-teal-700">Contact</a></li>
-        </ul>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+          <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
+            <li>
+              <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+                <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
+                <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
+              </ul>
+            </li>
+            <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <main class="bg-[#1c1c1c] text-white w-full overflow-x-hidden" style="margin-top: 80px">
+ 
+    <main class="bg-[#1c1c1c] text-white w-full container-fix" style="margin-top: 80px">
       
       <!-- Hero Section -->
-      <section class="relative min-h-screen bg-gradient-to-r from-purple-900/20 to-black/20 py-20 px-4 sm:px-12 lg:px-24">
+      <section class="relative min-h-screen bg-[#1c1c1c] py-20 px-4 sm:px-12 lg:px-24 container-fix">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
           <!-- Left Content -->
           <div class="lg:w-1/2 space-y-8" data-aos="fade-right">
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text leading-tight">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text leading-tight gradient-text">
               About Upstrah
             </h1>
-            <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-200">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-200 gradient-text">
               Empowering Athletes Worldwide
             </h2>
             <p class="text-lg sm:text-xl text-gray-300 max-w-lg leading-relaxed">
@@ -92,84 +133,96 @@
             </p>
           </div>
           
-          <!-- Right Content - Logo -->
+          <!-- Right Content - Logo with SVG container fix -->
           <div class="lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0" data-aos="fade-left">
-            <div class="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] flex items-center justify-center">
-              <img src="static/core/images/upstrahpurplesvg.svg" alt="Upstrah Logo" class="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] svg-container">
+              <img src="static/core/images/upstrahpurplesvg.svg" 
+                   alt="Upstrah Logo" 
+                   class="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" 
+                   style="max-width: 100%; height: auto;" />
             </div>
           </div>
         </div>
       </section>
 
       <!-- Our Existence Explained Section -->
-      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-gradient-to-r from-purple-900/20 to-black/20">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+          
           <!-- Left Content -->
-          <div class="lg:w-1/2 space-y-8" data-aos="fade-right">
-            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <div class="lg:w-1/2 space-y-8 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-right">
+            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text gradient-text">
               Our Existence Explained
             </h2>
-            <div class="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center">
-              <img src="static/core/images/upstrahpurplesvg.svg" alt="Upstrah Logo" class="w-full h-full object-contain opacity-80" />
+            <div class="w-32 h-32 sm:w-40 sm:h-40 svg-container">
+              <img src="static/core/images/earthbg.jpg" 
+                   alt="Upstrah Logo" 
+                   class="w-full h-full object-contain opacity-80" />
             </div>
+            <p class="text-gray-400 leading-relaxed">
+              (Filler text) We aim to build a platform that connects athletes across every level. 
+              This section explains the foundation of our existence and the motivation driving Upstrah.
+            </p>
           </div>
-          
+      
           <!-- Right Content -->
-          <div class="lg:w-1/2 space-y-6 text-lg text-gray-300" data-aos="fade-left">
-            <p class="leading-relaxed">
-              Upstrah is more than just a social platform—it's a digital arena for athletes. Whether you're striving for greatness in school, college, or pro sports, we're here to fuel your journey with data, engagement, and recognition.
+          <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-left">
+            <p class="leading-relaxed text-gray-300">
+              Upstrah is more than just a social platform—it's a digital arena for athletes. 
+              Whether you're striving for greatness in school, college, or pro sports, we're here to fuel your journey.
             </p>
-            <p class="leading-relaxed">
-              Founded with a mission to empower athletes, Upstrah blends performance analytics with community features to create an ecosystem where every player gets noticed, and every stat tells a story.
+            <p class="leading-relaxed text-gray-300">
+              Founded with a mission to empower athletes, Upstrah blends performance analytics with community features to create an ecosystem where every player gets noticed.
             </p>
-            <p class="leading-relaxed">
-              We believe performance should speak louder than politics. That's why we built a platform where your growth is measurable, your achievements are visible, and your team is always within reach.
+            <p class="leading-relaxed text-gray-300">
+              (Filler text) With continuous innovation, we ensure that athletes not only track progress but thrive in an environment built around growth and visibility.
             </p>
           </div>
         </div>
       </section>
-
+      
       <!-- What We Do & Our Difference Section -->
-      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-gradient-to-r from-purple-900/20 to-black/20">
+      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+          
           <!-- Left Side - What We Do -->
-          <div class="lg:w-1/2 space-y-6" data-aos="fade-right">
-            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8">
+          <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-right">
+            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8 gradient-text">
               What We Do
             </h2>
             <p class="text-lg text-gray-300 leading-relaxed">
-              We provide athletes with comprehensive performance tracking tools that go beyond basic statistics. Our platform captures every aspect of your athletic journey, from training sessions to competitive matches.
+              We provide athletes with comprehensive performance tracking tools that go beyond basic statistics.
             </p>
             <p class="text-lg text-gray-300 leading-relaxed">
-              Athletes can showcase their progress through detailed analytics, connect with teammates and coaches, and build a professional sports profile that attracts scouts and recruiters worldwide.
+              Athletes can showcase their progress, connect with teammates, and build a professional profile.
             </p>
             <p class="text-lg text-gray-300 leading-relaxed">
-              Our community features foster meaningful connections between players, coaches, and sports enthusiasts, creating a supportive ecosystem for athletic development.
+              (Filler text) Through data and community, we ensure that performance translates into recognition.
             </p>
           </div>
           
           <!-- Right Side - Our Difference -->
-          <div class="lg:w-1/2 space-y-6" data-aos="fade-left">
-            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8">
+          <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-left">
+            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8 gradient-text">
               Our Difference
             </h2>
             <p class="text-lg text-gray-300 leading-relaxed">
-              Unlike traditional sports platforms, Upstrah focuses on the individual athlete's journey while maintaining strong team connections. We understand that every sport is unique and requires specialized metrics.
+              Unlike traditional sports platforms, Upstrah focuses on the individual athlete's journey while maintaining strong team connections.
             </p>
             <p class="text-lg text-gray-300 leading-relaxed">
-              Our AI-powered insights help athletes identify improvement areas and celebrate achievements. We don't just store data—we transform it into actionable intelligence that drives performance.
+              Our AI-powered insights help athletes identify improvement areas and celebrate achievements.
             </p>
             <p class="text-lg text-gray-300 leading-relaxed">
-              With privacy controls that put athletes first and a user experience designed by former athletes, Upstrah bridges the gap between professional sports analytics and accessible social networking.
+              (Filler text) This balance of technology, privacy, and athlete-first design makes us stand apart.
             </p>
           </div>
         </div>
       </section>
-
+      
       <!-- Meet the Team Section -->
-      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-gradient-to-r from-purple-900/20 to-black/20">
+      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
         <div class="max-w-7xl mx-auto text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-4">
+          <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-4 gradient-text">
             Meet the Team
           </h2>
           <p class="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -178,48 +231,47 @@
         </div>
         
         <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+
           <!-- Team Member 1 -->
-          <div class="bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-lg border border-purple-500/20 p-8 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105" data-aos="zoom-in">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-4xl font-bold text-white">
-              MSA
+          <div class="bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-lg border border-purple-500/20 p-10 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 flex flex-col items-center" data-aos="zoom-in">
+            <div class="w-40 h-40 mb-6 overflow-hidden rounded-lg">
+              <img src="static/core/images/team/mir-sarwar.jpg" alt="Mir Sarwar Ali" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Mir Sarwar Ali</h3>
-            <p class="text-purple-300 font-semibold mb-4">CEO & Product Visionary</p>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Ex-footballer turned tech strategist with a passion for empowering athletes through innovative technology solutions.
-            </p>
+            <h3 class="text-2xl font-bold text-white mb-3">Mir Sarwar Ali</h3>
+            <div class="px-4 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold text-center">
+              CEO
+            </div>
           </div>
-          
+        
           <!-- Team Member 2 -->
-          <div class="bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-lg border border-purple-500/20 p-8 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-4xl font-bold text-white">
-              JE
+          <div class="bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-lg border border-purple-500/20 p-10 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="w-40 h-40 mb-6 overflow-hidden rounded-lg">
+              <img src="static/core/images/team/jawad.jpg" alt="Jawad" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Jawad</h3>
-            <p class="text-purple-300 font-semibold mb-4">CTO & Lead Developer</p>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Full-stack engineer passionate about sports tech, bringing cutting-edge solutions to athletic performance tracking.
-            </p>
+            <h3 class="text-2xl font-bold text-white mb-3">Jawad</h3>
+            <div class="px-4 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold text-center">
+              CTO
+            </div>
           </div>
-          
+        
           <!-- Team Member 3 -->
-          <div class="bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-lg border border-purple-500/20 p-8 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-4xl font-bold text-white">
-              SJ
+          <div class="bg-gradient-to-br from-purple-900/30 to-black/50 backdrop-blur-lg border border-purple-500/20 p-10 rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+            <div class="w-40 h-40 mb-6 overflow-hidden rounded-lg">
+              <img src="static/core/images/team/mirza-zain.jpg" alt="Mirza Zain Ali" class="w-full h-full object-cover" />
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Mirza Zain Ali</h3>
-            <p class="text-purple-300 font-semibold mb-4">Head of Design</p>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Former athlete with a keen eye for user experience, ensuring every interaction feels intuitive and engaging.
-            </p>
+            <h3 class="text-2xl font-bold text-white mb-3">Mirza Zain Ali</h3>
+            <div class="px-4 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold text-center">
+              Head of Design
+            </div>
           </div>
-        </div>
+        
+        </div>        
       </section>
 
       <!-- Call to Action Section -->
-      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-gradient-to-r from-purple-900/20 to-black/20 text-center">
+      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] text-center container-fix">
         <div class="max-w-4xl mx-auto space-y-8" data-aos="fade-up">
-          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text">
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text gradient-text">
             Ready to Transform Your Athletic Journey?
           </h2>
           <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
@@ -234,69 +286,69 @@
       </section>
 
     </main>
-    <footer class="w-full text-white">
+    <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
 
-        <div class="mx-auto border border-black w-full bg-[#1c1c1c] max-w-screen-xl p-4 py-6 lg:py-8">
-          <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
-              <a href="mystat.html" class="text-decoration-none flex items-center text-black">
-                <img src="static/core/images/mainlogo.png" class="me-3 h-8" alt="Stat Logo" />
-              </a>
-              <ul>
+      <div class="mx-auto border border-black w-full bg-[#1c1c1c] max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="mystat.html" class="text-decoration-none flex items-center text-black">
+              <img src="static/core/images/footerlogo.png" class="me-3 h-8" alt="Stat Logo" />
+            </a>
+            <ul>
+              <li>
+                <p class="font-light">
+                  Founders Office <br />
+                  Ebrah Tech Pvt. Ltd. <br />
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
+              <ul class="font-medium">
                 <li>
-                  <p class="font-light">
-                    Founders Office <br />
-                    Ebrah Tech Pvt. Ltd. <br />
-                  </p>
+                  <a href="mystat.html" class="hover:underline">Upstrah</a>
+                </li>
+                <br />
+                <li>
+                  <a href="mycerebro.html" class="hover:underline">Upstrah Partner</a>
                 </li>
               </ul>
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
-              <div>
-                <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
-                <ul class="font-medium">
-                  <li>
-                    <a href="mystat.html" class="hover:underline">Upstrah</a>
-                  </li>
-                  <br />
-                  <li>
-                    <a href="mycerebro.html" class="hover:underline">Upstrah Partner</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
-                <ul class="font-medium">
-                  <li class="mb-4">
-                    <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
-                  </li>
-                  <li>
-                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 class="mb-6 text-sm font-semibold">Legal</h2>
-                <ul class="font-medium ">
-                  <li class="mb-4">
-                    <a href="#" class="hover:underline">Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
+              <ul class="font-medium">
+                <li class="mb-4">
+                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
+                </li>
+              </ul>
             </div>
-          </div>
-          <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-          <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm sm:text-center">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
-            <div class="mt-4 flex sm:mt-0 sm:justify-center">
-              <!-- Social SVGs as in base.html -->
+            <div>
+              <h2 class="mb-6 text-sm font-semibold">Legal</h2>
+              <ul class="font-medium ">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </footer>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm sm:text-center">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
+          <div class="mt-4 flex sm:mt-0 sm:justify-center">
+            <!-- Social SVGs as in base.html -->
+          </div>
+        </div>
+      </div>
+    </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
           <!-- Optional JS for animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -353,4 +405,3 @@
       </script>
     </body>
   </html>
-  
