@@ -121,10 +121,11 @@
       <section class="relative min-h-screen bg-[#1c1c1c] py-20 px-4 sm:px-12 lg:px-24 container-fix">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
           <!-- Left Content -->
-          <div class="lg:w-1/2 space-y-8" data-aos="fade-right">
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text leading-tight gradient-text">
-              About Upstrah
-            </h1>
+          <div class="lg:w-1/2 space-y-6 -mt-12" data-aos="fade-right">
+  <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text leading-snug gradient-text">
+    About Upstrah
+  </h1>
+
             <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-200 gradient-text">
               Empowering Athletes Worldwide
             </h2>
@@ -132,14 +133,14 @@
               We're revolutionizing how athletes connect, compete, and showcase their talents. Join the future of sports networking and performance tracking.
             </p>
           </div>
-          
-          <!-- Right Content - Logo with SVG container fix -->
-          <img src="static/core/images/aboutuslogo1.jpg"
-     alt="About Us Logo"
-     class="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] h-auto object-contain ml-auto" />
-
-
-
+    <!-- Right Content -->
+<div class="lg:w-1/2 w-full flex items-center justify-end" data-aos="fade-left">
+  <div class="w-full flex justify-end items-center">
+    <img src="static/core/images/aboutus.jpg" alt="About Us Logo" class="max-w-[150px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] xl:max-w-[280px] h-auto object-contain" />
+  </div>
+</div>
+  </div>
+</div>
 
         </div>
       </section>
@@ -285,69 +286,68 @@
       </section>
 
     </main>
-    <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
+<footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
+  <!-- Single top border line -->
+  <div class="border-t border-black border-600 w-full"></div>
 
-      <div class="mx-auto border border-black w-full bg-[#1c1c1c] max-w-screen-xl p-4 py-6 lg:py-8">
-        <div class="md:flex md:justify-between">
-          <div class="mb-6 md:mb-0">
-            <a href="mystat.html" class="text-decoration-none flex items-center text-black">
-              <img src="static/core/images/footerlogo.png" class="me-3 h-8" alt="Stat Logo" />
-            </a>
-            <ul>
-              <li>
-                <p class="font-light">
-                  Founders Office <br />
-                  Ebrah Tech Pvt. Ltd. <br />
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
-            <div>
-              <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
-              <ul class="font-medium">
-                <li>
-                  <a href="mystat.html" class="hover:underline">Upstrah</a>
-                </li>
-                <br />
-                <li>
-                  <a href="mycerebro.html" class="hover:underline">Upstrah Partner</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
-              <ul class="font-medium">
-                <li class="mb-4">
-                  <a href="https://github.com/themesberg/flowbite" class="hover:underline">LinkedIn</a>
-                </li>
-                <li>
-                  <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Instagram</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="mb-6 text-sm font-semibold">Legal</h2>
-              <ul class="font-medium ">
-                <li class="mb-4">
-                  <a href="#" class="hover:underline">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="md:flex md:justify-between">
+      
+      <!-- Left Logo + Info -->
+      <div class="mb-6 md:mb-0">
+        <a href="mystat.html" class="flex items-center">
+          <img src="static/core/images/footerlogo.png" class="me-3 h-8" alt="Stat Logo" />
+        </a>
+        <p class="mt-2 font-light">
+          Founders Office <br />
+          Ebrah Tech Pvt. Ltd. <br />
+        </p>
+      </div>
+
+      <!-- Right Links -->
+      <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+        <!-- Resources -->
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
+          <ul class="space-y-2 font-medium">
+            <li><a href="mystat.html" class="hover:underline">Upstrah</a></li>
+            <li><a href="mycerebro.html" class="hover:underline">Upstrah Partner</a></li>
+          </ul>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm sm:text-center">© 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved. </span>
-          <div class="mt-4 flex sm:mt-0 sm:justify-center">
-            <!-- Social SVGs as in base.html -->
-          </div>
+
+        <!-- Follow Us -->
+        <div>
+          <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
+          <ul class="space-y-2 font-medium">
+            <li><a href="https://linkedin.com" class="hover:underline">LinkedIn</a></li>
+            <li><a href="https://instagram.com" class="hover:underline">Instagram</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h2 class="mb-6 text-sm font-semibold">Legal</h2>
+          <ul class="space-y-2 font-medium">
+            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" class="hover:underline">Terms &amp; Conditions</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="mt-6 sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm sm:text-center">
+        © 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved.
+      </span>
+      <div class="mt-4 flex sm:mt-0 sm:justify-center">
+        <!-- Social SVGs if needed -->
+      </div>
+    </div>
+  </div>
+</footer>
+
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
           <!-- Optional JS for animations -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
