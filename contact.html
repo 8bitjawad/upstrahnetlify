@@ -22,60 +22,73 @@
   <body class="bg-[#1c1c1c] text-white">
     <!-- Navigation (copied from home.html, with Products dropdown) -->
     <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
-        <div class="flex h-16 items-center justify-between px-4">
-          <!-- Brand -->
-          <a href="home.html" class="flex items-center">
-  <img src="static/core/images/footerlogo.png" alt="UPSTRAH Logo" class="h-12" />
-</a>
-    
-          <!-- Centered nav links (sm and above) -->
-          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
-            <!-- Products Dropdown -->
-            <div class="relative">
-              <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
-                Products
-                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
-                <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
-                <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
-              </div>
-            </div>
-            <!-- Other links -->
-            <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
-            <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
-          </div>
-    
-          <!-- Mobile toggle -->
-          <div class="sm:hidden">
-            <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
+  <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+    <div class="flex h-16 items-center justify-between px-4">
+      
+      <!-- Brand (Left) -->
+      <a href="home.html" class="flex items-center">
+        <img src="static/core/images/footerlogo.png" alt="UPSTRAH Logo" class="h-12" />
+      </a>
+      
+      <!-- Centered nav links (sm and above) -->
+      <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
+        <!-- Products Dropdown -->
+        <div class="relative">
+          <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
+            Products
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
+            <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
+            <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
           </div>
         </div>
-    
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
-          <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
-            <li>
-              <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
-                Products
-                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
-                <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
-                <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
-              </ul>
-            </li>
-            <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
-            <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
-          </ul>
+        
+        <!-- Other links -->
+        <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
+        <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
+      </div>
+      
+      <!-- Right side (Download button + Mobile toggle) -->
+      <div class="flex items-center gap-x-4">
+        <!-- Download button (hidden on small, shown on md and above) -->
+        <a href="home.html#get-the-app" 
+   class="px-4 py-2 bg-[#97fb57] text-white font-medium rounded-lg shadow hover:bg-[#97fb57] transition hidden md:block">
+  Download
+</a>
+
+        
+        <!-- Mobile toggle -->
+        <div class="sm:hidden">
+          <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
         </div>
       </div>
-    </nav>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+      <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
+        <li>
+          <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+            Products
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+            <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
+            <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
+          </ul>
+        </li>
+        <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
+        <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+        <li><a href="#get-the-app" class="hover:text-teal-300">Download</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
  
     
     <main style="margin-top: 80px">
