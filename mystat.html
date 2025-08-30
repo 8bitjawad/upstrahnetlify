@@ -68,7 +68,7 @@
       <!-- Right side (Download button + Mobile toggle) -->
       <div class="flex items-center gap-x-4">
         <!-- Download button (hidden on small, shown on md and above) -->
-        <a href="home.html#get-the-app" 
+        <a href="#get-the-app" 
    class="px-4 py-2 bg-[#97fb57] text-white font-medium rounded-lg shadow hover:bg-[#97fb57] transition hidden md:block">
   Download
 </a>
@@ -448,7 +448,7 @@ Connect with coaches, track your progress, and get real-time insights with the U
             <p class="text-white text-sm sm:text-base px-2">Post highlights, track stats, review teammates — and elevate your game.</p>
           </div>
         </div>
-      
+        <section id="get-the-app">
         <!-- Download Section Box -->
         <div class="mt-20 bg-[#1c1c1c] rounded-3xl shadow-lg p-8 flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
           <!-- Left -->
@@ -469,7 +469,7 @@ Connect with coaches, track your progress, and get real-time insights with the U
           </div>
         </div>
       </section>
-
+    </section>
     </main>
     <!-- Footer -->
    <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
@@ -742,5 +742,98 @@ Connect with coaches, track your progress, and get real-time insights with the U
         });
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+        // Dropdown for desktop (click only)
+        const productsBtn = document.getElementById("products-dropdown-btn");
+        const productsMenu = document.getElementById("products-dropdown-menu");
+        let dropdownOpen = false;
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownOpen = !dropdownOpen;
+            productsMenu.classList.toggle("hidden", !dropdownOpen);
+          });
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+              dropdownOpen = false;
+              productsMenu.classList.add("hidden");
+            }
+          });
+        }
+        // Dropdown for mobile
+        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+        const mobileProductsMenu = document.getElementById("mobile-products-menu");
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener("click", function () {
+            mobileProductsMenu.classList.toggle("hidden");
+          });
+        }
+        AOS.init({
+          once: true,
+          duration: 700,
+          offset: 80,
+        });
+      });
+    </script>
+    <script>
+(function(){
+  const OFFSET = 90; // 
+
+  function scrollToElement(el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  // Intercept in-page click (href="#get-the-app")
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+
+    // direct in-page anchor
+    if (href === '#get-the-app') {
+      e.preventDefault();
+      const target = document.querySelector('#get-the-app');
+      if (target) scrollToElement(target);
+    }
+  }, { passive: false });
+
+  // If the page loads with a hash (e.g. someone navigated to home.html#get-the-app),
+  // prevent the browser's instant jump and do a smooth scroll to the offset position.
+  function handleInitialHash() {
+    if (window.location.hash === '#get-the-app') {
+      // snap back to top so we can animate to the right spot
+      window.scrollTo(0, 0);
+
+      // small delay so layout paints and CSS (images/fonts) settle
+      setTimeout(function(){
+        const target = document.querySelector('#get-the-app');
+        if (target) scrollToElement(target);
+      }, 80); // tweak 60ms if necessary
+    }
+  }
+
+  // Run on load
+  document.addEventListener('DOMContentLoaded', handleInitialHash);
+  // Also run in case DOMContentLoaded already fired
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    handleInitialHash();
+  }
+})();
+</script>
   </body>
 </html>

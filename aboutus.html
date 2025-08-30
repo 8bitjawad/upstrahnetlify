@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="description" content="Contact Upstrah" />
+    <meta name="description" content="About Us" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Upstrah</title>
+    <title>About Us</title>
     <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
+    <link rel="icon" type="image/png" href="static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
+    <link rel="apple-touch-icon" href="static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
+    <link rel="manifest" href="static/core/favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="static/core/css/contact1.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
@@ -130,38 +133,41 @@
   </div>
 </nav>
  
-    <main class="bg-[#1c1c1c] text-white w-full container-fix" style="margin-top: 80px">
-      
-      <!-- Hero Section -->
-      <section class="relative bg-[#1c1c1c] py-12 px-4 sm:px-6 lg:px-12 container-fix">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
-          <!-- Left Content -->
-          <div class="lg:w-1/2 space-y-4 mt-[-300px]" data-aos="fade-right">
-  <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text overflow-visible pb-6">
-  About Upstrah
-</h1>
-
-            <h2 class="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-200 gradient-text">
-  Empowering Athletes Worldwide
-</h2>
-
-            </h2>
-            <p class="text-lg sm:text-xl text-gray-300 max-w-lg leading-relaxed">
-              We're revolutionizing how athletes connect, compete, and showcase their talents. Join the future of sports networking and performance tracking.
-            </p>
-          </div>
-    <!-- Right Content -->
-<div class="lg:w-1/2 w-full flex justify-end mt-0 px-4 lg:px-0" data-aos="fade-left">
-  <img src="static/core/images/aulogo.png" 
-     alt="About Us Logo"
-     class="w-full max-w-sm lg:max-w-[90%] h-auto object-contain" />
-
-</div>
-  </div>
-</div>
-
-        </div>
-      </section>
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Hero Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1c1c1c]">
+    <main class="bg-[#1c1c1c] text-white w-full" style="margin-top: 80px">
+        
+        <!-- Hero Section -->
+        <section class="relative bg-[#1c1c1c] py-12 overflow-hidden">
+            <div class="w-full flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 space-y-4 mt-[-300px] pl-4 sm:pl-6 lg:pl-12 pr-4 lg:pr-8" data-aos="fade-right">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text overflow-visible pb-6">
+                        About Upstrah
+                    </h1>
+                    <h2 class="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-200 gradient-text">
+                        Empowering Athletes Worldwide
+                    </h2>
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-lg leading-relaxed">
+                        We're revolutionizing how athletes connect, compete, and showcase their talents. Join the future of sports networking and performance tracking.
+                    </p>
+                </div>
+                
+                <!-- Right Content - Image touching right edge -->
+                <div class="lg:w-1/2 w-full flex justify-end mt-0" data-aos="fade-left">
+                    <img src="static/core/images/aulogo.png" 
+                         alt="About Us Logo"
+                         class="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto object-contain ml-auto" />
+                </div>
+            </div>
+        </section>
 
       <!-- Our Existence Explained Section -->
       <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">

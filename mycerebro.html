@@ -50,7 +50,7 @@
           </button>
           <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
             <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
-            <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
+            <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah X</a>
           </div>
         </div>
         
@@ -62,7 +62,7 @@
       <!-- Right side (Download button + Mobile toggle) -->
       <div class="flex items-center gap-x-4">
         <!-- Download button (hidden on small, shown on md and above) -->
-        <a href="home.html#get-the-app" 
+        <a href="#get-the-app" 
    class="px-4 py-2 bg-[#97fb57] text-white font-medium rounded-lg shadow hover:bg-[#97fb57] transition hidden md:block">
   Download
 </a>
@@ -87,7 +87,7 @@
           </button>
           <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
             <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
-            <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
+            <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah X</a></li>
           </ul>
         </li>
         <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
@@ -208,9 +208,9 @@
     About <span class="bg-gradient-to-r from-[#8bff41] to-[#00ffa6] text-transparent bg-clip-text">Upstrah Partner</span>
   </h2>
   <p class="text-black text-lg sm:text-xl leading-relaxed">
-    Upstrah Partner is your gateway to advanced performance tools designed for modern teams and ambitious individuals.
+    Upstrah X is your gateway to advanced performance tools designed for modern teams and ambitious individuals.
     From deep analytics to seamless integrations, our platform empowers your business to stay sharp, adapt faster, and
-    drive measurable outcomes. Whether you're scaling or just starting, <span class="text-[#8bff41] font-semibold">Upstrah Partner</span> brings the insight and control you need.
+    drive measurable outcomes. Whether you're scaling or just starting, <span class="text-[#8bff41] font-semibold">Upstrah X</span> brings the insight and control you need.
   </p>
 </div>
 
@@ -380,6 +380,7 @@
       </div>
   </div>
 </section>
+<section id="get-the-app">
       <!-- Image Grid Section --> 
       <div class="w-full py-10 px-6 md:px-10 flex justify-center">
         <div class="w-full max-w-6xl bg-white rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
@@ -422,6 +423,7 @@
           </div>
         </div>
       </div>
+      </section>
     </main>
     <!-- Footer -->
     <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
@@ -449,7 +451,7 @@
           <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
           <ul class="space-y-2 font-medium">
             <li><a href="mystat.html" class="hover:underline">Upstrah</a></li>
-            <li><a href="mycerebro.html" class="hover:underline">Upstrah Partner</a></li>
+            <li><a href="mycerebro.html" class="hover:underline">Upstrah X</a></li>
           </ul>
         </div>
 
@@ -691,5 +693,98 @@
         });
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+        // Dropdown for desktop (click only)
+        const productsBtn = document.getElementById("products-dropdown-btn");
+        const productsMenu = document.getElementById("products-dropdown-menu");
+        let dropdownOpen = false;
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownOpen = !dropdownOpen;
+            productsMenu.classList.toggle("hidden", !dropdownOpen);
+          });
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+              dropdownOpen = false;
+              productsMenu.classList.add("hidden");
+            }
+          });
+        }
+        // Dropdown for mobile
+        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+        const mobileProductsMenu = document.getElementById("mobile-products-menu");
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener("click", function () {
+            mobileProductsMenu.classList.toggle("hidden");
+          });
+        }
+        AOS.init({
+          once: true,
+          duration: 700,
+          offset: 80,
+        });
+      });
+    </script>
+    <script>
+(function(){
+  const OFFSET = 90; // 
+
+  function scrollToElement(el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  // Intercept in-page click (href="#get-the-app")
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+
+    // direct in-page anchor
+    if (href === '#get-the-app') {
+      e.preventDefault();
+      const target = document.querySelector('#get-the-app');
+      if (target) scrollToElement(target);
+    }
+  }, { passive: false });
+
+  // If the page loads with a hash (e.g. someone navigated to home.html#get-the-app),
+  // prevent the browser's instant jump and do a smooth scroll to the offset position.
+  function handleInitialHash() {
+    if (window.location.hash === '#get-the-app') {
+      // snap back to top so we can animate to the right spot
+      window.scrollTo(0, 0);
+
+      // small delay so layout paints and CSS (images/fonts) settle
+      setTimeout(function(){
+        const target = document.querySelector('#get-the-app');
+        if (target) scrollToElement(target);
+      }, 60); // tweak 60ms if necessary
+    }
+  }
+
+  // Run on load
+  document.addEventListener('DOMContentLoaded', handleInitialHash);
+  // Also run in case DOMContentLoaded already fired
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    handleInitialHash();
+  }
+})();
+</script>
   </body>
 </html>
