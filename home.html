@@ -16,6 +16,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  
    .floating-particles {
             position: absolute;
             width: 100%;
@@ -151,7 +152,7 @@
     </style>
   </head>
 
-  <body class="bg-[#1c1c1c]">
+  <body class="bg-[#1c1c1c] bg-container">
     <!-- Navigation -->
    <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
@@ -174,7 +175,7 @@
           </button>
           <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
             <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
-            <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah Partner</a>
+            <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah X</a>
           </div>
         </div>
         
@@ -211,7 +212,7 @@
           </button>
           <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
             <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
-            <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah Partner</a></li>
+            <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah X</a></li>
           </ul>
         </li>
         <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
@@ -241,30 +242,47 @@
             <div class="particle"></div>
         </div>
         
-        <div class="absolute inset-0"></div>
-        <div class="relative z-10 flex flex-col-reverse md:grid md:grid-cols-2 items-center h-full w-full px-4 md:px-16 max-w-6xl mx-auto" style="min-height: 400px">
-            <div class="flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left">
-                <h1 class="mb-6 text-4xl font-bold shimmer-text sm:text-5xl sm:font-medium" data-aos="fade-up">
-                    Built for Athletes. Powered by Stats.<br />
-                    Shared with the World.
-                </h1>
-                <p class="mb-6 px-0 text-lg font-light text-white max-w-xl" data-aos="fade-up" data-aos-delay="100">
-                    The ultimate platform designed to empower athletes at every level.<br />
-                    Track your stats, connect with clubs and level up your game.
-                </p>
-                <button class="glow-button px-6 py-3 bg-[#8bff41] mb-6 text-white rounded-md text-lg shadow-md hover:bg-[#6fd32d] transition-all duration-300 hover:shadow-lg hover:shadow-[#8bff41]/25" data-aos="fade-up" data-aos-delay="200">
-                    <a href="mystat.html"> Get Started </a>
-                </button>
+        <div class="relative w-full min-h-screen">
+          <!-- Background wrapper fills content height -->
+          <div class="absolute inset-0 h-full">
+            <!-- Background image -->
+            <img src="static/core/images/bghalf.png" alt="background" class="w-full h-full object-cover" />
+        
+            <!-- Dark overlay gradient -->
+            <div class="absolute inset-0">
+              <img src="static/core/images/bghalf.png" alt="background" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-[#1c1c1c]/80"></div>
             </div>
-            <div class="relative flex justify-center items-center w-full h-full mb-8 md:mb-0">
-                <!-- Background phone -->
-                <img src="static/core/images/hphone1.png" alt="phone" class="phone-float-bg absolute w-[75%] max-w-md min-h-[250px] h-auto object-contain translate-x-12 md:translate-x-44 opacity-90 pointer-events-none" style="--base-x: 3rem;" />
-
-                <!-- Foreground phone (no cut-off) -->
-                <!-- <img src="static/core/images/bgphone1.png" alt="phone" class="phone-float relative z-10 w-[75%] max-w-md min-h-[250px] h-auto object-contain -translate-x-8 md:translate-x-0" style="--base-x: -2rem;" /> -->
+          </div>
+        
+          <div class="relative z-10 flex flex-col md:grid md:grid-cols-2 items-center w-full px-4 md:px-16 max-w-6xl mx-auto py-16">
+            
+            <!-- TEXT -->
+            <div class="flex flex-col items-center md:items-start justify-center w-full text-center md:text-left order-1 md:order-none">
+              <h1 class="mb-6 text-4xl font-bold shimmer-text sm:text-5xl sm:font-medium" data-aos="fade-up">
+                Built for Athletes. Powered by Stats.<br />
+                Shared with the World.
+              </h1>
+              <p class="mb-6 px-0 text-lg font-light text-white max-w-xl" data-aos="fade-up" data-aos-delay="100">
+                The ultimate platform designed to empower athletes at every level.<br />
+                Track your stats, connect with clubs and level up your game.
+              </p>
+              <button class="glow-button px-6 py-3 bg-[#8bff41] mb-6 text-white rounded-md text-lg shadow-md hover:bg-[#6fd32d] transition-all duration-300 hover:shadow-lg hover:shadow-[#8bff41]/25" data-aos="fade-up" data-aos-delay="200">
+                <a href="mystat.html"> Get Started </a>
+              </button>
             </div>
+        
+            <!-- PHONE IMAGE -->
+            <div class="relative flex justify-center items-center w-full h-full mb-8 md:mb-0 order-2 md:order-none">
+              <img src="static/core/images/hphone1.png" 
+                   alt="phone" 
+                   class="w-[60%] sm:w-[50%] max-w-xs min-h-[200px] h-auto object-contain opacity-100 pointer-events-none md:translate-x-8" />
+            </div>
+        
+          </div>
         </div>
-    </div>   
+        
+      
       <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-6 sm:p-8">
         <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41] mt-10" data-aos="fade-up">
           Discover Your True Potential.
@@ -313,7 +331,7 @@
             
             <!-- Left: Image -->
             <div class="flex justify-center">
-              <img src="static/core/images/phonemockup1.png" alt="App Mockup" class="w-full max-w-[300px] sm:max-w-sm md:max-w-md lg:max-w-lg">
+              <img src="static/core/images/hphone2.png" alt="App Mockup" class="w-full max-w-[300px] sm:max-w-sm md:max-w-md lg:max-w-lg">
             </div>
             
             <!-- Right: Text Content -->
@@ -458,7 +476,7 @@
 
       <!-- Right Half: Phone Image -->
       <div class="w-full md:w-1/2 p-4 flex justify-center items-center">
-        <img src="static/core/images/phone1.png" alt="App Preview" class="w-40" />
+        <img src="static/core/images/hphone3.png" alt="App Preview" class="w-60" />
       </div>
     </div>
   </div>
@@ -496,7 +514,7 @@
           <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
           <ul class="space-y-2 font-medium">
             <li><a href="mystat.html" class="hover:underline">Upstrah</a></li>
-            <li><a href="mycerebro.html" class="hover:underline">Upstrah Partner</a></li>
+            <li><a href="mycerebro.html" class="hover:underline">Upstrah X</a></li>
           </ul>
         </div>
 
