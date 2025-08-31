@@ -145,29 +145,33 @@
     <main class="bg-[#1c1c1c] text-white w-full" style="margin-top: 80px">
         
         <!-- Hero Section -->
-        <section class="relative bg-[#1c1c1c] py-12 overflow-hidden">
-            <div class="w-full flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
-                <!-- Left Content -->
-                <div class="lg:w-1/2 space-y-4 mt-[-300px] pl-4 sm:pl-6 lg:pl-12 pr-4 lg:pr-8" data-aos="fade-right">
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-purple-200 text-transparent bg-clip-text overflow-visible pb-6">
-                        About Upstrah
-                    </h1>
-                    <h2 class="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold text-purple-200 gradient-text">
-                        Empowering Athletes Worldwide
-                    </h2>
-                    <p class="text-lg sm:text-xl text-gray-300 max-w-lg leading-relaxed">
-                        We're revolutionizing how athletes connect, compete, and showcase their talents. Join the future of sports networking and performance tracking.
-                    </p>
-                </div>
-                
-                <!-- Right Content - Image touching right edge -->
-                <div class="lg:w-1/2 w-full flex justify-end mt-0" data-aos="fade-left">
-                    <img src="static/core/images/aulogo.png" 
-                         alt="About Us Logo"
-                         class="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto object-contain ml-auto" />
-                </div>
-            </div>
-        </section>
+        <section class="relative bg-[#1c1c1c] py-12 overflow-hidden">   
+  <div class="relative w-full min-h-screen">     
+    <!-- Background wrapper -->     
+    <div class="absolute inset-0 min-h-screen">       
+      <!-- Background image -->       
+      <img src="static/core/images/aupage.png" alt="background" class="w-full min-h-screen object-contain" />        
+      <!-- Dark overlay (lighter so image shows more) -->       
+      <div class="absolute inset-0 bg-[#1c1c1c]/50"></div>     
+    </div>      
+
+    <!-- Content -->     
+    <div class="relative z-10 flex flex-col md:grid md:grid-cols-2 items-center w-full px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-20">              
+      <!-- TEXT -->       
+      <div class="lg:w-1/2 space-y-6 text-left">         
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight whitespace-nowrap">           
+          About Upstrah         
+        </h1>         
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white whitespace-nowrap">           
+          Empowering Athletes Worldwide         
+        </h2>         
+        <p class="text-lg sm:text-xl text-gray-300 max-w-xl leading-relaxed break-words">     
+          We're revolutionizing how athletes connect, compete, and showcase their talents. Join the future of sports networking and performance tracking. 
+        </p>        
+      </div>     
+    </div>   
+  </div> 
+</section>
 
       <!-- Our Existence Explained Section -->
       <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
