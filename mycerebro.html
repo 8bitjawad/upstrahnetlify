@@ -25,78 +25,94 @@
         height: 100%;
         display: block;
       }
+      
+      /* Ensure mobile menu button is clickable */
+      #menu-toggle {
+        pointer-events: auto !important;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+      
+      /* Ensure mobile menu is properly positioned */
+      #mobile-menu {
+        pointer-events: auto !important;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body class="bg-[#1c1c1c] text-white">
     <!-- Navigation -->
     <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
-    <div class="flex h-16 items-center justify-between px-4">
-      
-      <!-- Brand (Left) -->
-      <a href="home.html" class="flex items-center">
-        <img src="static/core/images/footerlogo.png" alt="UPSTRAH Logo" class="h-12" />
-      </a>
-      
-      <!-- Centered nav links (sm and above) -->
-      <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
-        <!-- Products Dropdown -->
-        <div class="relative">
-          <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
-            Products
-            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
-            <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
-            <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah X</a>
+      <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+        <div class="flex h-16 items-center justify-between px-4">
+          
+          <!-- Brand (Left) -->
+          <a href="home.html" class="flex items-center">
+            <img src="static/core/images/footerlogo.png" alt="UPSTRAH Logo" class="h-12" />
+          </a>
+          
+          <!-- Centered nav links (sm and above) -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
+            <!-- Products Dropdown -->
+            <div class="relative">
+              <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
+                <a href="mystat.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
+                <a href="mycerebro.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah X</a>
+              </div>
+            </div>
+            
+            <!-- Other links -->
+            <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
+            <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
+          </div>
+          
+          <!-- Right side (Download button + Mobile toggle) -->
+          <div class="flex items-center gap-x-4">
+            <!-- Download button (hidden on small, shown on md and above) -->
+            <a href="#get-the-app" 
+       class="px-4 py-2 bg-[#97fb57] text-white font-medium rounded-lg shadow hover:bg-[#97fb57] transition hidden md:block">
+      Download
+    </a>
+    
+            
+            <!-- Mobile toggle -->
+            <div class="sm:hidden">
+              <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
+            </div>
           </div>
         </div>
         
-        <!-- Other links -->
-        <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
-        <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
-      </div>
-      
-      <!-- Right side (Download button + Mobile toggle) -->
-      <div class="flex items-center gap-x-4">
-        <!-- Download button (hidden on small, shown on md and above) -->
-        <a href="#get-the-app" 
-   class="px-4 py-2 bg-[#97fb57] text-white font-medium rounded-lg shadow hover:bg-[#97fb57] transition hidden md:block">
-  Download
-</a>
-
-        
-        <!-- Mobile toggle -->
-        <div class="sm:hidden">
-          <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+          <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
+            <li>
+              <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+                <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
+                <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah X</a></li>
+              </ul>
+            </li>
+            <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+            <li><a href="#get-the-app" class="hover:text-teal-300">Download</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
-      <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
-        <li>
-          <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
-            Products
-            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
-            <li><a href="mystat.html" class="block hover:text-teal-300">Upstrah</a></li>
-            <li><a href="mycerebro.html" class="block hover:text-teal-300">Upstrah X</a></li>
-          </ul>
-        </li>
-        <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
-        <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
-        <li><a href="#get-the-app" class="hover:text-teal-300">Download</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    </nav>
     
     <main class="bg-[#1c1c1c] min-h-screen" style="margin-top: 80px">
       <!-- Hero Section with Background Video -->
@@ -482,6 +498,63 @@
 </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileProductsToggle = document.getElementById('mobile-products-toggle');
+        const mobileProductsMenu = document.getElementById('mobile-products-menu');
+
+        if (menuToggle && mobileMenu) {
+          menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            const isOpen = mobileMenu.classList.contains('max-h-0');
+            mobileMenu.classList.toggle('max-h-0', !isOpen);
+            mobileMenu.classList.toggle('opacity-0', !isOpen);
+            mobileMenu.classList.toggle('max-h-96', isOpen);
+            mobileMenu.classList.toggle('opacity-100', isOpen);
+            mobileMenu.classList.toggle('py-3', isOpen);
+            this.textContent = isOpen ? '✕' : '☰';
+          });
+        }
+
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            mobileProductsMenu.classList.toggle('hidden');
+          });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (mobileMenu && menuToggle && !event.target.closest('#mobile-menu') && !event.target.closest('#menu-toggle')) {
+            mobileMenu.classList.add('max-h-0', 'opacity-0');
+            mobileMenu.classList.remove('max-h-96', 'opacity-100', 'py-3');
+            menuToggle.textContent = '&#9776;';
+          }
+        });
+      });
+
+      // Products dropdown for desktop
+      document.addEventListener('DOMContentLoaded', function() {
+        const productsBtn = document.getElementById('products-dropdown-btn');
+        const productsMenu = document.getElementById('products-dropdown-menu');
+        
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            productsMenu.classList.toggle('hidden');
+          });
+          
+          // Close when clicking outside
+          document.addEventListener('click', function(event) {
+            if (productsMenu && !event.target.closest('#products-dropdown-btn')) {
+              productsMenu.classList.add('hidden');
+            }
+          });
+        }
+      });
+
       // Glowing dots animation
       (function() {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -612,66 +685,24 @@
         }
       })();
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleBtn = document.getElementById("menu-toggle");
-        const menu = document.getElementById("mobile-menu");
-        toggleBtn.addEventListener("click", function () {
-          const isOpen = menu.classList.contains("max-h-0");
-          if (isOpen) {
-            menu.classList.remove("max-h-0", "opacity-0");
-            menu.classList.add("max-h-96", "opacity-100");
-          } else {
-            menu.classList.add("max-h-0", "opacity-0");
-            menu.classList.remove("max-h-96", "opacity-100");
+      // Countdown Timer - Only run if element exists
+      var countdownElement = document.getElementById("countdown-timer");
+      if (countdownElement) {
+        var countDownDate = new Date("Jul 30, 2025 23:59:59").getTime();
+        var x = setInterval(function () {
+          var now = new Date().getTime();
+          var distance = countDownDate - now;
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          if (distance < 0) {
+            clearInterval(x);
+            countdownElement.innerHTML = "EXPIRED";
           }
-        });
-        // Products dropdown for desktop
-        const productsBtn = document.getElementById("products-dropdown-btn");
-        const productsMenu = document.getElementById("products-dropdown-menu");
-        let dropdownOpen = false;
-        if (productsBtn && productsMenu) {
-          productsBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            dropdownOpen = !dropdownOpen;
-            productsMenu.classList.toggle("hidden", !dropdownOpen);
-          });
-          // Close dropdown when clicking outside
-          document.addEventListener("click", function (e) {
-            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
-              dropdownOpen = false;
-              productsMenu.classList.add("hidden");
-            }
-          });
-        }
-        // Products dropdown for mobile
-        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
-        const mobileProductsMenu = document.getElementById("mobile-products-menu");
-        if (mobileProductsToggle && mobileProductsMenu) {
-          mobileProductsToggle.addEventListener("click", function () {
-            mobileProductsMenu.classList.toggle("hidden");
-          });
-        }
-        AOS.init({
-          once: true,
-          duration: 700,
-          offset: 80,
-        });
-      });
-      // Countdown Timer
-      var countDownDate = new Date("Jul 30, 2025 23:59:59").getTime();
-      var x = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("countdown-timer").innerHTML = "EXPIRED";
-        }
-      }, 1000);
+        }, 1000);
+      }
       // FAQ Accordion
       document.querySelectorAll(".faq-toggle").forEach((toggle) => {
         toggle.addEventListener("click", () => {
@@ -682,55 +713,8 @@
           document.querySelectorAll(".faq-toggle span").forEach((el) => (el.textContent = "+"));
           if (!isOpen) {
             answer.classList.remove("hidden");
-            icon.textContent = "−";
+            icon.textContent = "&#8722;";
           }
-        });
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleBtn = document.getElementById("menu-toggle");
-        const menu = document.getElementById("mobile-menu");
-        toggleBtn.addEventListener("click", function () {
-          const isOpen = menu.classList.contains("max-h-0");
-          if (isOpen) {
-            menu.classList.remove("max-h-0", "opacity-0");
-            menu.classList.add("max-h-96", "opacity-100");
-          } else {
-            menu.classList.add("max-h-0", "opacity-0");
-            menu.classList.remove("max-h-96", "opacity-100");
-          }
-        });
-        // Dropdown for desktop (click only)
-        const productsBtn = document.getElementById("products-dropdown-btn");
-        const productsMenu = document.getElementById("products-dropdown-menu");
-        let dropdownOpen = false;
-        if (productsBtn && productsMenu) {
-          productsBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            dropdownOpen = !dropdownOpen;
-            productsMenu.classList.toggle("hidden", !dropdownOpen);
-          });
-          // Close dropdown when clicking outside
-          document.addEventListener("click", function (e) {
-            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
-              dropdownOpen = false;
-              productsMenu.classList.add("hidden");
-            }
-          });
-        }
-        // Dropdown for mobile
-        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
-        const mobileProductsMenu = document.getElementById("mobile-products-menu");
-        if (mobileProductsToggle && mobileProductsMenu) {
-          mobileProductsToggle.addEventListener("click", function () {
-            mobileProductsMenu.classList.toggle("hidden");
-          });
-        }
-        AOS.init({
-          once: true,
-          duration: 700,
-          offset: 80,
         });
       });
     </script>
