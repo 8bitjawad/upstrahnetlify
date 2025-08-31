@@ -64,8 +64,8 @@
   </head>
   <body class="bg-[#1c1c1c] text-white font-sans container-fix">
     <!-- Navigation (copied from home.html, with Products dropdown) -->
-    <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+    <nav class="fixed top-0 mt-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8  ">
+  <div class="max-w-6xl mx-auto backdrop-blur-md bg-white/5 rounded-lg my-1">
     <div class="flex h-16 items-center justify-between px-4">
       
       <!-- Brand (Left) -->
@@ -132,122 +132,114 @@
     </div>
   </div>
 </nav>
- 
-     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Hero Section</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+
 <body class="bg-[#1c1c1c]">
-    <main class="bg-[#1c1c1c] text-white w-full" style="margin-top: 80px">
+    <main class="bg-[#1c1c1c] text-white w-full">
         
-        <!-- Hero Section -->
-        <section class="relative bg-[#1c1c1c] py-12 overflow-hidden">   
-  <div class="relative w-full min-h-screen">     
-    <!-- Background wrapper -->     
-    <div class="absolute inset-0 min-h-screen">       
-      <!-- Background image -->       
-      <img src="static/core/images/aupage.png" alt="background" class="w-full min-h-screen object-contain" />        
-      <!-- Dark overlay (lighter so image shows more) -->       
-      <div class="absolute inset-0 bg-[#1c1c1c]/50"></div>     
+  <!-- Hero Section - Fixed to start from top -->
+<section class="relative overflow-hidden" style="padding-top: 80px;">   
+  <div class="relative w-full h-screen" style="margin-top: -80px;">     
+    <!-- Background wrapper - starts from absolute top -->     
+    <div class="absolute inset-0">       
+      <!-- Background image - full screen from top with reduced opacity -->       
+      <img src="static/core/images/abbg3.png" alt="background" class="w-full h-full object-cover opacity-70" />        
+      <!-- Dark overlay with adjusted opacity -->       
+      <div class="absolute inset-0 bg-[#1c1c1c]/70"></div>     
     </div>      
 
     <!-- Content -->     
-    <div class="relative z-10 flex flex-col md:grid md:grid-cols-2 items-center w-full px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-20">              
-      <!-- TEXT -->       
-      <div class="lg:w-1/2 space-y-6 text-left">         
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight whitespace-nowrap">           
+    <div class="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-7xl mx-auto">
+        <!-- Single column layout for all screen sizes -->
+        <div class="w-full max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">         
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">           
           About Upstrah         
         </h1>         
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white whitespace-nowrap">           
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white">           
           Empowering Athletes Worldwide         
         </h2>         
-        <p class="text-lg sm:text-xl text-gray-300 max-w-xl leading-relaxed break-words">     
+        <p class="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">     
           We're revolutionizing how athletes connect, compete, and showcase their talents. Join the future of sports networking and performance tracking. 
-        </p>        
+        </p>
+        </div>
       </div>     
     </div>   
   </div> 
 </section>
 
-      <!-- Our Existence Explained Section -->
-      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
-          
-          <!-- Left Content -->
-          <div class="lg:w-1/2 space-y-8 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-right">
-            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text gradient-text">
-              Our Existence Explained
-            </h2>
-            <div class="w-32 h-32 sm:w-40 sm:h-40 svg-container">
-              <img src="static/core/images/earthbg.jpg" 
-                   alt="Upstrah Logo" 
-                   class="w-full h-full object-contain opacity-80" />
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              (Filler text) We aim to build a platform that connects athletes across every level. 
-              This section explains the foundation of our existence and the motivation driving Upstrah.
-            </p>
-          </div>
-      
-          <!-- Right Content -->
-          <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-left">
-            <p class="leading-relaxed text-gray-300">
-              Upstrah is more than just a social platform—it's a digital arena for athletes. 
-              Whether you're striving for greatness in school, college, or pro sports, we're here to fuel your journey.
-            </p>
-            <p class="leading-relaxed text-gray-300">
-              Founded with a mission to empower athletes, Upstrah blends performance analytics with community features to create an ecosystem where every player gets noticed.
-            </p>
-            <p class="leading-relaxed text-gray-300">
-              (Filler text) With continuous innovation, we ensure that athletes not only track progress but thrive in an environment built around growth and visibility.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <!-- What We Do & Our Difference Section -->
-      <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
-          
-          <!-- Left Side - What We Do -->
-          <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-right">
-            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8 gradient-text">
-              What We Do
-            </h2>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              We provide athletes with comprehensive performance tracking tools that go beyond basic statistics.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Athletes can showcase their progress, connect with teammates, and build a professional profile.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              (Filler text) Through data and community, we ensure that performance translates into recognition.
-            </p>
-          </div>
-          
-          <!-- Right Side - Our Difference -->
-          <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-[#1c1c1c]" data-aos="fade-left">
-            <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8 gradient-text">
-              Our Difference
-            </h2>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Unlike traditional sports platforms, Upstrah focuses on the individual athlete's journey while maintaining strong team connections.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Our AI-powered insights help athletes identify improvement areas and celebrate achievements.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              (Filler text) This balance of technology, privacy, and athlete-first design makes us stand apart.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Meet the Team Section -->
+<!-- Our Existence Explained Section - Moved higher up -->
+<section class="py-8 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix" style="margin-top: -60px;">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+    
+    <!-- Left Content -->
+    <div class="lg:w-1/2 space-y-8 border-4 border-black rounded-2xl p-8 bg-white" data-aos="fade-right">
+      <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text gradient-text">
+        Our Existence Explained
+      </h2>
+      <!-- <div class="w-32 h-32 sm:w-40 sm:h-40 svg-container">
+        <img src="static/core/images/earthbg.jpg" 
+             alt="Upstrah Logo" 
+             class="w-full h-full object-contain opacity-80" />
+      </div> -->
+      <p class="text-black leading-relaxed">
+        (Filler text) We aim to build a platform that connects athletes across every level. 
+        This section explains the foundation of our existence and the motivation driving Upstrah.
+      </p>
+    </div>
+
+    <!-- Right Content -->
+    <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-white" data-aos="fade-left">
+      <p class="leading-relaxed text-black">
+        Upstrah is more than just a social platform—it's a digital arena for athletes. 
+        Whether you're striving for greatness in school, college, or pro sports, we're here to fuel your journey.
+      </p>
+      <p class="leading-relaxed text-black">
+        Founded with a mission to empower athletes, Upstrah blends performance analytics with community features to create an ecosystem where every player gets noticed.
+      </p>
+      <p class="leading-relaxed text-black">
+        (Filler text) With continuous innovation, we ensure that athletes not only track progress but thrive in an environment built around growth and visibility.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Do & Our Difference Section - Also moved higher -->
+<section class="py-8 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+    
+    <!-- Left Side - What We Do -->
+    <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-white" data-aos="fade-right">
+      <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8 gradient-text">
+        What We Do
+      </h2>
+      <p class="text-lg text-black leading-relaxed">
+        We provide athletes with comprehensive performance tracking tools that go beyond basic statistics.
+      </p>
+      <p class="text-lg text-black leading-relaxed">
+        Athletes can showcase their progress, connect with teammates, and build a professional profile.
+      </p>
+      <p class="text-lg text-black leading-relaxed">
+        (Filler text) Through data and community, we ensure that performance translates into recognition.
+      </p>
+    </div>
+    
+    <!-- Right Side - Our Difference -->
+    <div class="lg:w-1/2 space-y-6 border-4 border-black rounded-2xl p-8 bg-white" data-aos="fade-left">
+      <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-8 gradient-text">
+        Our Difference
+      </h2>
+      <p class="text-lg text-black leading-relaxed">
+        Unlike traditional sports platforms, Upstrah focuses on the individual athlete's journey while maintaining strong team connections.
+      </p>
+      <p class="text-lg text-black leading-relaxed">
+        Our AI-powered insights help athletes identify improvement areas and celebrate achievements.
+      </p>
+      <p class="text-lg text-black leading-relaxed">
+        (Filler text) This balance of technology, privacy, and athlete-first design makes us stand apart.
+      </p>
+    </div>
+  </div>
+</section>      <!-- Meet the Team Section -->
       <section class="py-20 px-4 sm:px-12 lg:px-24 bg-[#1c1c1c] container-fix">
         <div class="max-w-7xl mx-auto text-center mb-16">
           <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text mb-4 gradient-text">
