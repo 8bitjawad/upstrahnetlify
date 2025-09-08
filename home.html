@@ -242,7 +242,7 @@
             <div class="particle"></div>
         </div>
         
-        <div class="relative w-full min-h-screen">
+        <div class="relative w-full min-h-[calc(100vh-80px)] flex items-center">
           <!-- Background wrapper fills content height -->
           <div class="absolute inset-0 h-full">
             <!-- Background image -->
@@ -273,136 +273,141 @@
             </div>
         
             <!-- PHONE IMAGE -->
-            <div class="relative flex justify-center items-center w-full h-full mb-8 md:mb-0 order-2 md:order-none">
-              <img src="static/core/images/hphone1.png" 
-                   alt="phone" 
-                   class="w-[95%] sm:w-[90%] md:w-[80%] lg:w-[75%] xl:w-[70%] 
-                          h-auto object-contain 
-                          opacity-100 pointer-events-none 
-                          translate-x-0 md:translate-x-24 lg:translate-x-32 xl:translate-x-40" />
-            </div>
-          </div> 
-        </div>           
+      <div class="relative flex justify-center md:justify-end items-center w-full h-full mb-8 md:mb-0 order-2 md:order-none">
+    <img src="static/core/images/hphone1.png" 
+         alt="phone" 
+         class="w-[95%] sm:w-[90%] md:w-[80%] lg:w-[75%] xl:w-[70%] 
+                h-auto object-contain 
+                opacity-100 pointer-events-none 
+                translate-x-0 md:translate-x-12 lg:translate-x-16 xl:translate-x-24" />
+</div>
+            
+          </div>
+        </div>
         
       
-      <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-6 sm:p-8">
-        <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41] mt-10" data-aos="fade-up">
+      <div class="flex flex-col items-center justify-center bg-[#1c1c1c] p-4 sm:p-6">
+        <h1 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#8bff41] mt-6 sm:mt-8 md:mt-10" data-aos="fade-up">
           Discover Your True Potential.
         </h1>
-        <h2 class="text-center text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-center text-base sm:text-lg font-light text-white max-w-3xl mx-auto mt-1 sm:mt-2 px-2" data-aos="fade-up" data-aos-delay="100">
           No room for mediocrity with Upstrah.
         </h2>
       
-        <div class="w-full max-w-7xl mt-10 px-4 sm:px-6 lg:px-8 mx-auto">
+        <div class="w-full max-w-6xl mt-6 sm:mt-8 px-1 sm:px-4 mx-auto">
           <!-- (3 Cards) -->
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-        <!-- Card 1 -->
-        <div class="flex">
-  <div class="relative aspect-square w-full bg-gradient-to-b from-purple-500/25 via-black to-green-700/30 rounded-xl p-6 flex flex-col items-center justify-between text-white">
-    <div class="z-10 text-center">
-      <h2 class="text-base sm:text-lg md:text-xl font-bold">Player Profile</h2>
-      <p class="text-xs sm:text-sm mb-0">Showcase your athletic achievements</p>
-    </div>
-    <!-- Player profile content -->
-    <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
-      <div class="text-center mt-0">
-        <div class="text-2xl sm:text-3xl font-bold">👤</div>
-        <p class="text-xs mt-1">Profile Stats</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+  <!-- Card 1 -->
+  <div class="flex">
+    <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
+      <div class="bg-white rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
+        <div class="z-10 text-center">
+          <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Player Profile</h2>
+          <p class="text-[11px] sm:text-xs mb-0 text-green-600">Showcase your athletic achievements</p>
+        </div>
+        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
+          <div class="text-center mt-0">
+            <div class="text-2xl sm:text-3xl font-bold">👤</div>
+            <p class="text-xs mt-1 text-gray-600">Profile Stats</p>
+          </div>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3 text-center w-full">
+            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 border border-purple-200">
+              <p class="text-sm sm:text-lg font-bold text-purple-700">127</p>
+              <p class="text-xs text-green-600">Games</p>
+            </div>
+            <div class="bg-green-100 rounded-lg p-2 sm:p-3 border border-green-200">
+              <p class="text-sm sm:text-lg font-bold text-green-700">89%</p>
+              <p class="text-xs text-purple-600">Win Rate</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-1 sm:gap-2 text-center w-full">
+            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
+              <p class="text-xs sm:text-sm font-bold text-purple-700">4.8⭐</p>
+              <p class="text-xs text-green-600">Rating</p>
+            </div>
+            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
+              <p class="text-xs sm:text-sm font-bold text-green-700">23</p>
+              <p class="text-xs text-purple-600">Awards</p>
+            </div>
+            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
+              <p class="text-xs sm:text-sm font-bold text-purple-700">156</p>
+              <p class="text-xs text-green-600">Followers</p>
+            </div>
+          </div>
+        </div>
       </div>
-                    <div class="grid grid-cols-2 gap-2 sm:gap-3 text-center w-full">
-                        <div class="bg-white/20 rounded-lg p-2 sm:p-3">
-                            <p class="text-sm sm:text-lg font-bold">127</p>
-                            <p class="text-xs">Games</p>
-                        </div>
-                        <div class="bg-white/20 rounded-lg p-2 sm:p-3">
-                            <p class="text-sm sm:text-lg font-bold">89%</p>
-                            <p class="text-xs">Win Rate</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-1 sm:gap-2 text-center w-full">
-                        <div class="bg-white/10 rounded p-1 sm:p-2">
-                            <p class="text-xs sm:text-sm font-bold">4.8⭐</p>
-                            <p class="text-xs">Rating</p>
-                        </div>
-                        <div class="bg-white/10 rounded p-1 sm:p-2">
-                            <p class="text-xs sm:text-sm font-bold">23</p>
-                            <p class="text-xs">Awards</p>
-                        </div>
-                        <div class="bg-white/10 rounded p-1 sm:p-2">
-                            <p class="text-xs sm:text-sm font-bold">156</p>
-                            <p class="text-xs">Followers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="flex">
-            <div class="relative aspect-square w-full bg-gradient-to-b from-purple-500/25 via-black to-green-700/30 rounded-xl p-6 flex flex-col items-center justify-between text-white">
-                <div class="z-10 text-center">
-                    <h2 class="text-base sm:text-lg md:text-xl font-bold">Peer Reviews</h2>
-                    <p class="text-xs sm:text-sm mt-2">Get feedback from fellow athletes</p>
-                </div>
-                <!-- Peer reviews content -->
-                <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
-                    <div class="text-center">
-                        <div class="text-2xl sm:text-3xl font-bold">💬</div>
-                        <p class="text-xs mt-1">Recent Reviews</p>
-                    </div>
-                    <div class="bg-white/20 rounded-lg p-2 sm:p-3 w-full text-center">
-                        <p class="text-xl sm:text-2xl font-bold text-yellow-400">4.7/5</p>
-                        <p class="text-xs">Average Rating</p>
-                    </div>
-                    <div class="space-y-1 sm:space-y-2 w-full">
-                        <div class="bg-white/10 rounded p-1 sm:p-2 text-xs">
-                            <div class="flex justify-between items-center">
-                                <span>🏀 Marcus J.</span>
-                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            </div>
-                            <p class="text-xs mt-1 italic">"Great teammate, solid skills"</p>
-                        </div>
-                        <div class="bg-white/10 rounded p-1 sm:p-2 text-xs">
-                            <div class="flex justify-between items-center">
-                                <span>⚽ Lisa R.</span>
-                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                            </div>
-                            <p class="text-xs mt-1 italic">"Amazing work ethic!"</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="flex">
-  <div class="relative aspect-square w-full bg-gradient-to-b from-purple-500/25 via-black to-green-700/30 rounded-xl p-6 flex flex-col items-center justify-between text-white">
-    <div class="z-10 text-center">
-      <h2 class="text-base sm:text-lg md:text-xl font-bold">Explore our Products</h2>
-      <p class="text-xs sm:text-sm mb-0">Discover premium features</p>
     </div>
-    <!-- Products content -->
-    <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
-      <div class="text-center mt-0">
-        <div class="text-2xl sm:text-3xl font-bold">📱</div>
-        <p class="text-xs mt-1">App Features</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="flex w-full">
+    <div class="overflow-hidden aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
+      <div class="bg-white overflow-hidden rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
+        <div class="z-10 text-center">
+          <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Peer Reviews</h2>
+          <p class="text-[11px] sm:text-xs mt-1 sm:mt-1.5 text-green-600">Get feedback from fellow athletes</p>
+        </div>
+        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-bold">💬</div>
+            <p class="text-xs mt-1 text-gray-600">Recent Reviews</p>
+          </div>
+          <div class="bg-purple-100 rounded-lg p-2 sm:p-3 w-full text-center border border-purple-200">
+            <p class="text-xl sm:text-2xl font-bold text-yellow-600">4.7/5</p>
+            <p class="text-xs text-green-600">Average Rating</p>
+          </div>
+          <div class="space-y-1 sm:space-y-2 w-full">
+            <div class="bg-gray-50 rounded p-1 sm:p-2 text-xs border border-gray-200">
+              <div class="flex justify-between items-center">
+                <span class="text-purple-700">🏀 Marcus J.</span>
+                <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="text-xs mt-1 italic text-green-600">"Great teammate, solid skills"</p>
+            </div>
+            <div class="bg-gray-50 rounded p-1 sm:p-2 text-xs border border-gray-200">
+              <div class="flex justify-between items-center">
+                <span class="text-green-700">⚽ Lisa R.</span>
+                <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p class="text-xs mt-1 italic text-purple-600">"Amazing work ethic!"</p>
+            </div>
+          </div>
+        </div>
       </div>
-                    <div class="grid grid-cols-1 gap-1 sm:gap-2 w-full">
-                        <div class="bg-white/20 rounded-lg p-2 sm:p-3 text-center">
-                            <p class="text-xs sm:text-sm font-semibold">🎯 Performance Tracker</p>
-                        </div>
-                        <div class="bg-white/20 rounded-lg p-2 sm:p-3 text-center">
-                            <p class="text-xs sm:text-sm font-semibold">👥 Team Events</p>
-                        </div>
-                        <div class="bg-white/20 rounded-lg p-2 sm:p-3 text-center">
-                            <p class="text-xs sm:text-sm font-semibold">🏅 Achievement System</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="flex">
+    <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
+      <div class="bg-white rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
+        <div class="z-10 text-center">
+          <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Explore our Products</h2>
+          <p class="text-[11px] sm:text-xs mb-0 text-green-600">Discover premium features</p>
+        </div>
+        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
+          <div class="text-center mt-0">
+            <div class="text-2xl sm:text-3xl font-bold">📱</div>
+            <p class="text-xs mt-1 text-gray-600">App Features</p>
+          </div>
+          <div class="grid grid-cols-1 gap-1 sm:gap-2 w-full">
+            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 text-center border border-purple-200">
+              <p class="text-xs sm:text-sm font-semibold text-green-700">🎯 Performance Tracker</p>
+            </div>
+            <div class="bg-green-100 rounded-lg p-2 sm:p-3 text-center border border-green-200">
+              <p class="text-xs sm:text-sm font-semibold text-purple-700">👥 Team Events</p>
+            </div>
+            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 text-center border border-purple-200">
+              <p class="text-xs sm:text-sm font-semibold text-green-700">🏅 Achievement System</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <section class="w-full bg-[#1c1c1c] py-8 lg:py-12 px-2 sm:px-6 lg:px-20">
           <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center">
             
@@ -437,25 +442,22 @@
         </section>
 
       <!-- Our Goals Section -->
-      <section class="w-full bg-[#1c1c1c] px-2 sm:px-6 md:px-10 pt-4 pb-12 lg:pt-6 lg:pb-16">
+      <section class="w-full bg-[#1c1c1c] px-4 sm:px-6 md:px-8 pt-8 pb-12 lg:pt-12 lg:pb-20">
+        <!-- Header -->
+        <div class="flex flex-col items-center justify-center bg-[#1c1c1c] px-2 sm:px-4">
+          <h1 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#8bff41]" data-aos="fade-up">
+            Join the Future of Athlete Social
+          </h1>
+          <h2 class="text-center mb-6 sm:mb-10 text-base sm:text-lg font-light text-white max-w-3xl mx-auto mt-2 sm:mt-3" data-aos="fade-up" data-aos-delay="100">
+            Elevate your sports journey with a platform built for athletes.
+          </h2>
+        </div>
 
-  <!-- Header -->
-
- 
-    <!-- Right Half -->
-    <div class="flex flex-col items-center justify-center bg-[#1c1c1c] sm:p-8">
-      <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41]" data-aos="fade-up">
-        Join the Future of Athlete Social
-      </h1>
-      <h2 class="text-center mb-8 text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
-        Elevate your sports journey with a platform built for athletes.
-      </h2>
-    </div>
-
-  <!-- Cards Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full pb-4 px-4 sm:px-6 lg:px-8">
+        <!-- Cards Grid -->
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
    <!-- Card 1 -->
-    <div class="relative bg-white rounded-2xl border border-gray-200 p-5 feature-card shadow-sm w-full min-h-[440px] flex flex-col">
+    <div class="relative bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 feature-card shadow-sm w-full min-h-[350px] sm:min-h-[380px] md:min-h-[420px] flex flex-col">
       <!-- Icon -->
       <div class="absolute top-4 right-4 text-purple-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -465,19 +467,19 @@
       </div>
       
       <!-- Content -->
-      <div class="content-section bg-white">
+      <div class="content-section">
         <h2 class="text-xl font-bold text-gray-900 mb-2">Track Performance</h2>
-        <p class="text-gray-600 text-sm sm:text-base">View your daily workout stats and engagement.</p>
+        <p class="text-gray-600 text-sm sm:text-base">View your daily workout stats and engagement with detailed analytics.</p>
       </div>
       
       <!-- Image -->
-      <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-2xl">
-        <img src="static/core/images/hphone6.jpg" alt="Chart" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover">
+      <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-xl sm:rounded-2xl">
+        <img src="static/core/images/hphone6.jpg" alt="Chart" class="w-full h-48 sm:h-72 md:h-80 lg:h-96 object-cover">
       </div>
     </div>
   
     <!-- Card 2 -->
-    <div class="relative bg-white rounded-2xl border border-gray-200 p-5 feature-card shadow-sm w-full min-h-[440px] flex flex-col">
+    <div class="relative bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 feature-card shadow-sm w-full min-h-[400px] sm:min-h-[440px] flex flex-col">
       <!-- Icon -->
       <div class="absolute top-4 right-4 text-purple-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -489,17 +491,17 @@
       <!-- Content -->
       <div class="content-section">
         <h2 class="text-xl font-bold text-purple-900 mb-2">Goal Analytics</h2>
-        <p class="text-purple-800 text-sm sm:text-base">Understand referrals, search trends, and direct actions.</p>
+        <p class="text-purple-800 text-sm sm:text-base">Track your athletic progress with comprehensive analytics and insights.</p>
       </div>
       
       <!-- Image -->
       <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-2xl">
-        <img src="static/core/images/hphone7.jpg" alt="Analytics" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover">
+        <img src="static/core/images/hphone8.jpg" alt="Analytics" class="w-full h-48 sm:h-72 md:h-80 lg:h-96 object-cover">
       </div>
     </div>
-   
+  
     <!-- Card 3 -->
-    <div class="relative bg-white rounded-2xl p-5 feature-card w-full min-h-[440px] flex flex-col">
+    <div class="relative bg-white rounded-2xl p-4 sm:p-5 feature-card shadow-sm w-full min-h-[400px] sm:min-h-[440px] flex flex-col">
       <!-- Icon -->
       <div class="absolute top-4 right-4 text-purple-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -510,13 +512,13 @@
       
       <!-- Content -->
       <div class="content-section">
-        <h2 class="text-xl font-bold text-gray-900 mb-2">Revenue Breakdown</h2>
-        <p class="text-gray-600 text-sm sm:text-base">Analyze your revenue split by client and department.</p>
+        <h2 class="text-xl font-bold text-black mb-2">Performance Breakdown</h2>
+        <p class="text-black text-sm sm:text-base">Analyze your athletic performance across different metrics and events.</p>
       </div>
       
       <!-- Image -->
       <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-2xl">
-        <img src="static/core/images/hphone8.jpg" alt="Pie Chart" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover">
+        <img src="static/core/images/hphone7.jpg" alt="Pie Chart" class="w-full h-48 sm:h-72 md:h-80 lg:h-96 object-cover">
       </div>
     </div>
   </div>
@@ -524,11 +526,11 @@
 </section>
 
   <section id="get-the-app" class="w-full">
-        <div class="w-full py-6 lg:py-10 px-4 sm:px-6 lg:px-10">
-            <div class="w-full max-w-7xl mx-auto bg-white rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden relative">
+        <div class="w-full py-8 lg:py-12 px-4 sm:px-6">
+            <div class="w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden relative">
                 
                 <!-- Left Half: Text & Buttons -->
-                <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start text-left">
+                <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center items-start text-left">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Get the app</h2>
                     <p class="text-gray-700 mb-6 max-w-md">
                         Download our app to unlock exclusive features and stay connected on the go. Available on both iOS and Android.
@@ -560,7 +562,7 @@
                 </div>
 
                 <!-- Right Half: Phone Image -->
-                <div class="w-full md:w-1/2 flex items-center justify-center relative py-6 md:py-0">
+                <div class="w-full md:w-1/2 flex items-center justify-center relative p-6 md:p-8">
                     <img src="static/core/images/hphone3.png" alt="App Preview" 
                          class="w-64 md:w-80 h-auto object-contain">
                 </div>
