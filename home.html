@@ -138,6 +138,9 @@
         }
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 </style>
 
@@ -297,47 +300,47 @@
         <div class="w-full max-w-6xl mt-6 sm:mt-8 px-1 sm:px-4 mx-auto">
           <!-- (3 Cards) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
-  <!-- Card 1 -->
-  <div class="flex">
-    <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
-      <div class="bg-white rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
-        <div class="z-10 text-center">
-          <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Player Profile</h2>
-          <p class="text-[11px] sm:text-xs mb-0 text-green-600">Showcase your athletic achievements</p>
+        <!-- Card 1 - FIXED -->
+        <div class="flex">
+            <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
+                <div class="bg-white rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
+                    <div class="z-10 text-center mb-1 sm:mb-4">
+                        <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700 mb-1">Player Profile</h2>
+                        <p class="text-[11px] sm:text-xs text-green-600">Showcase your athletic achievements</p>
+                    </div>
+                    <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 w-full">
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl font-bold">👤</div>
+                            <p class="text-xs mt-1 text-gray-600">Profile Stats</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 sm:gap-3 text-center w-full">
+                            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 border border-purple-200">
+                                <p class="text-sm sm:text-lg font-bold text-purple-700">127</p>
+                                <p class="text-xs text-green-600">Games</p>
+                            </div>
+                            <div class="bg-green-100 rounded-lg p-2 sm:p-3 border border-green-200">
+                                <p class="text-sm sm:text-lg font-bold text-green-700">89%</p>
+                                <p class="text-xs text-purple-600">Win Rate</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-1 sm:gap-2 text-center w-full">
+                            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
+                                <p class="text-xs sm:text-sm font-bold text-purple-700">4.8⭐</p>
+                                <p class="text-xs text-green-600">Rating</p>
+                            </div>
+                            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
+                                <p class="text-xs sm:text-sm font-bold text-green-700">23</p>
+                                <p class="text-xs text-purple-600">Awards</p>
+                            </div>
+                            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
+                                <p class="text-xs sm:text-sm font-bold text-purple-700">156</p>
+                                <p class="text-xs text-green-600">Followers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
-          <div class="text-center mt-0">
-            <div class="text-2xl sm:text-3xl font-bold">👤</div>
-            <p class="text-xs mt-1 text-gray-600">Profile Stats</p>
-          </div>
-          <div class="grid grid-cols-2 gap-2 sm:gap-3 text-center w-full">
-            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 border border-purple-200">
-              <p class="text-sm sm:text-lg font-bold text-purple-700">127</p>
-              <p class="text-xs text-green-600">Games</p>
-            </div>
-            <div class="bg-green-100 rounded-lg p-2 sm:p-3 border border-green-200">
-              <p class="text-sm sm:text-lg font-bold text-green-700">89%</p>
-              <p class="text-xs text-purple-600">Win Rate</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-3 gap-1 sm:gap-2 text-center w-full">
-            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
-              <p class="text-xs sm:text-sm font-bold text-purple-700">4.8⭐</p>
-              <p class="text-xs text-green-600">Rating</p>
-            </div>
-            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
-              <p class="text-xs sm:text-sm font-bold text-green-700">23</p>
-              <p class="text-xs text-purple-600">Awards</p>
-            </div>
-            <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
-              <p class="text-xs sm:text-sm font-bold text-purple-700">156</p>
-              <p class="text-xs text-green-600">Followers</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Card 2 -->
   <div class="flex w-full">
@@ -381,11 +384,11 @@
   <div class="flex">
     <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
       <div class="bg-white rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
-        <div class="z-10 text-center">
+        <div class="z-10 text-center mb-2 sm:mb-4">
           <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Explore our Products</h2>
           <p class="text-[11px] sm:text-xs mb-0 text-green-600">Discover premium features</p>
         </div>
-        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
+        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 w-full">
           <div class="text-center mt-0">
             <div class="text-2xl sm:text-3xl font-bold">📱</div>
             <p class="text-xs mt-1 text-gray-600">App Features</p>
@@ -424,12 +427,17 @@
                 Connect with Athletes Near You
               </h2>
               <p class="text-white mb-4 max-w-prose mx-auto sm:mx-0 text-base sm:text-lg">
-                Discover a new way to network, compete, and grow in your local sports community. MyStat brings players, fans, and organizers together in one vibrant space.
+                Discover a new way to network, compete, and grow in your local sports community. Upstrah brings players, fans, and organizers together in one vibrant space.
               </p>
-              <ul class="list-disc list-inside text-white space-y-2 max-w-prose mx-auto sm:mx-0 text-base sm:text-lg">
-                <li>Follow your favorite local athletes and teams</li>
-                <li>Get instant updates on tournaments and events</li>
-              </ul>
+              <ul class="list-none text-white space-y-2 max-w-prose mx-auto sm:mx-0 text-base sm:text-lg">
+  <li class="relative pl-6 before:content-['➔'] before:absolute before:left-0 before:text-white-400">
+    Follow your favorite local athletes and teams
+  </li>
+  <li class="relative pl-6 before:content-['➔'] before:absolute before:left-0 before:text-white-400">
+    Get instant updates on tournaments and events
+  </li>
+</ul>
+
               <div class="mt-8 flex justify-center sm:justify-start">
                 <a href="mystat.html" 
    class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-all">
@@ -442,24 +450,20 @@
         </section>
 
       <!-- Our Goals Section -->
-      <section class="w-full bg-[#1c1c1c] px-2 sm:px-6 md:px-10 pt-4 pb-12 lg:pt-6 lg:pb-16">
+      <section class="w-full bg-[#1c1c1c] pt-8 pb-12 lg:pt-12 lg:pb-20">
+        <!-- Header -->
+        <div class="flex flex-col items-center justify-center bg-[#1c1c1c] px-4 sm:px-6 md:px-8">
+          <h1 class="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#8bff41]" data-aos="fade-up">
+            Join the Future of Athlete Social
+          </h1>
+          <h2 class="text-center mb-6 sm:mb-10 text-base sm:text-lg font-light text-white max-w-3xl mx-auto mt-2 sm:mt-3" data-aos="fade-up" data-aos-delay="100">
+            Elevate your sports journey with a platform built for athletes.
+          </h2>
+        </div>
 
-  <!-- Header -->
-
- 
-    <!-- Right Half -->
-    <div class="flex flex-col items-center justify-center bg-[#1c1c1c] sm:p-8">
-      <h1 class="text-center text-4xl sm:text-5xl font-bold text-[#8bff41]" data-aos="fade-up">
-        Join the Future of Athlete Social
-      </h1>
-      <h2 class="text-center mb-8 text-lg font-light text-white max-w-3xl mx-auto mt-2" data-aos="fade-up" data-aos-delay="100">
-        Elevate your sports journey with a platform built for athletes.
-      </h2>
-    </div>
-
-  <!-- Cards Grid -->
-  <div class="w-full max-w-full pb-4 px-0">
-    <div class="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full sm:gap-6 sm:px-2 lg:px-8">
+        <!-- Cards Grid -->
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
    <!-- Card 1 -->
     <div class="relative bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 feature-card shadow-sm w-full min-h-[400px] sm:min-h-[440px] flex flex-col">
       <!-- Icon -->
@@ -574,12 +578,12 @@
         </div>
     </section>
 
-  <!-- Single top border line spanning full width - outside footer -->
-  <div class="w-full border-t border-black"></div>
-  
-  <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
+
+  <footer class="w-screen text-white bg-[#1c1c1c] overflow-hidden relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+ 
+    <div class="w-full border-t border-black"></div>
     <!-- Content container (centered, but background stretches full width) -->
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+   <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between md:items-start">
             
             <!-- Left Logo + Info -->
@@ -635,8 +639,6 @@
         </div>
     </div>
 </footer>
-
-
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
