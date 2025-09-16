@@ -29,13 +29,16 @@
     <link rel="manifest" href="static/core/favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="static/core/css/home.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" /> -->
+    <link href="https://db.onlinewebfonts.com/c/54deb902459692001bafddf102d8235a?family=Stereo+Gothic+W01+850" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  
+  .stereo {
+  font-family: 'Stereo Gothic W01 850', sans-serif;
+}
+
    .floating-particles {
             position: absolute;
             width: 100%;
@@ -285,13 +288,13 @@
                 Built for Athletes. Powered by Stats.<br />
                 Shared with the World.
               </h1>
-              <p class="mb-6 px-0 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 shadow-md tracking-wider"
+              <p class="mb-6 px-0 text-xl text-white stereo font-bold bg-clip-text text-transparent italic"
               data-aos="fade-up" data-aos-delay="100">
-             Train, Track, Triumph.
+            TRAIN.TRACK.TRIUMPH.
            </p>
            
 
-              <p class="mb-6 px-0 text-lg font-light text-white max-w-xl" data-aos="fade-up" data-aos-delay="100">
+              <p class="mb-6 px-0 font-light text-white " data-aos="fade-up" data-aos-delay="100">
                 The ultimate platform designed to empower athletes at every level.<br />
                 Track your stats, connect with clubs and level up your game.
               </p>
@@ -325,60 +328,63 @@
         <div class="w-full max-w-6xl mt-6 sm:mt-8 px-1 sm:px-4 mx-auto">
           <!-- (3 Cards) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
-              <!-- Card 1 - UPDATED -->
-              <div class="flex">
-                  <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
-                      <div class="bg-gray-200 rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
-                          <div class="z-10 text-center mb-1 sm:mb-4">
-                              <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700 mb-1">Player Profile</h2>
-                              <p class="text-[11px] sm:text-xs text-green-600">Showcase your athletic achievements</p>
-                          </div>
-                          <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 w-full">
-                              <div class="text-center">
-                                  <div class="text-4xl sm:text-5xl font-bold">🏆</div>
-                                  <p class="text-xs mt-1 text-gray-600">Athletic Performance</p>
-                              </div>
-                              <div class="grid grid-cols-2 gap-2 sm:gap-3 text-center w-full">
-                                  <div class="bg-purple-100 rounded-lg p-2 sm:p-3 border border-purple-200">
-                                      <p class="text-sm sm:text-lg font-bold text-purple-700">127</p>
-                                      <p class="text-xs text-green-600">Games</p>
-                                  </div>
-                                  <div class="bg-green-100 rounded-lg p-2 sm:p-3 border border-green-200">
-                                      <p class="text-sm sm:text-lg font-bold text-green-700">89%</p>
-                                      <p class="text-xs text-purple-600">Win Rate</p>
-                                  </div>
-                              </div>
-                              <div class="grid grid-cols-3 gap-1 sm:gap-2 text-center w-full">
-                                  <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
-                                      <p class="text-xs sm:text-sm font-bold text-purple-700">126</p>
-                                      <p class="text-xs text-green-600">Matches</p>
-                                  </div>
-                                  <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
-                                      <p class="text-xs sm:text-sm font-bold text-green-700">23</p>
-                                      <p class="text-xs text-purple-600">Awards</p>
-                                  </div>
-                                  <div class="bg-gray-50 rounded p-1 sm:p-2 border border-gray-200">
-                                      <p class="text-xs sm:text-sm font-bold text-purple-700">156</p>
-                                      <p class="text-xs text-green-600">Followers</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+            <!-- Card 1 - UPDATED -->
+            <div class="flex">
+                <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
+                    <div class="bg-gray-200 rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
+                        <div class="z-10 text-center mb-0 sm:mb-2">
+                            <h2 class="text-3xl sm:text-base md:text-2xl font-bold text-purple-700 mb-1">Player Profile</h2>
+                            <p class="text-2xl sm:text-xs text-green-600">Showcase your athletic achievements</p>
+                        </div>
+                        <div class="z-10 flex flex-col items-center w-full flex-1 justify-center space-y-2 sm:space-y-3">
+                            <div class="text-center -mt-4 sm:-mt-6">
+                                <div class="text-4xl sm:text-5xl font-bold">
+                                    <img src="static/core/images/groupicon.png" class="w-16 h-16 sm:w-20 sm:h-20 mx-auto">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4 text-center w-full">
+                                <div class="bg-purple-100 rounded-lg p-3 sm:p-4 border border-purple-200">
+                                    <p class="text-lg sm:text-xl font-bold text-purple-700">127</p>
+                                    <p class="text-sm sm:text-xs text-green-600">Games</p>
+                                </div>
+                                <div class="bg-green-100 rounded-lg p-3 sm:p-4 border border-green-200">
+                                    <p class="text-lg sm:text-xl font-bold text-green-700">89%</p>
+                                    <p class="text-sm sm:text-xs text-purple-600">Win Rate</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 sm:gap-3 text-center w-full">
+                                <div class="bg-gray-50 rounded p-2 sm:p-3 border border-gray-200">
+                                    <p class="text-sm sm:text-base font-bold text-purple-700">126</p>
+                                    <p class="text-xs sm:text-sm text-green-600">Matches</p>
+                                </div>
+                                <div class="bg-gray-50 rounded p-2 sm:p-3 border border-gray-200">
+                                    <p class="text-sm sm:text-base font-bold text-green-700">23</p>
+                                    <p class="text-xs sm:text-sm text-purple-600">Awards</p>
+                                </div>
+                                <div class="bg-gray-50 rounded p-2 sm:p-3 border border-gray-200">
+                                    <p class="text-sm sm:text-base font-bold text-purple-700">156</p>
+                                    <p class="text-xs sm:text-sm text-green-600">Followers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
   
               <!-- Card 2 - UPDATED -->
               <div class="flex w-full">
                   <div class="overflow-hidden aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
                       <div class="bg-gray-200 overflow-hidden rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
                           <div class="z-10 text-center">
-                              <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Peer Reviews</h2>
-                              <p class="text-[11px] sm:text-xs mt-1 sm:mt-1.5 text-green-600">Get feedback from fellow athletes</p>
+                              <h2 class="text-3xl sm:text-base md:text-2xl font-bold text-purple-700 mb-1">Peer Reviews</h2>
+                              <p class="text-2xl sm:text-xs text-green-600">Get feedback from fellow athletes</p>
                           </div>
                           <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 mt-4 w-full">
                               <div class="text-center">
-                                  <div class="text-2xl sm:text-3xl font-bold">💬</div>
-                                  <p class="text-xs mt-1 text-gray-600">Recent Reviews</p>
+                                  <div class="text-2xl sm:text-3xl font-bold">
+                                    <img src="static/core/images/chaticon.png" class="w-12 h-12 mx-auto">
+                                  </div>
                               </div>
                               <div class="space-y-1 sm:space-y-2 w-full">
                                   <div class="bg-gray-50 rounded p-2 sm:p-3 text-xs border border-gray-200">
@@ -411,35 +417,42 @@
   <!-- Card 3 -->
   <div class="flex">
     <div class="relative aspect-square w-full p-[1px] sm:p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-green-500">
-      <div class="bg-gray-200 rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full">
-        <div class="z-10 text-center mb-2 sm:mb-4">
-          <h2 class="text-sm sm:text-base md:text-lg font-bold text-purple-700">Explore our Products</h2>
-          <p class="text-[11px] sm:text-xs mb-0 text-green-600">Discover premium features</p>
-        </div>
-        <div class="z-10 flex flex-col items-center space-y-2 sm:space-y-3 w-full">
-          <div class="text-center mt-0">
-            <div class="text-2xl sm:text-3xl font-bold">📱</div>
-            <p class="text-xs mt-1 text-gray-600">App Features</p>
+        <div class="bg-gray-200 rounded-xl p-3 sm:p-4 md:p-5 flex flex-col items-center justify-between shadow-lg border border-gray-100 h-full relative overflow-hidden">
+            <!-- Grid Background -->
+            <div class="absolute inset-0 opacity-20">
+                <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+            
+            <div class="z-10 text-center mb-2 sm:mb-4">
+                <h2 class="text-3xl sm:text-base md:text-2xl font-bold text-purple-700 mb-1">Explore our Products</h2>
+                <p class="text-2xl sm:text-xs text-green-600">Discover premium features</p>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="z-10 flex flex-col space-y-3 sm:space-y-4 w-64 pl-2 sm:pl-4">
+              <a href="upstrah.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center flex items-center justify-between">
+                  <span>Upstrah</span>
+                  <span class="text-lg">></span>
+              </a>
+              <a href="upstrahx.html" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center flex items-center justify-between">
+                  <span>Upstrah X</span>
+                  <span class="text-lg">></span>
+              </a>
+        
           </div>
-          <div class="grid grid-cols-1 gap-1 sm:gap-2 w-full">
-            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 text-center border border-purple-200">
-              <p class="text-xs sm:text-sm font-semibold text-green-700">🎯 Performance Tracker</p>
-            </div>
-            <div class="bg-green-100 rounded-lg p-2 sm:p-3 text-center border border-green-200">
-              <p class="text-xs sm:text-sm font-semibold text-purple-700">👥 Team Events</p>
-            </div>
-            <div class="bg-purple-100 rounded-lg p-2 sm:p-3 text-center border border-purple-200">
-              <p class="text-xs sm:text-sm font-semibold text-green-700">🤝 Network and Learn</p>
-
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-
-
+</div>
+</div>
+</section>
     <section class="w-full bg-[#1c1c1c] py-8 lg:py-12 px-2 sm:px-6 lg:px-20">
           <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center">
             
@@ -461,15 +474,13 @@
               <ul class="list-none text-white space-y-2 max-w-prose mx-auto sm:mx-0 text-base sm:text-lg">
   <li class="relative pl-6 before:content-['➔'] before:absolute before:left-0 before:text-white-400">
     Track and support athletes and teams you love
-
   </li>
   <li class="relative pl-6 before:content-['➔'] before:absolute before:left-0 before:text-white-400">
     Never miss a tournament or event update
   </li>
 </ul>
-
-              <div class="mt-8 flex justify-center sm:justify-start">
-                <a href="upstrah.html" 
+<div class="mt-8 flex justify-center sm:justify-start">
+   <a href="upstrah.html" 
    class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-all">
   View More
 </a>
@@ -477,8 +488,8 @@
               </div>
             </div>
           </div>
+        </div>
         </section>
-
       <!-- Our Goals Section -->
       <section class="w-full bg-[#1c1c1c] pt-8 pb-12 lg:pt-12 lg:pb-20">
         <!-- Header -->
@@ -507,13 +518,12 @@
       <div class="content-section">
         <h2 class="text-xl font-bold text-gray-900 mb-2">Fitness First </h2>
         <p class="text-black text-sm sm:text-base">View your daily workout stats and engagement</p>
-      </div>
-      
-      <!-- Image -->
-      <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-xl sm:rounded-2xl">
-        <img src="static/core/images/hphone6.jpg" alt="Chart" class="w-full h-48 sm:h-72 md:h-80 lg:h-96 object-cover">
-      </div>
     </div>
+    
+    <!-- Image -->
+    <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-xl sm:rounded-2xl">
+        <img src="static/core/images/hss4.jpg" alt="Chart" class="w-full h-full object-cover">
+    </div></div>
   
     <!-- Card 2 -->
     <div class="relative bg-gray-200 rounded-2xl border border-gray-200 p-4 sm:p-5 feature-card shadow-sm w-full min-h-[400px] sm:min-h-[440px] flex flex-col">
@@ -527,14 +537,14 @@
       
       <!-- Content -->
       <div class="content-section">
-        <h2 class="text-xl font-bold text-black mb-2">Consistency
+        <h2 class="text-xl font-bold text-black mb-2">Discipline
 </h2>
         <p class="text-black text-sm sm:text-base">Track your consistency by tagging practice and game days</p>
       </div>
       
       <!-- Image -->
       <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-2xl">
-        <img src="static/core/images/hphone8.jpg" alt="Analytics" class="w-full h-48 sm:h-72 md:h-80 lg:h-96 object-cover">
+        <img src="static/core/images/hss6.jpg" alt="Analytics" class="w-full h-full object-cover">
       </div>
     </div>
   
@@ -550,14 +560,13 @@
       
       <!-- Content -->
       <div class="content-section">
-        <h2 class="text-xl font-bold text-black mb-2">Performance Review</h2>
-        <p class="text-black text-sm sm:text-base">Review your athletic performance and improve your game on a day to day basis</p>
-      </div>
-      
-      <!-- Image -->
-      <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-2xl">
-        <img src="static/core/images/hphone7.jpg" alt="Pie Chart" class="w-full h-48 sm:h-72 md:h-80 lg:h-96 object-cover">
-      </div>
+        <h2 class="text-xl font-bold text-black mb-2">Community</h2>
+        <p class="text-black text-sm sm:text-base">Engage with athletes, find new resources and stay inspired.</p>
+    </div>
+    
+    <!-- Image -->
+    <div class="image-section mt-4 flex-1 flex items-end overflow-hidden rounded-2xl">
+        <img src="static/core/images/hss5.jpg" alt="Pie Chart" class="w-full h-full object-cover">
     </div>
   </div>
 </div>
