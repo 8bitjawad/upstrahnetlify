@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="static/core/css/contact1.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://db.onlinewebfonts.com/c/54deb902459692001bafddf102d8235a?family=Stereo+Gothic+W01+850" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
@@ -42,11 +43,57 @@
 }
 
       .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #8f48d5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        /* Subtle animated brand gradient (green ↔ purple) */
+        .brand-gradient {
+  background: linear-gradient(90deg, 
+    #62ff00 0%, 
+    #7a00e6 50%, 
+    #62ff00 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #666;
+  animation: brandGradientShift 4s ease-in-out infinite alternate;
+  
+  /* Ensure no clipping */
+  display: inline-block;
+  padding: 0 5px;
+  box-sizing: content-box;
+}
+
+@keyframes brandGradientShift {
+  0% { background-position: 20% 50%; }
+  100% { background-position: 80% 50%; }
+}
+
+/* Safe fallback for small screens */
+@media (max-width: 640px) {
+  .brand-gradient {
+    background-size: 150% 100%;
+  }
+  
+  @keyframes brandGradientShift {
+    0% { background-position: 25% 50%; }
+    100% { background-position: 75% 50%; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-gradient { 
+    animation: none;
+    background: linear-gradient(90deg, #62ff00 0%, #7a00e6 100%);
+    background-size: 100% 100%;
+    background-position: 0% 50%;
+  }
+}
         
         .card-hover {
             transition: all 0.3s ease;
@@ -116,7 +163,7 @@
       }
     </style>
   </head>
-  <body class="bg-[#1c1c1c] text-white font-sans container-fix">
+  <body class="bg-[#1c1c1c] text-white container-fix">
     <!-- Navigation (copied from home.html, with Products dropdown) -->
     <nav class="fixed top-0 mt-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8  ">
   <div class="max-w-6xl mx-auto backdrop-blur-md bg-white/5 rounded-lg my-1">
@@ -187,7 +234,6 @@
   </div>
 </nav>
 
-<body class="bg-[#1c1c1c]">
     <main class="bg-[#1c1c1c] text-white w-full">
         
   <!-- Hero Section - Fixed to start from top -->
@@ -206,11 +252,11 @@
       <div class="w-full max-w-7xl mx-auto">
         <!-- Single column layout for all screen sizes -->
         <div class="w-full max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">         
-        <h1 class="text-4xl stereo sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">           
-        Upstrah
+        <h1 class="text-3xl stereo md:text-4xl font-medium leading-tight">           
+        OUR ANTHEM
         </h1>         
-        <h2 class="text-xl stereo md:text-2xl lg:text-3xl font-semibold text-white">           
-          Train.Track.Triumph.       
+        <h2 class="text-lg stereo sm:text-2xl md:text-4xl font-semibold brand-gradient">           
+          Train.Track.Triumph.        
         </h2>         
         <p class="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed text-center">     
           At Upstrah, we’re building an ecosystem where athletes, coaches, clubs, and fans come together to grow in the sport they love.        </p>
