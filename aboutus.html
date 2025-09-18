@@ -24,10 +24,26 @@
     <meta name="twitter:image" content="https://upstrah.com/static/core/images/mainlogo.png" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="static/core/favicon_io/favicon.ico" />
-    <link rel="icon" type="image/png" href="static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
-    <link rel="apple-touch-icon" href="static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
-    <link rel="manifest" href="static/core/favicon_io/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
+    <link rel="manifest" href="/static/core/favicon_io/site.webmanifest" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Upstrah",
+      "url": "https://upstrah.com",
+      "logo": "https://upstrah.com/static/core/favicon_io/upstra-logo_icon-dark-512x512.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Upstrah",
+      "url": "https://upstrah.com/aboutus.html"
+    }
+    </script>
     
     <title>About Us - Upstrah </title>
     <link rel="stylesheet" href="static/core/css/contact1.css" />
@@ -99,7 +115,6 @@ p {
   /* Hardware acceleration and browser compatibility */
   will-change: background-position;
   transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
 }
 
 @keyframes brandGradientShift {
