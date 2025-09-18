@@ -67,14 +67,15 @@ p {
   font-family: 'Stereo Gothic W01 850', sans-serif;
 }
 
-      .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #8f48d5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #8f48d5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
         /* Subtle animated brand gradient (green ↔ purple) */
-        .brand-gradient {
+.brand-gradient {
+  /* Animated gradient */
   background: linear-gradient(90deg, 
     #62ff00 0%, 
     #7a00e6 50%, 
@@ -86,7 +87,7 @@ p {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #666;
+  color: #666; /* Fallback text color for unsupported browsers */
   animation: brandGradientShift 2s ease-in-out infinite alternate;
   
   /* Ensure no clipping */
@@ -94,6 +95,43 @@ p {
   padding: 0 5px;
   box-sizing: content-box;
   white-space: nowrap; /* keep all words on one line so animation spans across */
+  
+  /* Hardware acceleration and browser compatibility */
+  will-change: background-position;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes brandGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; } /* Return to start */
+}
+
+/* Disable animation on devices that might have issues */
+@media (max-width: 768px) {
+  .brand-gradient {
+    animation-duration: 3s; /* Slower on mobile */
+  }
+}
+
+/* Disable animation if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .brand-gradient { 
+    animation: none;
+    background: linear-gradient(90deg, #62ff00 0%, #7a00e6 100%);
+    background-size: 100% 100%;
+    background-position: 0% 50%;
+  }
+}
+
+/* Fix for problematic browsers/devices */
+@supports not (-webkit-background-clip: text) {
+  .brand-gradient {
+    animation: none;
+    color: #62ff00; /* Fallback to solid green */
+    -webkit-text-fill-color: #62ff00;
+  }
 }
 
 @keyframes brandGradientShift {
