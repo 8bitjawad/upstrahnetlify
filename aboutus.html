@@ -56,34 +56,36 @@
     #62ff00 75%,
     #7a00e6 100%
   );
-  background-size: 200% 100%;
+  background-size: 300% 100%; /* wider travel so it spans across all words */
   background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #666;
-  animation: brandGradientShift 4s ease-in-out infinite alternate;
+  animation: brandGradientShift 2s ease-in-out infinite alternate;
   
   /* Ensure no clipping */
   display: inline-block;
   padding: 0 5px;
   box-sizing: content-box;
+  white-space: nowrap; /* keep all words on one line so animation spans across */
 }
 
 @keyframes brandGradientShift {
-  0% { background-position: 20% 50%; }
-  100% { background-position: 80% 50%; }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 /* Safe fallback for small screens */
 @media (max-width: 640px) {
   .brand-gradient {
-    background-size: 150% 100%;
+    background-size: 200% 100%;
+    white-space: normal; /* allow wrapping on very small screens */
   }
   
   @keyframes brandGradientShift {
-    0% { background-position: 25% 50%; }
-    100% { background-position: 75% 50%; }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
   }
 }
 
