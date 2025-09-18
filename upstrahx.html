@@ -136,7 +136,7 @@
       </div>
     </nav>
     
-    <main class="bg-[#1c1c1c] min-h-screen pt-16 md:pt-12">
+    <main class="bg-[#1c1c1c] h-full pt-16 md:pt-12">
       <!-- Hero Section with Background Video -->
             <section
    class="relative bg-cover bg-center bg-no-repeat pb-12 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto overflow-hidden"
@@ -153,74 +153,45 @@
       <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-[3rem] sm:leading-[3.5rem] md:leading-[4rem] mb-8">
         UPSTRAH X – For Those Who Shape the Game
       </h1>
-      <div class="flex justify-center md:justify-start gap-6">
-        <!-- App Store button -->
-        <a
-          href="#"
-          class="inline-flex items-center bg-purple-500 text-black font-semibold px-6 py-3 rounded-lg  hover:bg-lime-600 transition"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Download on the App Store"
-        >
-          <svg
-            class="w-6 h-6 mr-2"
-            fill="currentColor"
-            viewBox="0 0 40 45"
-            xmlns="https://www.w3.org/2000/svg"
-          >
+      <div class="flex flex-col gap-3 w-full max-w-xs mx-auto 
+      md:flex-row md:gap-4 md:justify-start md:mx-0 md:max-w-2xl">
+        <a href="#" target="_blank"
+          class="flex items-center justify-center w-full md:w-auto px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
+          rel="noreferrer">
+          <svg class="w-8 h-8" viewBox="0 0 40 45" fill="none" xmlns="https://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
-              <path
-                d="M32.6226 23.7016C32.6026 20.0267 34.2591 17.253 37.6118 15.2103C35.7359 12.5167 32.902 11.0347 29.1601 10.7443C25.6177 10.464 21.7461 12.8171 20.3292 12.8171C18.8324 12.8171 15.3998 10.8445 12.7057 10.8445C7.13769 10.9346 1.22048 15.3004 1.22048 24.1822C1.22048 26.8057 1.69945 29.516 2.65738 32.3131C3.93461 35.988 8.54465 45 13.3542 44.8498C15.8688 44.7897 17.645 43.0574 20.9179 43.0574C24.091 43.0574 25.7375 44.8498 28.5414 44.8498C33.3909 44.7797 37.5619 36.5888 38.7793 32.9039C32.2733 29.8298 32.6226 23.8919 32.6226 23.7016ZM26.9748 7.25968C29.6989 4.01535 29.4494 1.06142 29.3696 0C26.9648 0.140187 24.1808 1.64219 22.5943 3.49466C20.848 5.4773 19.8203 7.93058 20.0398 10.6943C22.6442 10.8945 25.019 9.55274 26.9748 7.25968Z"
-                fill="black"
-              />
+              <path d="M32.6226 23.7016C32.6026 20.0267 34.2591 17.253 37.6118 15.2103C35.7359 12.5167 32.902 11.0347 29.1601 10.7443C25.6177 10.464 21.7461 12.8171 20.3292 12.8171C18.8324 12.8171 15.3998 10.8445 12.7057 10.8445C7.13769 10.9346 1.22048 15.3004 1.22048 24.1822C1.22048 26.8057 1.69945 29.516 2.65738 32.3131C3.93461 35.988 8.54465 45 13.3542 44.8498C15.8688 44.7897 17.645 43.0574 20.9179 43.0574C24.091 43.0574 25.7375 44.8498 28.5414 44.8498C33.3909 44.7797 37.5619 36.5888 38.7793 32.9039C32.2733 29.8298 32.6226 23.8919 32.6226 23.7016ZM26.9748 7.25968C29.6989 4.01535 29.4494 1.06142 29.3696 0C26.9648 0.140187 24.1808 1.64219 22.5943 3.49466C20.848 5.4773 19.8203 7.93058 20.0398 10.6943C22.6442 10.8945 25.019 9.55274 26.9748 7.25968Z" fill="black"></path>
             </g>
             <defs>
               <clipPath id="clip0">
-                <rect width="40" height="45" fill="white" />
+                <rect width="40" height="45" fill="white"></rect>
               </clipPath>
             </defs>
           </svg>
-          App Store
+          <div class="flex flex-col ml-3 leading-4 text-left">
+            <span class="text-xs text-gray-700">Get it on</span>
+            <span class="text-base font-semibold text-gray-900 group-hover:text-blue-600 transition">App Store</span>
+          </div>
         </a>
-
-        <!-- Play Store button -->
-        <a
-          href="#"
-          class="inline-flex items-center bg-purple-500 text-black font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-lime-600 transition"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Download on the Play Store"
-        >
-          <svg
-            class="w-6 h-6 mr-2"
-            viewBox="-9 0 274 274"
-            fill="none"
-            xmlns="https://www.w3.org/2000/svg"
-          >
+      
+        <a href="#" target="_blank"
+          class="flex items-center justify-center w-full md:w-auto px-5 py-3 bg-white rounded-xl shadow hover:scale-105 transition-transform duration-200 group"
+          rel="noreferrer">
+          <svg class="w-8 h-8" viewBox="-9 0 274 274" fill="none" xmlns="https://www.w3.org/2000/svg">
             <g>
-              <path
-                d="M188.81319,178.874645 C221.272218,161.051727 245.880297,147.470853 248.001319,146.415618 C254.78648,142.806714 261.79324,133.256838 248.001319,125.838536 C243.548228,123.506467 219.573289,110.347687 188.81319,93.3795092 L146.171146,136.443648 L188.81319,178.874645 Z"
-                fill="#FFD900"
-              />
-              <path
-                d="M146.171146,136.443648 L10.3940643,273.286517 C13.5808739,273.708611 17.1792251,272.864423 21.4212696,270.532353 C30.3274526,265.657168 124.739324,214.098388 188.81319,178.885198 L146.171146,136.443648 Z"
-                fill="#F43249"
-              />
-              <path
-                d="M146.171146,136.443648 L188.81319,93.5905562 C188.81319,93.5905562 30.9711459,7.45172685 21.4212696,2.36549437 C17.8229184,0.233919759 13.7919209,-0.399221214 10.1830173,0.233919759 L146.171146,136.443648 Z"
-                fill="#00EE76"
-              />
-              <path
-                d="M146.171146,136.443648 L10.1830173,0.233919759 C4.6641385,1.51075405 0,6.38593954 0,16.3579099 C0,32.270853 0,244.003747 0,257.162527 C0,266.290309 3.60890354,272.864423 10.3940643,273.497564 L146.171146,136.443648 Z"
-                fill="#00D3FF"
-              />
+              <path d="M188.81319,178.874645 C221.272218,161.051727 245.880297,147.470853 248.001319,146.415618 C254.78648,142.806714 261.79324,133.256838 248.001319,125.838536 C243.548228,123.506467 219.573289,110.347687 188.81319,93.3795092 L146.171146,136.443648 L188.81319,178.874645 Z" fill="#FFD900"></path>
+              <path d="M146.171146,136.443648 L10.3940643,273.286517 C13.5808739,273.708611 17.1792251,272.864423 21.4212696,270.532353 C30.3274526,265.657168 124.739324,214.098388 188.81319,178.885198 L146.171146,136.443648 Z" fill="#F43249"></path>
+              <path d="M146.171146,136.443648 L188.81319,93.5905562 C188.81319,93.5905562 30.9711459,7.45172685 21.4212696,2.36549437 C17.8229184,0.233919759 13.7919209,-0.399221214 10.1830173,0.233919759 L146.171146,136.443648 Z" fill="#00EE76"></path>
+              <path d="M146.171146,136.443648 L10.1830173,0.233919759 C4.6641385,1.51075405 0,6.38593954 0,16.3579099 C0,32.270853 0,244.003747 0,257.162527 C0,266.290309 3.60890354,272.864423 10.3940643,273.497564 L146.171146,136.443648 Z" fill="#00D3FF"></path>
             </g>
           </svg>
-          Play Store
+          <div class="flex flex-col ml-3 leading-4 text-left">
+            <span class="text-xs text-gray-700">Get it on</span>
+            <span class="text-base font-semibold text-gray-900 group-hover:text-green-600 transition">Play Store</span>
+          </div>
         </a>
       </div>
     </div>
-
     <!-- Right phone images -->
     <div class="relative flex justify-center items-center w-full md:w-1/2 h-auto mt-8 md:mt-0 mb-8 md:mb-0 order-2 md:order-3">
       <!-- Background phone -->
@@ -236,12 +207,12 @@
   </div>
   
   <!-- About Upstrah Partner Section -->
-  <div class="relative z-10 bg-gray-100 rounded-2xl max-w-[1320px] mx-auto mb-0 px-6 sm:px-12 py-10 mt-12">
-  <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-black">
+  <div class="relative z-10 bg-gray-100 rounded-2xl max-w-6xl mx-auto mb-0 px-6 sm:px-12 py-10 mt-12">
+  <h2 class="text-2xl text-center sm:text-4xl font-bold mb-4 text-black">
     About <span class="bg-gradient-to-r from-[#7e22ce] to-[#a855f7]
     text-transparent bg-clip-text">Upstrah X</span>
   </h2>
-  <p class="text-black text-lg sm:text-xl leading-relaxed word-spacing-tight">
+  <p class="text-black text-justify text-lg sm:text-xl leading-relaxed word-spacing-tight">
     UPSTRAH X equips sports professionals with the tools they need to shape tomorrow’s champions. From reviewing player stats and tracking performance, to connecting with athletes and evaluating potential, the platform streamlines talent discovery and development. Whether you’re building a team, mentoring rising stars, or scouting future talent, UPSTRAH X helps you nurture the next generation of athletes—all in one powerful ecosystem.
   </p>
 </div>
@@ -249,7 +220,8 @@
 </section>
 
       
-<section class="max-w-6xl mx-4 sm:mx-6 lg:mx-8 xl:mx-auto px-4 py-8">
+<section class="w-full px-4 sm:px-6 lg:px-8 py-8">
+  <div class="max-w-6xl mx-auto">
   <!-- Header -->
   <div class="text-center mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">
@@ -300,9 +272,9 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Athlete Profiles & Stats</h3>
-              <p class="text-sm text-gray-600 text-justify">
-                   Review and analyze detailed player statistics to track progress, evaluate performance, and identify rising talent.
+              <h3 class="text-lg font-bold text-purple-600 mb-2">Athlete Profiles & Stats</h3>
+              <p class="text-gray-600 text-justify">
+                   Review and analyze detailed player statistics in order to track progress, evaluate a player's performance and identify rising talent.
               </p>
           </div>
       </div>
@@ -315,115 +287,109 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012-2m-2 8h2m-2 4h2"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Event Creation & Management</h3>
-              <p class="text-sm text-gray-600 text-justify">
+              <h3 class="text-lg font-bold text-purple-600 mb-2">Event Creation & Management</h3>
+              <p class="text-gray-600 text-justify">
                   Easily organize tournaments, trials, or training camps, and share them with your club and community.
               </p>
           </div>
       </div>
 
       <!-- Card 4 - Practice Reviews (Second Row Left, Small) -->
-      <div class="md:col-span-2 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[170px] ">
+      <div class="md:col-span-2 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[180px] ">
           <div class="bg-gray-100 rounded-2xl p-4 shadow-sm flex flex-col h-full">
               <!-- <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
                   <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Practice & Game Reviews</h3>
-              <p class="text-sm text-gray-600 text-justify">
-                   Log training sessions, review match performances, and create feedback loops that help athletes continually improve.
+              <h3 class="text-lg font-bold text-purple-600 mb-2">Practice & Game Reviews</h3>
+              <p class="text-gray-600 text-justify">
+                Log training sessions, review match performances, and build valuable feedback loops that will aid athletes in improving consistently.  
               </p>
           </div>
       </div>
 
       <!-- Card 8 - Club Management (Second Row Center, Large) -->
-      <div class="md:col-span-4 lg:col-span-4 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[170px]">
+      <div class="md:col-span-4 lg:col-span-4 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[180px]">
           <div class="bg-gray-100 rounded-2xl p-4 shadow-sm flex flex-col h-full">
               <!-- <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
                   <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Club & Team Management</h3>
-              <p class="text-sm text-gray-600 text-justify">
-                  Oversee rosters, schedules, and activities, ensuring smooth operations for your club or organization.
-              </p>
+              <h3 class="text-lg font-bold text-purple-600 mb-2">Club & Team Management</h3>
+              <p class="text-gray-600 text-justify">
+                Oversee rosters, schedules, and activities with ease, ensuring smooth operations, clear coordination, and better management for your club or organization.              </p>
           </div>
       </div>
 
       <!-- Card 3 - Updates (Second Row Right, Small) -->
-      <div class="md:col-span-6 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[170px]">
+      <div class="md:col-span-6 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[180px]">
           <div class="bg-gray-100 rounded-2xl p-4 shadow-sm flex flex-col h-full">
               <!-- <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
                   <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Updates & Announcements</h3>
-              <p class="text-sm text-gray-600 ">
+              <h3 class="text-lg font-bold text-purple-600 mb-2">Updates & Announcements</h3>
+              <p class="text-gray-600 ">
                   Keep your athletes, staff, and community informed with timely updates on schedules, achievements, and club news.
               </p>
           </div>
       </div>
 
       <!-- Card 9 - Sports News (Third Row Left, Wide) -->
-      <div class="md:col-span-4 lg:col-span-3 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[170px]">
+      <div class="md:col-span-4 lg:col-span-3 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[180px]">
           <div class="bg-gray-100 rounded-2xl p-6 shadow-sm flex flex-col h-full">
               <!-- <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                   <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Sports & Talent News</h3>
-              <p class="text-gray-600 text-sm flex-grow text-justify">
+              <h3 class="text-lg font-semibold text-purple-600 mb-2">Sports & Talent News</h3>
+              <p class="text-gray-600 flex-grow text-justify">
                   Stay informed with the latest updates from the sports world while tracking trends in talent development.
               </p>
           </div>
       </div>
 
       <!-- Card 7 - Performance Reviews (Third Row Center) -->
-      <div class="md:col-span-2 lg:col-span-3 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[170px]">
+      <div class="md:col-span-2 lg:col-span-3 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[180px]">
           <div class="bg-gray-100 rounded-2xl p-6 shadow-sm flex flex-col h-full">
               <!-- <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                   <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Performance Reviews</h3>
-              <p class="text-gray-600 text-sm flex-grow text-justify">
-                 Provide structured feedback and encouragement to athletes, helping them refine skills and stay motivated.
-              </p>
-          </div>
+              <h3 class="text-lg font-semibold text-purple-600 mb-2">Performance Reviews</h3>
+              <p class="text-gray-600 flex-grow text-justify">
+                Easily provide well-structured feedback and encouragement to athletes, helping them refine skills and stay consistently motivated.          </div>
       </div>
 
       <!-- Card 6 - Direct Connections (Third Row Right) -->
-      <div class="md:col-span-6 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[170px]">
+      <div class="md:col-span-6 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover h-[180px]">
           <div class="bg-gray-100 rounded-2xl p-6 shadow-sm flex flex-col h-full">
               <!-- <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                   <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                   </svg>
               </div> -->
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Direct Connections</h3>
-              <p class="text-gray-600 text-sm flex-grow">
-                 Connect with athletes, other coaches, and scouts through dedicated communication channels for better collaboration.
-              </p>
+              <h3 class="text-lg font-semibold text-purple-600 mb-2">Direct Connections</h3>
+              <p class="text-gray-600 flex-grow text-justify">
+                Connect with athletes, other coaches, and scouts via our communication channels for collaboration.              </p>
           </div>
       </div>
 
   </div>
 </section>
-      <section class="w-full mb-10 mt-10 px-4 sm:px-6 lg:px-10">
-        <div class="mx-auto max-w-7xl bg-gray-100 rounded-3xl shadow-xl overflow-hidden py-16 px-4 sm:px-8 lg:px-16 mb-0">
+      <section class="w-full mb-10 mt-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto bg-gray-100 rounded-3xl shadow-xl overflow-hidden py-16 px-4 sm:px-8 lg:px-16 mb-0">
             <!-- Title -->
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-black text-center">
-                How It Works
-            </h2>
-        
-            <!-- Enhanced Steps Layout -->
+            <h2 class="text-4xl text-center font-bold text-purple-700 mb-4">How It Works</h2>
+            <p class="text-black mb-6 max-w-md mx-auto text-center">
+              Discover how Upstrah X can help you streamline your sports management and talent discovery processes.
+            </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                
                 <!-- Step 1 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="step-card rounded-2xl p-6 w-full h-full flex flex-col items-center justify-between">
@@ -431,7 +397,7 @@
                             <!-- Enlarged Number -->
                             <div class="bg-purple-600 text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">1</div>
                             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-purple-600">Sign Up</h3>
-                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-center">
+                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-justify">
                                 Set up your Upstrah X profile and access your dashboard to manage your club, players, and events.
                             </p>
                         </div>
@@ -448,8 +414,8 @@
                             <!-- Enlarged Number -->
                             <div class="bg-purple-600 text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">2</div>
                             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-purple-600">Register</h3>
-                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs">
-                                Submit your club or organization details and key information for verification.
+                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-justify">
+                                Submit your club or organization details and other key information for verification.
                             </p>
                         </div>
                         <div class="mt-4 w-full h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -465,8 +431,8 @@
                             <!-- Enlarged Number -->
                             <div class="bg-purple-600 text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">3</div>
                             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-purple-600">Get Approved</h3>
-                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-center">
-                                Our team reviews your registration to ensure authenticity and credibility before activating your account.
+                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-justify">
+                                Our team reviews your registration to ensure authenticity, credibility, and provide a secure experience for activation of your account.
                             </p>
                         </div>
                         <div class="mt-4 w-full h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -482,7 +448,7 @@
                             <!-- Enlarged Number -->
                             <div class="bg-purple-600 text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">4</div>
                             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-purple-600">Get Started</h3>
-                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-center">
+                            <p class="text-gray-900 text-sm sm:text-base leading-relaxed max-w-xs text-justify">
                                 Invite your athletes, staff, and fellow professionals to join your network and start building your sports community.
                             </p>
                         </div>
@@ -492,7 +458,8 @@
                     </div>
                 </div>
             </div>
-        </div></section>
+        </div>
+      </section>
             
             <!-- <section id="get-the-app">
                  Download Section Box 
@@ -539,8 +506,8 @@
        -->
 <section id="get-the-app">
       <!-- Image Grid Section --> 
-      <div class="w-full py-10 px-6 md:px-10 flex justify-center">
-        <div class="w-full max-w-6xl bg-gray-100 rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
+      <div class="w-full py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto bg-gray-100 rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
           
           <!-- Left Half: Phone Image -->
           <div class="w-full md:w-1/2 p-4 flex justify-center items-center">

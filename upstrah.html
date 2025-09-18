@@ -37,16 +37,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
     <style>
-        .gradient-bg-1 { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
-        .gradient-bg-2 { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
-        .gradient-bg-3 { background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); }
-        .gradient-bg-4 { background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); }
-        .gradient-bg-5 { background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%); }
-        .gradient-bg-6 { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); }
-        .gradient-bg-7 { background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); }
-        .gradient-bg-8 { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
-        .gradient-bg-9 { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
-        
+      .typewriter {
+  overflow: hidden;
+  border-right: .15em solid #4f46e5; /* cursor effect */
+  white-space: nowrap;
+  font-family: monospace;
+  display: inline-block;
+  animation: typing 3s steps(30, end) infinite alternate,
+             blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
         .floating-element {
             animation: float 6s ease-in-out infinite;
         }
@@ -252,96 +261,111 @@
       >
         <h1 class="text-3xl font-bold text-[#8bff41] mb-4">About UPSTRAH</h1>
         
-        <p class="text-black text-2xl mx-auto px-2 max-w-5xl word-spacing-tight">
+        <p class="text-black text-xl mx-auto px-2 word-spacing-tight">
           UPSTRAH is the first-of-its-kind platform combining performance tracking, networking, and community support.  
           Designed to connect athletes, coaches, and fans to keep your passion for sport alive and growing.
         </p>
       </div>
       
 </section>
-<section class="max-w-6xl mx-auto mt-10 mb-10 px-3 py-6">
+<section class="lg:w-[1220px] max-w-7xl mx-auto mt-10 mb-10 px-4 sm:px-6 lg:px-8 py-6">
   <!-- Header -->
   <div class="text-center mb-6">
       <h1 class="font-bold text-[#8bff41] text-2xl sm:text-3xl lg:text-4xl mb-2" data-aos="fade-up">
           What UPSTRAH Brings You
       </h1>
+      <p class="text-white text-sm max-w-md mx-auto word-spacing-tight">
+        An all-in-one sports ecosystem designed to track, connect, and elevate every athlete’s journey.    </p>
   </div>
 
   <!-- Abstract Creative Grid -->
   <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-8 gap-4" data-aos="fade-up" data-aos-delay="350">
       
       <!-- Fitness Stats - Large Featured Card -->
-      <div class="md:col-span-3 lg:col-span-4 bg-gray-100 rounded-3xl p-6 relative overflow-hidden card-hover pattern-dots min-h-[180px]">
+      <div class="md:col-span-3 lg:col-span-4 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-3xl card-hover min-h-[180px]">
+          <div class="bg-gray-100 rounded-3xl p-6 relative overflow-hidden h-full pattern-dots">
           <div class="relative z-10 h-full flex flex-col justify-between">
               <div>
                   <h3 class="text-[#8bff41] text-2xl md:text-3xl font-bold mb-4">Fitness Stats</h3>
-                  <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">Track your daily fitness progress, monitor stamina, and stay on course to achieve your goals with detailed analytics.</p>
+                  <p class="text-black text-base leading-relaxed text-justify">Track your daily fitness progress, monitor stamina, and stay on course to achieve your goals with detailed analytics.</p>
               </div>
+          </div>
           </div>
       </div>
 
       <!-- Practice Stats - Medium Card -->
-      <div class="md:col-span-3 lg:col-span-2 bg-[#8bff41]/80 rounded-2xl p-6 relative overflow-hidden card-hover min-h-[180px]">
+      <div class="md:col-span-3 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover min-h-[180px]">
+          <div class="bg-gray-100 rounded-2xl p-6 relative overflow-hidden h-full">
           <div class="relative z-10">
-              <h3 class="text-white text-xl font-bold mb-3">Practice Stats</h3>
-              <p class="text-white text-sm leading-relaxed text-justify">Get insights from your training sessions and identify ways to keep improving your game.</p>
+              <h3 class="text-[#8bff41] text-2xl md:text-3xl font-bold mb-4">Practice Stats</h3>
+              <p class="text-black leading-relaxed text-justify">Get insights from your training sessions and identify ways to keep improving your game.</p>
+          </div>
           </div>
       </div>
 
       <!-- Game Stats - Medium Card -->
-      <div class="md:col-span-3 lg:col-span-2 bg-gray-100 rounded-2xl p-6 relative overflow-hidden card-hover min-h-[180px]">
+      <div class="md:col-span-3 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover min-h-[180px]">
+          <div class="bg-gray-100 rounded-2xl p-6 relative overflow-hidden h-full">
           <div class="relative z-10">
-              <h3 class="text-[#8bff41] text-xl font-bold mb-3">Game Stats</h3>
-              <p class="text-black text-sm leading-relaxed text-justify">Record and revisit your match performances—your stats are safely stored to look back on anytime.</p>
+              <h3 class="text-[#8bff41] text-2xl md:text-3xl font-bold mb-4">Game Stats</h3>
+              <p class="text-black leading-relaxed text-justify">Record and revisit your match performances—your stats are safely stored to look back on anytime.</p>
+          </div>
           </div>
       </div>
 
       <!-- Chat - Small Square -->
-      <div class="md:col-span-2 lg:col-span-2 bg-[#8bff41]/80 rounded-2xl p-5 relative overflow-hidden card-hover pattern-dots min-h-[100px]">
+      <div class="md:col-span-2 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover min-h-[100px]">
+          <div class="bg-gray-100 rounded-2xl p-5 relative overflow-hidden h-full pattern-dots">
           <div class="relative z-10">
-              <h3 class="text-white text-lg font-bold mb-2">Chat</h3>
-              <p class="text-white text-xs leading-relaxed text-left">Connect directly with teammates, coaches, or friends through one-on-one chats.</p>
+              <h3 class="text-[#8bff41]  text-2xl md:text-3xl font-bold mb-4">Chat</h3>
+              <p class="text-black leading-relaxed text-justify">Connect with your teammates, coaches, and friends through one-on-one chats and stay updated with instant messages anytime, anywhere.</p>
+          </div>
           </div>
       </div>
 
       <!-- News - Small Square -->
-      <div class="md:col-span-2 lg:col-span-2 bg-gray-100 rounded-2xl p-5 relative overflow-hidden card-hover min-h-[100px]">
+      <div class="md:col-span-2 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover min-h-[100px]">
+          <div class="bg-gray-100 rounded-2xl p-5 relative overflow-hidden h-full">
           <div class="relative z-10">
-              <h3 class="text-[#8bff41] text-lg font-bold mb-2">News</h3>
-              <p class="text-black text-xs leading-relaxed text-justify">Catch up with the latest happenings from across the global sports world.</p>
+              <h3 class="text-[#8bff41]  text-2xl md:text-3xl font-bold mb-4">News</h3>
+              <p class="text-black leading-relaxed text-justify">Catch up with the latest happenings, news, and stories from across the global sports world, covering every event and moment.</p>
+          </div>
           </div>
       </div>
 
       <!-- Post - Wide Card -->
-      <div class="md:col-span-4 lg:col-span-4 bg-gray-100 rounded-2xl p-6 relative overflow-hidden card-hover min-h-[100px]">
+      <div class="md:col-span-4 lg:col-span-4 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover min-h-[100px]">
+          <div class="bg-gray-100 rounded-2xl p-6 relative overflow-hidden h-full">
           <div class="relative z-10">
-              <h3 class="text-[#8bff41] text-2xl font-bold mb-3">Post</h3>
+              <h3 class="text-[#8bff41]  text-2xl md:text-3xl font-bold mb-4">Post</h3>
               <p class="text-black text-base leading-relaxed text-justify">Share your highlights, achievements, and stories with the community to inspire and grow together.</p>
+          </div>
           </div>
       </div>
 
       <!-- AI Buddy - Large Card -->
-      <div class="md:col-span-6 lg:col-span-4 bg-gray-100 rounded-3xl p-8 relative overflow-hidden card-hover pattern-dots min-h-[280px]">
+      <div class="md:col-span-6 lg:col-span-4 bg-[#8bff41]/80 rounded-3xl p-8 relative overflow-hidden card-hover pattern-dots min-h-[280px]">
           <div class="relative z-10 h-full flex flex-col justify-between">
               <div>
-                  <h3 class="text-[#8bff41] text-2xl md:text-3xl font-bold mb-4">Coming Soon: PlayBo</h3>
-                  <h4 class="text-black text-lg font-semibold mb-3">Your AI Buddy</h4>
-                  <p class="text-black text-base leading-relaxed text-justify">Your personal AI coach to guide, analyze, and elevate your game like never before.</p>
+                  <h3 class="text-white text-2xl md:text-3xl font-bold mb-4">Coming Soon: PlayBo</h3>
+                  <h4 class="text-white text-lg font-semibold mb-3">Your AI Buddy</h4>
+                  <p class="text-white text-base leading-relaxed text-justify">Your personal AI coach to guide, analyze, and elevate your game like never before.</p>
               </div>
               <div class="bg-black/10 backdrop-blur-sm rounded-2xl p-4 mt-6">
                   <div class="flex items-center space-x-3">
-                      <div class="w-3 h-3 bg-green-600 rounded-full animate-pulse"></div>
-                      <span class="text-green-800 text-sm">AI Training in Progress...</span>
+                      <div class="w-3 h-3 bg-purple-600 rounded-full animate-pulse"></div>
+                      <span class="typewriter text-white text-sm">AI Training in Progress...</span>
                   </div>
               </div>
           </div>
       </div>
 
       <!-- Peer Review - Tall Card -->
-      <div class="md:col-span-3 lg:col-span-2 bg-gray-100 rounded-2xl p-6 relative overflow-hidden card-hover  min-h-[280px]">
+      <div class="md:col-span-3 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover  min-h-[280px]">
+          <div class="bg-gray-100 rounded-2xl p-6 relative overflow-hidden h-full">
           <div class="relative z-10 h-full flex flex-col justify-between">
               <div>
-                  <h3 class="text-[#8bff41] text-xl font-bold mb-3">Peer Review</h3>
+                  <h3 class="text-[#8bff41] text-2xl md:text-3xl font-bold mb-4">Peer Review</h3>
                   <p class="text-black text-sm leading-relaxed text-left ">Show support for fellow athletes by dropping feedback, encouragement, or a quick note.</p>
               </div>
               <div class="space-y-2 mt-6">
@@ -363,13 +387,15 @@
                   </div>
               </div>
           </div>
+          </div>
       </div>
 
       <!-- Club Connect - Medium Card -->
-      <div class="md:col-span-3 lg:col-span-2 bg-gray-100 rounded-2xl p-6 relative overflow-hidden card-hover min-h-[200px]">
+      <div class="md:col-span-3 lg:col-span-2 relative p-0.5 bg-gradient-to-r from-purple-500 to-green-500 rounded-2xl card-hover min-h-[200px]">
+          <div class="bg-gray-100 rounded-2xl p-6 relative overflow-hidden h-full">
           <div class="relative z-10">
-              <h3 class="text-[#8bff41] text-xl font-bold mb-3">Club Connect</h3>
-              <p class="text-black text-sm leading-relaxed text-justify">Stay updated with your club's announcements, events, and activities—all in one place.</p>
+              <h3 class="text-[#8bff41]  text-2xl md:text-3xl font-bold mb-4">Club Connect</h3>
+              <p class="text-black leading-relaxed text-justify">Stay updated with your club's announcements,events,and activities—all in one place.</p>
         
               <div class="space-y-2 mt-6">
                 <div class="bg-black/5 rounded-lg p-3">
@@ -387,6 +413,7 @@
                     </div>
                 </div>
             </div>
+          </div>
           </div>
       </div>
   </div>
@@ -414,8 +441,8 @@
       </div>
      -->
       <!-- How It Works Section -->
-<section class="w-full mb-10 mt-10 px-4 sm:px-6 lg:px-10" data-aos="fade-up">
-        <div class="mx-auto max-w-7xl bg-gray-100 text-white rounded-3xl shadow-xl overflow-hidden py-16 px-4 sm:px-8 lg:px-16 mb-0">
+<section class="w-full mb-10 mt-10 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto bg-gray-100 text-white rounded-3xl shadow-xl overflow-hidden py-16 px-4 sm:px-8 lg:px-16 mb-0">
             <!-- Title -->
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-0 text-black text-center" data-aos="fade-up">
 
@@ -428,9 +455,8 @@
                 <div class="hidden md:block absolute top-20 left-0 w-full connecting-line z-0"></div>
                 
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center text-center flex-1 relative z-10" data-aos="fade-up" data-aos-delay="100">
+                <!-- <div class="flex flex-col items-center text-center flex-1 relative z-10" data-aos="fade-up" data-aos-delay="100">
                     <div class="step-card rounded-2xl p-8 w-full h-full flex flex-col items-center justify-between min-h-[400px]">
-                        <!-- Enlarged Number -->
                         <div class="bg-[#8bff41] text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">1</div>
                         <h3 class="text-3xl font-bold mt-0 pt-0 text-[#8bff41]">Sign Up</h3>
                         <p class="text-black text-lg sm:text-base leading-relaxed max-w-xs text-center">
@@ -441,14 +467,28 @@
                             <div class="h-full w-2/3 bg-gradient-to-r from-[#8bff41] to-[#6fd932] rounded-full"></div>
                         </div>
                     </div>
+                </div> -->
+                <div class="flex flex-col items-center text-center flex-1 relative z-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-card rounded-2xl p-8 w-full h-full flex flex-col items-center justify-between min-h-[400px]">
+                        <!-- Enlarged Number -->
+                        <div class="bg-[#8bff41] text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">1</div>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#8bff41]">Sign Up</h3>
+                        <p class="text-black text-lg sm:text-base leading-relaxed max-w-xs text-center">
+                          Create your Upstrah profile and unlock your personal dashboard,
+                          designed to track growth.
+                        </p>
+                        
+                        <div class="mt-6 w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="h-full w-2/3 bg-gradient-to-r from-[#8bff41] to-[#6fd932] rounded-full"></div>
+                        </div>
+                    </div>
                 </div>
-
                 <!-- Step 2 -->
                 <div class="flex flex-col items-center text-center flex-1 relative z-10" data-aos="fade-up" data-aos-delay="200">
                     <div class="step-card rounded-2xl p-8 w-full h-full flex flex-col items-center justify-between min-h-[400px]">
                         <!-- Enlarged Number -->
                         <div class="bg-[#8bff41] text-black rounded-full px-6 py-3 text-2xl font-bold mb-4">2</div>
-                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#8bff41]">Connect Your Club</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#8bff41]">Connect</h3>
                         <p class="text-black text-lg sm:text-base leading-relaxed max-w-xs text-center">
                             Connect with your club, stay updated with club news, and sync schedules.
                         </p>
@@ -476,30 +516,24 @@
                 </div>
             </div>
             
-            <section id="get-the-app">
-                <!-- Download Section Box -->
-                <div class="mt-20 bg-[#1c1c1c] rounded-3xl shadow-lg p-8 flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
-                    <!-- Left -->
+            <!-- <section id="get-the-app">
+              Download Section Box 
+                <div class="mt-20 bg-[#1c1c1c] rounded-3xl shadow-lg p-8 flex flex-col lg:flex-row items-center gap-12 w-full">
                     <div class="lg:w-1/2 text-center lg:text-left">
                         <h3 class="text-3xl sm:text-4xl font-bold mb-6 text-[#8bff41]">Download the App</h3>
                         <p class="text-gray-300 mb-8 max-w-md mx-auto lg:mx-0 text-sm sm:text-base text-justify">
                             Available on iOS and Android — get real-time access to your dashboard and club updates on the go.
                         </p>
                         <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-  <!-- Apple Store Button -->
   <a href="#" target="_blank"
      class="flex items-center px-5 py-3 bg-[#8bff41] text-black rounded-xl hover:scale-105 transition-transform group">
-    <!-- Apple Icon (white) -->
     <svg class="w-6 h-6 mr-3" viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path d="M318.7 268c-1.4-34.5 15.1-60.9 47-80.4-17.2-25.1-43-39-76.6-41.8-32.2-2.7-66.5 19-88.5 19s-47.6-18.5-78.3-18c-40.2.5-77 23.6-97.8 59.9-41.8 70.8-10.6 175.6 30 233.3 20 28.1 43.7 59.6 74.9 58.5 30.5-1 42.1-19.9 78.9-19.9s45.9 19.9 77.4 19.2c32.7-.7 53.3-28.6 73.1-56.6 23-33.5 32.5-66 32.9-67.7-0.7-.3-62.5-24-63.6-95.5zM256.5 60.2c17.3-21 28.9-50.2 25.8-79.2-24.9 1-54.9 16.5-72.7 37.5-16 18.2-29.9 47.5-26.1 75.3 27.6 2.1 55.9-14 73-33.6z"/>
     </svg>
     <span class="text-sm font-medium text-black">App Store</span>
   </a>
-
-  <!-- Play Store Button -->
   <a href="#" target="_blank"
      class="flex items-center px-5 py-3 bg-[#8bff41] text-black rounded-xl hover:scale-105 transition-transform group">
-    <!-- Custom Play Store SVG -->
     <svg class="w-6 h-6 mr-3" viewBox="-9 0 274 274" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M188.81319,178.874645 C221.272218,161.051727 245.880297,147.470853 248.001319,146.415618 C254.78648,142.806714 261.79324,133.256838 248.001319,125.838536 C243.548228,123.506467 219.573289,110.347687 188.81319,93.3795092 L146.171146,136.443648 L188.81319,178.874645 Z" fill="#FFD900"></path>
       <path d="M146.171146,136.443648 L10.3940643,273.286517 C13.5808739,273.708611 17.1792251,272.864423 21.4212696,270.532353 C30.3274526,265.657168 124.739324,214.098388 188.81319,178.885198 L146.171146,136.443648 Z" fill="#F43249"></path>
@@ -512,7 +546,6 @@
 
                     </div>
             
-                    <!-- Right -->
 <div class="w-full lg:w-1/2 flex items-center justify-center lg:justify-end">
   <img 
     src="static/core/images/mystatdl.png" 
@@ -522,9 +555,54 @@
 </div>
 
                 </div>
-            </section>
+            </section> -->
+
         </div>
     </section>
+    <section id="get-the-app">
+      <!-- Image Grid Section --> 
+      <div class="w-full py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto bg-gray-100 rounded-3xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
+          
+          <!-- Left Half: Phone Image -->
+          <div class="w-full md:w-1/2 p-2 flex justify-center items-center">
+            <img src="static/core/images/mystatdl.png" alt="App Preview" class="block mx-auto md:mx-0 h-72 md:h-80 lg:h-96 object-contain" />
+          </div>
+  
+          <!-- Right Half: Text & Buttons -->
+          <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start text-left">
+            <h2 class="text-3xl font-bold text-[#8bff41] mb-4">Get the app</h2>
+            <p class="text-black mb-6 max-w-md text-justify">
+              Available on iOS and Android — get real-time access to your dashboard and club updates on the go.
+            </p>
+  
+            <!-- Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <!-- App Store Button -->
+              <a href="#" target="_blank"
+                 class="flex items-center px-4 py-2 border border-white bg-black text-white rounded-xl hover:scale-105 transition-transform group">
+                <svg class="w-6 h-6 mr-3" viewBox="0 0 40 45" fill="currentColor" xmlns="https://www.w3.org/2000/svg">
+                  <path d="M32.6226 23.7016C32.6026 20.0267 34.2591 17.253 37.6118 15.2103C35.7359 12.5167 32.902 11.0347 29.1601 10.7443C25.6177 10.464 21.7461 12.8171 20.3292 12.8171C18.8324 12.8171 15.3998 10.8445 12.7057 10.8445C7.13769 10.9346 1.22048 15.3004 1.22048 24.1822C1.22048 26.8057 1.69945 29.516 2.65738 32.3131C3.93461 35.988 8.54465 45 13.3542 44.8498C15.8688 44.7897 17.645 43.0574 20.9179 43.0574C24.091 43.0574 25.7375 44.8498 28.5414 44.8498C33.3909 44.7797 37.5619 36.5888 38.7793 32.9039C32.2733 29.8298 32.6226 23.8919 32.6226 23.7016ZM26.9748 7.25968C29.6989 4.01535 29.4494 1.06142 29.3696 0C26.9648 0.140187 24.1808 1.64219 22.5943 3.49466C20.848 5.4773 19.8203 7.93058 20.0398 10.6943C22.6442 10.8945 25.019 9.55274 26.9748 7.25968Z" fill="white" />
+                </svg>
+                <span class="text-sm font-medium">App Store</span>
+              </a>
+  
+              <!-- Play Store Button -->
+              <a href="#" target="_blank"
+                 class="flex items-center px-4 py-2 border border-white bg-black text-white rounded-xl hover:scale-105 transition-transform group">
+                <svg class="w-6 h-6 mr-3" viewBox="-9 0 274 274" fill="none" xmlns="https://www.w3.org/2000/svg">
+                  <path d="M188.81319,178.874645 C221.272218,161.051727 245.880297,147.470853 248.001319,146.415618 C254.78648,142.806714 261.79324,133.256838 248.001319,125.838536 C243.548228,123.506467 219.573289,110.347687 188.81319,93.3795092 L146.171146,136.443648 L188.81319,178.874645 Z" fill="#FFD900"></path>
+                  <path d="M146.171146,136.443648 L10.3940643,273.286517 C13.5808739,273.708611 17.1792251,272.864423 21.4212696,270.532353 C30.3274526,265.657168 124.739324,214.098388 188.81319,178.885198 L146.171146,136.443648 Z" fill="#F43249"></path>
+                  <path d="M146.171146,136.443648 L188.81319,93.5905562 C188.81319,93.5905562 30.9711459,7.45172685 21.4212696,2.36549437 C17.8229184,0.233919759 13.7919209,-0.399221214 10.1830173,0.233919759 L146.171146,136.443648 Z" fill="#00EE76"></path>
+                  <path d="M146.171146,136.443648 L10.1830173,0.233919759 C4.6641385,1.51075405 0,6.38593954 0,16.3579099 C0,32.270853 0,244.003747 0,257.162527 C0,266.290309 3.60890354,272.864423 10.3940643,273.497564 L146.171146,136.443648 Z" fill="#00D3FF"></path>
+                </svg>
+                <span class="text-sm font-medium">Play Store</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
     </main>
     <!-- Footer -->
    <footer class="w-full text-white bg-[#1c1c1c] overflow-hidden">
@@ -587,8 +665,8 @@
     </div>
   </div>
 </footer>
-    
 
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       // Mobile menu toggle
