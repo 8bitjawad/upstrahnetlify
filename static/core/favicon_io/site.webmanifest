@@ -3,6 +3,12 @@
   "short_name": "Upstrah",
   "icons": [
     {
+      "src": "/static/core/favicon_io/upstra-logo_icon-dark-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/static/core/favicon_io/upstra-logo_icon-dark-256x256.png",
       "sizes": "256x256",
       "type": "image/png",
