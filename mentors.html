@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Meet the mentors guiding Upstrah's mission to empower athletes worldwide." />
+    <meta name="keywords" content="sports mentors, Upstrah advisors, sports industry leaders" />
+    <meta name="author" content="Upstrah" />
+    <meta name="robots" content="index, follow" />
+    
+    <title>Upstrah - Our Mentors</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="/static/core/favicon_io/upstra-logo_icon-dark-256x256.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      .mentor-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .mentor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(139, 255, 65, 0.2);
+      }
+
+      .shimmer-text {
+        background: linear-gradient(90deg, #00ff88 0%, #ffffff 50%, #9d4edd 100%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 8s ease-in-out infinite;
+      }
+
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+
+      .floating-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .particle {
+        position: absolute;
+        background: rgba(139, 255, 65, 0.3);
+        border-radius: 50%;
+        animation: floatUp linear infinite;
+      }
+      
+      .particle:nth-child(1) { left: 10%; animation-duration: 15s; animation-delay: 0s; width: 4px; height: 4px; }
+      .particle:nth-child(2) { left: 20%; animation-duration: 18s; animation-delay: 2s; width: 6px; height: 6px; }
+      .particle:nth-child(3) { left: 30%; animation-duration: 12s; animation-delay: 4s; width: 3px; height: 3px; }
+      .particle:nth-child(4) { left: 40%; animation-duration: 20s; animation-delay: 1s; width: 5px; height: 5px; }
+      .particle:nth-child(5) { left: 50%; animation-duration: 16s; animation-delay: 3s; width: 4px; height: 4px; }
+      
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) translateX(0px);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) translateX(30px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#1c1c1c]">
+    <!-- Navigation -->
+    <nav class="fixed top-4 z-50 inset-x-0 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto backdrop-blur-lg rounded-xl shadow-lg">
+        <div class="flex h-16 items-center justify-between px-4">
+          
+          <!-- Brand (Left) -->
+          <a href="index.html" class="flex items-center">
+            <img src="static/core/images/footerlogo.png" alt="UPSTRAH Logo" class="h-12" />
+          </a>
+          
+          <!-- Centered nav links (sm and above) -->
+          <div class="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-x-10">
+            <!-- Products Dropdown -->
+            <div class="relative">
+              <button type="button" id="products-dropdown-btn" class="text-lg font-semibold text-white hover:text-teal-300 flex items-center focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="products-dropdown-menu" class="absolute left-0 mt-2 w-40 bg-[#1c1c1c]/90 text-white rounded-lg shadow-lg hidden z-50">
+                <a href="upstrah.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah</a>
+                <a href="upstrahx.html" class="block px-3 py-2 hover:bg-gray-700">Upstrah X</a>
+              </div>
+            </div>
+            
+            <!-- Other links -->
+            <a href="aboutus.html" class="text-lg font-semibold text-white hover:text-teal-300">About Us</a>
+            <a href="mentors.html" class="text-lg font-semibold text-white hover:text-teal-300">Experts</a>
+            <a href="contact.html" class="text-lg font-semibold text-white hover:text-teal-300">Contact</a>
+          </div>
+          
+          <!-- Right side (Download button + Mobile toggle) -->
+          <div class="flex items-center gap-x-4">
+            <!-- Download button (hidden on small, shown on md and above) -->
+            <a href="#get-the-app" 
+               class="px-4 py-2 bg-[#97fb57] text-white font-medium rounded-lg shadow hover:bg-[#97fb57] transition hidden md:block">
+              Download
+            </a>
+            
+            <!-- Mobile toggle -->
+            <div class="sm:hidden">
+              <button id="menu-toggle" class="text-2xl text-white focus:outline-none">☰</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#1c1c1c]/90 text-white px-4 opacity-0 transition-all duration-300 sm:hidden">
+          <ul class="flex flex-col space-y-3 py-3 text-base font-semibold">
+            <li>
+              <button id="mobile-products-toggle" class="w-full text-left flex items-center justify-between focus:outline-none">
+                Products
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul id="mobile-products-menu" class="pl-4 mt-2 space-y-2 hidden">
+                <li><a href="upstrah.html" class="block hover:text-teal-300">Upstrah</a></li>
+                <li><a href="upstrahx.html" class="block hover:text-teal-300">Upstrah X</a></li>
+              </ul>
+            </li>
+            <li><a href="aboutus.html" class="hover:text-teal-300">About Us</a></li>
+            <li><a href="mentors.html" class="hover:text-teal-300">Experts</a></li>
+            <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+            <li><a href="home.html#get-the-app" class="hover:text-teal-300">Download</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main style="margin-top: 80px">
+      <!-- Hero Section -->
+      <div class="relative min-h-[50vh] w-full flex items-center justify-center overflow-hidden">
+        <!-- Floating Particles -->
+        <div class="floating-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+
+        <!-- Background -->
+        <div class="absolute inset-0">
+          <div class="absolute inset-0 bg-gradient-to-b from-[#1c1c1c] via-purple-900/20 to-[#1c1c1c]"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 py-16">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold shimmer-text mb-6" data-aos="fade-up">
+            Our Mentors
+          </h1>
+          <p class="text-lg sm:text-xl text-white max-w-3xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
+            Behind every great platform is a team of visionaries. Our mentors bring decades of experience in sports, technology, and entrepreneurship to guide Upstrah's mission of empowering athletes worldwide.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mentors Cards Section -->
+      <section class="w-full bg-[#1c1c1c] py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Mentor Card 1 -->
+            <div class="mentor-card bg-gray-200 rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+              <div class="relative h-64 bg-gradient-to-br from-purple-600 to-green-500 flex items-center justify-center">
+                <div class="w-40 h-40 bg-white rounded-full flex items-center justify-center">
+                  <i class="fas fa-user text-6xl text-purple-600"></i>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Dr. Sarah Mitchell</h3>
+                <p class="text-purple-600 font-semibold mb-4">Sports Science Expert</p>
+                <p class="text-gray-700 text-sm mb-4">
+                  With over 20 years in sports analytics and athlete performance optimization, Dr. Mitchell has worked with Olympic teams and professional leagues to revolutionize training methodologies.
+                </p>
+                <div class="flex gap-3">
+                  <a href="#" class="text-purple-600 hover:text-purple-800 transition">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                  </a>
+                  <a href="#" class="text-purple-600 hover:text-purple-800 transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mentor Card 2 -->
+            <div class="mentor-card bg-gray-200 rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+              <div class="relative h-64 bg-gradient-to-br from-green-500 to-purple-600 flex items-center justify-center">
+                <div class="w-40 h-40 bg-white rounded-full flex items-center justify-center">
+                  <i class="fas fa-user text-6xl text-green-600"></i>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Marcus Chen</h3>
+                <p class="text-green-600 font-semibold mb-4">Tech Entrepreneur</p>
+                <p class="text-gray-700 text-sm mb-4">
+                  A serial entrepreneur with three successful exits in the SaaS space, Marcus brings invaluable insights on scaling platforms and building communities that athletes love.
+                </p>
+                <div class="flex gap-3">
+                  <a href="#" class="text-green-600 hover:text-green-800 transition">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                  </a>
+                  <a href="#" class="text-green-600 hover:text-green-800 transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mentor Card 3 -->
+            <div class="mentor-card bg-gray-200 rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+              <div class="relative h-64 bg-gradient-to-br from-purple-500 via-pink-500 to-green-500 flex items-center justify-center">
+                <div class="w-40 h-40 bg-white rounded-full flex items-center justify-center">
+                  <i class="fas fa-user text-6xl text-pink-600"></i>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Coach James Rodriguez</h3>
+                <p class="text-pink-600 font-semibold mb-4">Professional Sports Coach</p>
+                <p class="text-gray-700 text-sm mb-4">
+                  A decorated coach with championship titles across multiple sports, Coach Rodriguez understands what athletes need to succeed both on and off the field.
+                </p>
+                <div class="flex gap-3">
+                  <a href="#" class="text-pink-600 hover:text-pink-800 transition">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                  </a>
+                  <a href="#" class="text-pink-600 hover:text-pink-800 transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="w-full bg-[#1c1c1c] py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#8bff41] mb-6">
+            Want to Join Our Advisory Board?
+          </h2>
+          <p class="text-white text-lg mb-8">
+            We're always looking for passionate individuals who want to help shape the future of sports technology.
+          </p>
+          <a href="contact.html" class="inline-block px-8 py-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition shadow-lg">
+            Get in Touch
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-screen text-white bg-[#1c1c1c] overflow-hidden relative z-50 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <div class="w-full border-t border-black"></div>
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between md:items-start">
+          
+          <!-- Left Logo + Info -->
+          <div class="mb-6 md:mb-0">
+            <a href="upstrah.html" class="flex items-center">
+              <img src="static/core/images/footerlogo.png" class="me-3 h-8" alt="Stat Logo" />
+            </a>
+            <p class="mt-2 font-light">
+              Founders Office <br />
+              Ebrah Tech Pvt. Ltd. <br />
+            </p>
+          </div>
+
+          <!-- Right Links -->
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+            <!-- Resources -->
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-white">Resources</h2>
+              <ul class="space-y-2 font-medium">
+                <li><a href="upstrah.html" class="hover:underline">Upstrah</a></li>
+                <li><a href="upstrahx.html" class="hover:underline">Upstrah X</a></li>
+              </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div>
+              <h2 class="mb-6 text-sm font-semibold">Follow us</h2>
+              <ul class="space-y-2 font-medium">
+                <li><a href="https://linkedin.com" class="hover:underline">LinkedIn</a></li>
+                <li><a href="https://instagram.com" class="hover:underline">Instagram</a></li>
+              </ul>
+            </div>
+
+            <!-- Legal -->
+            <div>
+              <h2 class="mb-6 text-sm font-semibold">Legal</h2>
+              <ul class="space-y-2 font-medium">
+                <li><a href="privacypolicy.html" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="tandc.html" class="hover:underline">Terms &amp; Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="mt-6 sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm sm:text-center">
+            © 2025 <a href="#" class="hover:underline">Ebrah Tech</a>. All Rights Reserved.
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        
+        toggleBtn.addEventListener("click", function () {
+          const isOpen = menu.classList.contains("max-h-0");
+          if (isOpen) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100");
+          } else {
+            menu.classList.add("max-h-0", "opacity-0");
+            menu.classList.remove("max-h-96", "opacity-100");
+          }
+        });
+
+        // Dropdown for desktop
+        const productsBtn = document.getElementById("products-dropdown-btn");
+        const productsMenu = document.getElementById("products-dropdown-menu");
+        let dropdownOpen = false;
+        
+        if (productsBtn && productsMenu) {
+          productsBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownOpen = !dropdownOpen;
+            productsMenu.classList.toggle("hidden", !dropdownOpen);
+          });
+          
+          document.addEventListener("click", function (e) {
+            if (dropdownOpen && !productsMenu.contains(e.target) && !productsBtn.contains(e.target)) {
+              dropdownOpen = false;
+              productsMenu.classList.add("hidden");
+            }
+          });
+        }
+
+        // Dropdown for mobile
+        const mobileProductsToggle = document.getElementById("mobile-products-toggle");
+        const mobileProductsMenu = document.getElementById("mobile-products-menu");
+        
+        if (mobileProductsToggle && mobileProductsMenu) {
+          mobileProductsToggle.addEventListener("click", function () {
+            mobileProductsMenu.classList.toggle("hidden");
+          });
+        }
+
+        // Initialize AOS
+        AOS.init({
+          once: true,
+          duration: 700,
+          offset: 80,
+        });
+      });
+    </script>
+  </body>
+</html>
